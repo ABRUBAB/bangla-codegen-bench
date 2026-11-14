@@ -39,14 +39,16 @@ def fig_shap():
 
 
 def fig_attribution():
-    files = sorted(X.glob("tokens_*_*_*.json")) if X.exists() else []
+    import re
+    files = sorted(X.glob("tokens_*.json")) if X.exists() else []
     if not files:
         return
     # choose model/task with all four variants available
     by = {}
     for f in files:
-        _, model, tid, var = f.stem.split("_", 3)[0], *f.stem.split("_", 1)[1].rsplit("_", 2)
-        by.setdefault((model, tid), {})[var] = f
+        m = re.match(r"tokens_(?P<model>.+?)_(?P<tid>[FS]\d{3})_(?P<var>.+)$", f.stem)
+        if m:
+            by.setdefault((m["model"], m["tid"]), {})[m["var"]] = f
     pick = None
     for k, v in by.items():
         if {"EN", "BN", "BN_MIX", "BANGLISH"} <= set(v):
@@ -77,12 +79,21 @@ def fig_attribution():
     save(fig, "fig_attribution", ROOT / "figures")
 
 
-def fig_segments(model="qwen2.5-coder-7b"):
+def main_xai_model():
+    """The largest model for which white-box probes exist (order of preference: 7B, 3B, 1.5B)."""
+    for m in ("qwen2.5-coder-7b", "qwen2.5-coder-3b", "qwen2.5-coder-1.5b"):
+        if (X / f"xai_{m}.jsonl").exists() and (X / f"xai_{m}_hidden.npz").exists():
+            return m
+    return None
+
+
+def fig_segments(model=None):
+    model = model or main_xai_model()
     p = X / f"xai_{model}.jsonl"
-    if not p.exists():
+    if model is None or not p.exists():
         return
     d = pd.read_json(p, lines=True)
-    vs = [v for v in ["EN", "EN_TYPO", "BN", "BN_SPELL", "BN_MIX", "BN_TYPO", "BANGLISH", "ID_ONLY"] if v in set(d.variant)]
+    vs = [v for v in ["EN", "EN_TYPO", "BN", "BN_SPELL", "BN_MIX", "BN_TYPO", "BANGLISH", "ES", "ID_ONLY"] if v in set(d.variant)]
     fig, axs = plt.subplots(1, 2, figsize=(7.2, 2.9))
     ax = axs[0]
     agg = d.groupby("variant")[["attr_head", "attr_signature", "attr_description", "attr_tail"]].mean().reindex(vs)
@@ -111,22 +122,23 @@ def fig_segments(model="qwen2.5-coder-7b"):
     ax.axhline(0, color="grey", ls="--", lw=0.7)
     ax.set_xticks(range(1, len(labs) + 1))
     ax.set_xticklabels(labs, rotation=35, ha="right")
-    ax.set_ylabel(r"$\Delta$ NLL of reference solution vs EN (nats/token)")
+    ax.set_ylabel(r"$\Delta$NLL of reference vs EN (nats/token)")
     ax.text(-0.2, 1.1, "(b)", transform=ax.transAxes, fontweight="bold", fontsize=9)
     fig.subplots_adjust(wspace=0.4)
     save(fig, "fig_segments", ROOT / "figures")
 
 
-def fig_alignment(model="qwen2.5-coder-7b"):
+def fig_alignment(model=None):
+    model = model or main_xai_model()
     p = X / f"xai_{model}_hidden.npz"
-    if not p.exists():
+    if model is None or not p.exists():
         return
     z = np.load(p, allow_pickle=True)
     keys = [str(k) for k in z["keys"]]
     last = z["last"].astype(np.float32)  # N, L+1, D
     idx = {k: i for i, k in enumerate(keys)}
     tasks = sorted({k.split("|")[0] for k in keys})
-    vs = [v for v in ["EN_TYPO", "BN", "BN_SPELL", "BN_MIX", "BN_TYPO", "BANGLISH", "ID_ONLY"] if any(k.endswith("|" + v) for k in keys)]
+    vs = [v for v in ["EN_TYPO", "BN", "BN_SPELL", "BN_MIX", "BN_TYPO", "BANGLISH", "ES", "ID_ONLY"] if any(k.endswith("|" + v) for k in keys)]
     nl = last.shape[1]
 
     def cos(a, b):
@@ -149,13 +161,13 @@ def fig_alignment(model="qwen2.5-coder-7b"):
     ex = pd.read_csv(R / "exec_merged.csv") if (R / "exec_merged.csv").exists() else None
     if ex is not None and "BN" in per_task:
         e = ex[(ex.model_id == model) & (ex.condition == "DIRECT")]
-        pv = e.groupby(["task_id", "variant"])["pass"].mean().unstack()
+        pv = e.groupby(["task_id", "variant"])["functional_pass"].mean().unstack()
         t = [k for k in per_task["BN"] if k in pv.index]
         drop = (pv.loc[t, "EN"] - pv.loc[t, "BN"]).values
         al = np.array([per_task["BN"][k] for k in t])
         rho, pval = sps.spearmanr(al, drop)
         ax.scatter(al, drop + np.random.default_rng(0).normal(0, 0.01, len(drop)), s=7, color=NPG["red"], alpha=0.6, linewidths=0)
-        ax.set_xlabel("late-layer alignment EN$\\leftrightarrow$BN (cosine)")
+        ax.set_xlabel("late-layer cosine, EN vs BN")
         ax.set_ylabel(r"per-task Pass@1 drop EN$-$BN")
         ax.text(0.03, 0.95, f"Spearman $\\rho$={rho:.2f} (p={pval:.3f})", transform=ax.transAxes, fontsize=7, va="top")
         json.dump({"spearman_rho": float(rho), "p": float(pval), "n": int(len(t))}, open(R / "xai_alignment_corr.json", "w"))

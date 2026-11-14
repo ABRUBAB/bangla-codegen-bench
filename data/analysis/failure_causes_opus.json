@@ -1,0 +1,731 @@
+[
+ {
+  "pair_id": "P001",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S005",
+  "variant": "BN_MIX",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Filters with `price LIKE` instead of on `name` when sort_by is price (and closes conn), though the prompt clearly says rows whose name contains keyword."
+ },
+ {
+  "pair_id": "P002",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F006",
+  "variant": "BN",
+  "category": "G. other",
+  "confidence": "medium",
+  "one_sentence_reason": "Implementation slip: added unrequested punctuation stripping that also removes whitespace, merging all words into one; spec rendering is faithful."
+ },
+ {
+  "pair_id": "P003",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S022",
+  "variant": "BN_MIX",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "Emits the literal placeholder text WEBSITE as link text instead of the website value; placeholder semantics stated equivalently in BN_MIX."
+ },
+ {
+  "pair_id": "P004",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F082",
+  "variant": "BN_SPELL",
+  "category": "C. wrong_task_or_API",
+  "confidence": "medium",
+  "one_sentence_reason": "Implemented a Roman-numeral value distance instead of a character mismatch count; the Bangla gloss \"রোমান হরফে\" (Roman script) plus the function name triggered Roman numerals (spelling noise did not touch this phrase)."
+ },
+ {
+  "pair_id": "P005",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S035",
+  "variant": "BN_SPELL",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "check_pin compares the raw PIN to the stored hash and hash_pin skips the digit check; the requirement is intact despite spelling noise."
+ },
+ {
+  "pair_id": "P006",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F034",
+  "variant": "BN",
+  "category": "G. other",
+  "confidence": "medium",
+  "one_sentence_reason": "Arithmetic implementation bug (computes lcm then divides again, returning gcd); the Bangla spec is correct and explicit."
+ },
+ {
+  "pair_id": "P007",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F074",
+  "variant": "BN_TYPO",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Returns nums instead of [] when window > len and no rounding; the noise deleted the negation in \"ধনাত্মক না হলে\", but clean BN (P044) fails identically, so noise is not the main cause."
+ },
+ {
+  "pair_id": "P008",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S010",
+  "variant": "BN_SPELL",
+  "category": "G. other",
+  "confidence": "medium",
+  "one_sentence_reason": "Missing `import os` (NameError) and used tarfile instead of the system tar command; a coding slip rather than a language misunderstanding."
+ },
+ {
+  "pair_id": "P009",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "S005",
+  "variant": "BN_SPELL",
+  "category": "C. wrong_task_or_API",
+  "confidence": "medium",
+  "one_sentence_reason": "Invents a non-existent `cursor.query` attribute (AttributeError) and also sorts DESC despite \"ঊর্ধ্বক্রমে\" (ascending)."
+ },
+ {
+  "pair_id": "P010",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S020",
+  "variant": "BN_MIX",
+  "category": "C. wrong_task_or_API",
+  "confidence": "medium",
+  "one_sentence_reason": "Misuses PyYAML by parsing the document line by line, so each line becomes a list instead of a mapping."
+ },
+ {
+  "pair_id": "P011",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F100",
+  "variant": "BN_MIX",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "Returns only the final digital root [n] instead of the full sequence starting with n, though BN_MIX states the list clearly."
+ },
+ {
+  "pair_id": "P012",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F056",
+  "variant": "BN_TYPO",
+  "category": "B. term_or_number_lost",
+  "confidence": "medium",
+  "one_sentence_reason": "Ignores the sorting qualifier \"কী অনুযায়ী ঊর্ধ্বক্রমে সাজানো\" and returns items in insertion order (the typo hit \"টাপলের\", not the sort phrase)."
+ },
+ {
+  "pair_id": "P013",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F094",
+  "variant": "BN_TYPO",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Computes window sums/means instead of population variance; clean BN (P043) fails the same way, so the typo in \"গড়\" (mean) is at most a minor factor."
+ },
+ {
+  "pair_id": "P014",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S005",
+  "variant": "BN_SPELL",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Same as P001: filters on price instead of name for price sorting and drops case-insensitivity; the key phrases survive the spelling noise."
+ },
+ {
+  "pair_id": "P015",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S035",
+  "variant": "BANGLISH",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "check_pin calls hash_pin, which raises on invalid PIN instead of returning False; the BANGLISH text \"valid PIN na hole-o False\" states this."
+ },
+ {
+  "pair_id": "P016",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "S047",
+  "variant": "BN_SPELL",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Uses a TemporaryDirectory context manager, so the directory is deleted before return; the caller-removes requirement is intact."
+ },
+ {
+  "pair_id": "P017",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S010",
+  "variant": "BN",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Walks files with relative arcnames lacking the directory prefix (and avoids system tar), violating the stated member-name rule."
+ },
+ {
+  "pair_id": "P018",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "F011",
+  "variant": "BN_SPELL",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Reverses characters of each word instead of word order; \"শব্দগুলো উল্টো ক্রমে সাজিয়ে\" is clear and the same bug occurs in clean BN (P053)."
+ },
+ {
+  "pair_id": "P019",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S035",
+  "variant": "BN_MIX",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "hash_pin checks only length, not that all characters are digits, although the prompt specifies digits 0-9."
+ },
+ {
+  "pair_id": "P020",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F039",
+  "variant": "BANGLISH",
+  "category": "B. term_or_number_lost",
+  "confidence": "medium",
+  "one_sentence_reason": "Adds the 0b prefix: the sentence-final negation in \"`0b` prefix ba shurute extra zero thakbe na\" was lost."
+ },
+ {
+  "pair_id": "P021",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F045",
+  "variant": "BN",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Off-by-one: adds an extra 1 to the harmonic sum; spec equivalent."
+ },
+ {
+  "pair_id": "P022",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "S018",
+  "variant": "BN",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "Empty YAML file returns [None] instead of [], an edge case stated explicitly (\"খালি হলে খালি তালিকা\")."
+ },
+ {
+  "pair_id": "P023",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F082",
+  "variant": "BN",
+  "category": "C. wrong_task_or_API",
+  "confidence": "medium",
+  "one_sentence_reason": "Implements Roman-numeral arithmetic instead of character mismatch count, triggered by \"রোমান হরফে\" plus the function name."
+ },
+ {
+  "pair_id": "P024",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F045",
+  "variant": "BANGLISH",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Recursive version returns 0.0 for n==1 (wrong base case) and no rounding; \"1 er cheye choto\" stated clearly."
+ },
+ {
+  "pair_id": "P025",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S005",
+  "variant": "BN",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Filters on price instead of name for price sorting and is not case-insensitive; spec equivalent in clean BN."
+ },
+ {
+  "pair_id": "P026",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "S045",
+  "variant": "BN_TYPO",
+  "category": "B. term_or_number_lost",
+  "confidence": "medium",
+  "one_sentence_reason": "Uses subdomain suffix matching and skips scheme/userinfo checks; \"হুবহু সমান\" (exactly equal) was ignored (the typo garbled \"একেবারে শেষে\" about the trailing dot, a possible minor factor)."
+ },
+ {
+  "pair_id": "P027",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F006",
+  "variant": "BN_SPELL",
+  "category": "G. other",
+  "confidence": "medium",
+  "one_sentence_reason": "Same implementation slip as P002 (non-alnum stripping removes spaces); unrelated to the spelling noise."
+ },
+ {
+  "pair_id": "P028",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S022",
+  "variant": "BN",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "Emits the literal text WEBSITE instead of the website value; spec equivalent."
+ },
+ {
+  "pair_id": "P029",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "S018",
+  "variant": "BN_TYPO",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Empty YAML file returns [None]; same as clean BN (P022), typos irrelevant."
+ },
+ {
+  "pair_id": "P030",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F082",
+  "variant": "BN_MIX",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "Raises on unequal lengths and sums ord differences instead of counting mismatches plus length difference; BN_MIX states both explicitly."
+ },
+ {
+  "pair_id": "P031",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F060",
+  "variant": "BANGLISH",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "Indexes a[0] before handling the empty-matrix case that \"Duto matrix-i empty hole empty list\" requires."
+ },
+ {
+  "pair_id": "P032",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S038",
+  "variant": "BN_SPELL",
+  "category": "B. term_or_number_lost",
+  "confidence": "medium",
+  "one_sentence_reason": "Uses string.hexdigits (includes uppercase), ignoring \"ছোট হাতের\" (lowercase); noise did not affect that phrase."
+ },
+ {
+  "pair_id": "P033",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F082",
+  "variant": "BANGLISH",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "Same as P030: requires equal length and sums ord differences instead of mismatch count plus length difference."
+ },
+ {
+  "pair_id": "P034",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "S037",
+  "variant": "BN_MIX",
+  "category": "B. term_or_number_lost",
+  "confidence": "high",
+  "one_sentence_reason": "Strips leading zeros (lstrip) although \"শুরুর zero-গুলো বাদ যাবে না\" says they must be kept; the negation was lost."
+ },
+ {
+  "pair_id": "P035",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "S045",
+  "variant": "BANGLISH",
+  "category": "B. term_or_number_lost",
+  "confidence": "medium",
+  "one_sentence_reason": "Allows subdomains (endswith) despite \"hubohu soman\" (exactly equal); the exact-match qualifier was ignored."
+ },
+ {
+  "pair_id": "P036",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "F083",
+  "variant": "BN_TYPO",
+  "category": "E. noise_induced",
+  "confidence": "high",
+  "one_sentence_reason": "The typo duplicated the digit in \"৩ দশমিক\" to \"৩৩ দশমিক\", and the model rounds to 33 decimals."
+ },
+ {
+  "pair_id": "P037",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S022",
+  "variant": "BN_TYPO",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "Literal WEBSITE placeholder text again; typos do not touch the relevant part."
+ },
+ {
+  "pair_id": "P038",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "S047",
+  "variant": "BN",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "TemporaryDirectory context manager deletes the dir before returning; the spec says the caller removes it."
+ },
+ {
+  "pair_id": "P039",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S036",
+  "variant": "BN_TYPO",
+  "category": "A. requirement_misread",
+  "confidence": "low",
+  "one_sentence_reason": "Adds an unrequested upper bound of 64 on length; the typo corrupted \"৬২টি\" to \"২টি\", but that does not plausibly explain a 64 cap."
+ },
+ {
+  "pair_id": "P040",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S050",
+  "variant": "BN_MIX",
+  "category": "C. wrong_task_or_API",
+  "confidence": "high",
+  "one_sentence_reason": "Writes Google Cloud Storage upload code (import error) instead of creating a local directory, misled by the \"user-দের upload করা document store\" context."
+ },
+ {
+  "pair_id": "P041",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S005",
+  "variant": "BN_TYPO",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Filters on price instead of name for price sorting; key phrases intact despite typos."
+ },
+ {
+  "pair_id": "P042",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "S039",
+  "variant": "BN_MIX",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Does not guarantee at least one character of each of the four kinds (symbols missing), though \"অন্তত একটা\" is stated."
+ },
+ {
+  "pair_id": "P043",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F094",
+  "variant": "BN",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Computes squared changes of the window mean instead of population variance within the window; spec explicit."
+ },
+ {
+  "pair_id": "P044",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F074",
+  "variant": "BN",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "Returns nums instead of [] when window > len and omits rounding and the window<=0 check; spec explicit."
+ },
+ {
+  "pair_id": "P045",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "F093",
+  "variant": "BANGLISH",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Flawed algorithm (startswith on suffix, returns wrong index) for longest proper border; BANGLISH spec equivalent."
+ },
+ {
+  "pair_id": "P046",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "F011",
+  "variant": "BN_TYPO",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Reverses characters of each word instead of word order; same bug as clean BN (P053)."
+ },
+ {
+  "pair_id": "P047",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F006",
+  "variant": "BN_TYPO",
+  "category": "G. other",
+  "confidence": "medium",
+  "one_sentence_reason": "Same non-alnum stripping slip as P002; unrelated to the typos."
+ },
+ {
+  "pair_id": "P048",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S047",
+  "variant": "BN_MIX",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Creates ./temp then deletes it itself, misattributing the \"caller removes\" sentence, and uses no tempfile."
+ },
+ {
+  "pair_id": "P049",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "F001",
+  "variant": "BN_SPELL",
+  "category": "B. term_or_number_lost",
+  "confidence": "low",
+  "one_sentence_reason": "Lowercases but does not remove spaces; the \"spaces\" part of the ignore clause was dropped (the verb was noised to \"উপেখা\", but case-folding was still applied)."
+ },
+ {
+  "pair_id": "P050",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F082",
+  "variant": "BN_TYPO",
+  "category": "C. wrong_task_or_API",
+  "confidence": "medium",
+  "one_sentence_reason": "Roman-numeral lookup (KeyError) instead of character mismatch count, triggered by \"রোমান হরফে\"."
+ },
+ {
+  "pair_id": "P051",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "S003",
+  "variant": "BN",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "Always returns True instead of using rowcount to report whether a row was deleted; spec explicit."
+ },
+ {
+  "pair_id": "P052",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S050",
+  "variant": "BANGLISH",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Creates only the parent dirname, not `path` itself; spec explicit."
+ },
+ {
+  "pair_id": "P053",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "F011",
+  "variant": "BN",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Reverses characters within words instead of word order, despite clear \"উল্টো ক্রমে সাজিয়ে\"."
+ },
+ {
+  "pair_id": "P054",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S009",
+  "variant": "BN_SPELL",
+  "category": "D. spec_ambiguity_in_translation",
+  "confidence": "low",
+  "one_sentence_reason": "Checks for \"0\" in stdout instead of returncode; the rendering \"`0` স্ট্যাটাসে বের হলে\" (comes out with status 0) is less explicit than \"exits with status 0\" (clean BN P059 also fails)."
+ },
+ {
+  "pair_id": "P055",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "S003",
+  "variant": "BN_TYPO",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "Always returns True regardless of rowcount; same as clean BN P051."
+ },
+ {
+  "pair_id": "P056",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S010",
+  "variant": "BN_TYPO",
+  "category": "G. other",
+  "confidence": "medium",
+  "one_sentence_reason": "Missing `import os` (NameError), wrong arcname and no system tar; a coding slip, not noise."
+ },
+ {
+  "pair_id": "P057",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F045",
+  "variant": "BN_MIX",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "Treats n<=1 as 0.0 and adds an extra 1; \"1-এর চেয়ে ছোট\" stated clearly."
+ },
+ {
+  "pair_id": "P058",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "S018",
+  "variant": "BN_SPELL",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Empty file returns [None]; same as clean BN P022."
+ },
+ {
+  "pair_id": "P059",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S009",
+  "variant": "BN",
+  "category": "D. spec_ambiguity_in_translation",
+  "confidence": "medium",
+  "one_sentence_reason": "Decides reachability from stderr text rather than exit code; \"`0` স্ট্যাটাসে বের হলে\" is a weak rendering of \"exits with status 0\" (no explicit \"exit/return code\")."
+ },
+ {
+  "pair_id": "P060",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S037",
+  "variant": "BN_TYPO",
+  "category": "A. requirement_misread",
+  "confidence": "low",
+  "one_sentence_reason": "Adds an unrequested max of 10 digits; typos do not touch a bound."
+ },
+ {
+  "pair_id": "P061",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F021",
+  "variant": "BN",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "Does not handle the empty list (modulo by zero), despite \"খালি তালিকা দিলে খালি তালিকা\"."
+ },
+ {
+  "pair_id": "P062",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "S005",
+  "variant": "BN_TYPO",
+  "category": "B. term_or_number_lost",
+  "confidence": "medium",
+  "one_sentence_reason": "Sorts DESC although \"ঊর্ধ্বক্রমে\" means ascending; the ascending term is intact but misread (also seen in P009/P076)."
+ },
+ {
+  "pair_id": "P063",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S006",
+  "variant": "BN_TYPO",
+  "category": "C. wrong_task_or_API",
+  "confidence": "medium",
+  "one_sentence_reason": "Uses the gzip module and never writes the .gz file instead of running the system gzip command (typo \"দিয়ে\" became \"লিয়ে\", a minor factor)."
+ },
+ {
+  "pair_id": "P064",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "S037",
+  "variant": "BANGLISH",
+  "category": "B. term_or_number_lost",
+  "confidence": "high",
+  "one_sentence_reason": "Excludes 0 from the digit alphabet: \"Shurur zero gulo bad jabe na\" (leading zeros not dropped) was inverted."
+ },
+ {
+  "pair_id": "P065",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F100",
+  "variant": "BANGLISH",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "Returns only [digital_root] instead of the full sequence; same as BN_MIX P011."
+ },
+ {
+  "pair_id": "P066",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F039",
+  "variant": "BN",
+  "category": "B. term_or_number_lost",
+  "confidence": "high",
+  "one_sentence_reason": "Adds the 0b prefix: the sentence-final negation \"`0b` উপসর্গ ... থাকে না\" was lost."
+ },
+ {
+  "pair_id": "P067",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S038",
+  "variant": "BN",
+  "category": "B. term_or_number_lost",
+  "confidence": "medium",
+  "one_sentence_reason": "Uses string.hexdigits, ignoring \"ছোট হাতের\" (lowercase)."
+ },
+ {
+  "pair_id": "P068",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S038",
+  "variant": "BN_TYPO",
+  "category": "B. term_or_number_lost",
+  "confidence": "medium",
+  "one_sentence_reason": "Uses string.hexdigits, ignoring the lowercase qualifier; same as clean BN P067."
+ },
+ {
+  "pair_id": "P069",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F039",
+  "variant": "BN_SPELL",
+  "category": "B. term_or_number_lost",
+  "confidence": "medium",
+  "one_sentence_reason": "Adds 0b prefix; negation noised to \"ণা\", but clean BN (P066) fails identically, so the cause is the lost negation, not the noise."
+ },
+ {
+  "pair_id": "P070",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F021",
+  "variant": "BN_SPELL",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "No empty-list guard (modulo by zero); same as clean BN P061."
+ },
+ {
+  "pair_id": "P071",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F094",
+  "variant": "BN_SPELL",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Incoherent incremental variance formula and missing k<=0 guard; spec explicit."
+ },
+ {
+  "pair_id": "P072",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "F093",
+  "variant": "BN_MIX",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "Starts from i=len(s), returning the whole string, violating \"Proper prefix মানে পুরো string-এর চেয়ে ছোট\"."
+ },
+ {
+  "pair_id": "P073",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F034",
+  "variant": "BN_TYPO",
+  "category": "G. other",
+  "confidence": "medium",
+  "one_sentence_reason": "Missing `import math` plus the same gcd/lcm arithmetic bug as clean BN P006; a coding slip."
+ },
+ {
+  "pair_id": "P074",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S035",
+  "variant": "BN",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "check_pin compares the raw PIN with the stored hash and has no digit check; spec explicit."
+ },
+ {
+  "pair_id": "P075",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F041",
+  "variant": "BN_TYPO",
+  "category": "E. noise_induced",
+  "confidence": "medium",
+  "one_sentence_reason": "Uses range(1, n+1) (includes n); the typo turned \"ছোট\" (less than) into \"ছোছোট\" in the strictly-less-than clause."
+ },
+ {
+  "pair_id": "P076",
+  "model_id": "qwen2.5-coder-7b",
+  "task_id": "S005",
+  "variant": "BN",
+  "category": "C. wrong_task_or_API",
+  "confidence": "medium",
+  "one_sentence_reason": "Invents `cursor.query` (AttributeError) and sorts DESC despite \"ঊর্ধ্বক্রমে\"."
+ },
+ {
+  "pair_id": "P077",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F039",
+  "variant": "BN_MIX",
+  "category": "B. term_or_number_lost",
+  "confidence": "high",
+  "one_sentence_reason": "Adds 0b prefix: the negation \"থাকবে না\" in BN_MIX was lost."
+ },
+ {
+  "pair_id": "P078",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F034",
+  "variant": "BANGLISH",
+  "category": "G. other",
+  "confidence": "medium",
+  "one_sentence_reason": "Missing `import math` (NameError); otherwise correct."
+ },
+ {
+  "pair_id": "P079",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S035",
+  "variant": "BN_TYPO",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "check_pin propagates ValueError instead of returning False and has no digit check; same failure pattern as BANGLISH P015."
+ },
+ {
+  "pair_id": "P080",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "F074",
+  "variant": "BN_SPELL",
+  "category": "A. requirement_misread",
+  "confidence": "medium",
+  "one_sentence_reason": "Returns nums instead of [] and no rounding; \"না\" noised to \"ণা\", but clean BN P044 fails identically."
+ },
+ {
+  "pair_id": "P081",
+  "model_id": "qwen2.5-coder-1.5b",
+  "task_id": "S018",
+  "variant": "BN_SPELL",
+  "category": "A. requirement_misread",
+  "confidence": "high",
+  "one_sentence_reason": "Returns None for an empty file instead of []."
+ }
+]

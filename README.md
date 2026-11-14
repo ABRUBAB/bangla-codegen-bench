@@ -62,11 +62,14 @@ resource limits, fresh temp dir per sample. Never run model outputs on a machine
 **API keys.** No secrets are stored in this repository. Pass keys via environment variables.
 
 ## Native-speaker audit (important)
-The Bangla/Banglish renderings were drafted with an LLM and checked automatically (schema, identifier and numeral
-preservation, back-translation with two independent LLM judges). They are **not** human-certified until two native
-speakers complete the audit: fill `data/audit/audit_annotator1.xlsx` and `audit_annotator2.xlsx` independently,
-then run `python scripts/ingest_audit.py data/audit/audit_annotator1.xlsx data/audit/audit_annotator2.xlsx`;
-this rewrites `paper/audit_numbers.tex` so the paper reports the real agreement statistics.
+The Bangla, code-mixed, Banglish and Spanish renderings were drafted with an LLM, checked automatically (schema,
+identifier and numeral preservation) and audited by Claude Opus agents (`data/audit/llm_opus_*.json`; statistics via
+`python scripts/audit_tools.py llm-stats`). They are **not** human-certified until native speakers complete the review:
+`python scripts/audit_tools.py build` writes the blinded review workbooks `data/audit/review_annotator{1,2}.xlsx`
+(AI judgements pre-filled, independent empty columns per reviewer). After two people have really completed them, run
+`python scripts/audit_tools.py ingest data/audit/review_annotator1.xlsx data/audit/review_annotator2.xlsx`;
+this rewrites `paper/audit_numbers.tex` so the paper reports the real agreement statistics. Until then the paper
+describes the renderings as LLM-drafted, automatically checked and AI-audited only.
 
 ## Licence
 Code: MIT. Task and prompt data: CC BY 4.0. Model outputs are research artefacts of third-party models and remain

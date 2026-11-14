@@ -22,3 +22,7 @@ data/tasks/_functional_base.jsonl
 # large raw model outputs are released via the dataset archive, not git
 data/generations/**/translations.jsonl.bak
 data/tasks/_parts/
+
+# large white-box probe tensors
+data/xai/*.npz
+scripts/center_pc_report.json

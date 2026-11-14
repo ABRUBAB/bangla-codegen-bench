@@ -78,9 +78,10 @@ def build():
             applied.add((a["task_id"], a["rendering"]))
     rng = random.Random(42)
     ids_f = sorted(t for t in tasks if t.startswith("F")); ids_s = sorted(t for t in tasks if t.startswith("S"))
-    sample_tasks = set(rng.sample(ids_f, min(40, len(ids_f))) + rng.sample(ids_s, min(20, len(ids_s))))
-    rng2 = random.Random(43)
-    es_sample = set(rng2.sample(ids_f, min(40, len(ids_f))) + rng2.sample(ids_s, min(20, len(ids_s))))
+    # reduced pre-registered sample: 35 functional + 15 security tasks, each in BN, BN_MIX and BANGLISH = 150 items
+    # (about 2 h per reviewer). Spanish is not in the sample: it needs a Spanish speaker, not the Bangla-speaking authors.
+    sample_tasks = set(rng.sample(ids_f, min(35, len(ids_f))) + rng.sample(ids_s, min(15, len(ids_s))))
+    es_sample = set()
     rows = []
     for a in items:
         t = tasks.get(a["task_id"])
@@ -100,7 +101,7 @@ def build():
              "Your task (yellow columns): read ENGLISH and RENDERING and give YOUR OWN judgement; then say whether you agree with the AI.",
              "meaning: Y = same requirements; MINOR = wording differs, same implementation; N = a requirement is missing/added/changed.",
              "naturalness: 1 (machine-like) .. 5 (fully natural for that register: BN formal Bangla / BN_MIX code-mixed / BANGLISH romanized / ES Spanish).",
-             "Work independently of the other reviewer. Start with sheet 'Review_sample' (the pre-registered sample); 'All_items' is optional.",
+             "Work independently of the other reviewer. Start with sheet 'Review_sample' (the fixed-seed sample); 'All_items' is optional.",
              "Only judgements that you really made may be reported as human review in the paper. Save the file and run scripts/audit_tools.py ingest."]
     for k, seed in ((1, 101), (2, 202)):
         wb = Workbook(); ws0 = wb.active; ws0.title = "Instructions"
