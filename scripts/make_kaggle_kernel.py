@@ -19,6 +19,7 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--tag", default="")
     ap.add_argument("--only", default="")
+    ap.add_argument("--prompts-name", default="prompts.jsonl")
     a = ap.parse_args()
     models = json.loads((ROOT / "data/models.json").read_text())
     m = models[a.model_key]
@@ -31,7 +32,7 @@ def main():
     code = textwrap.dedent(f'''\
         import os, subprocess, sys, shutil, glob, json
         subprocess.run([sys.executable, "-m", "pip", "install", "-q", "-U", "transformers", "accelerate", "bitsandbytes"], check=False)
-        data = glob.glob("/kaggle/input/**/prompts.jsonl", recursive=True)[0]
+        data = glob.glob("/kaggle/input/**/{a.prompts_name}", recursive=True)[0]
         script = glob.glob("/kaggle/input/**/generate_hf.py", recursive=True)[0]
         os.makedirs("/kaggle/working/gens", exist_ok=True)
         cmd = [sys.executable, script, "--hf-id", "{m['hf_id']}", "--revision", "{m['revision']}",
