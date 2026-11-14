@@ -222,6 +222,22 @@ def main():
     ft = ex[~ex["functional_pass"]].groupby(["model_id", "variant", "func_failure_type"]).size().rename("n").reset_index()
     ft.to_csv(out / "tab_failure_types.csv", index=False)
     # tokens per generation
+    # cost per success: workflow tokens needed per functionally correct sample (functional tasks) and per secure-correct
+    # sample (security tasks); includes translation tokens in the translate-first arm
+    cps = []
+    for (m, v, c), g in ex.groupby(["model_id", "variant", "condition"]):
+        gf = g[g.kind == "functional"]
+        gs = g[(g.kind == "security") & (g.status != "harness_error")]
+        row = {"model_id": m, "variant": v, "condition": c}
+        if len(gf):
+            row["tokens_per_sample_func"] = gf["total_tokens"].mean()
+            row["tokens_per_correct_func"] = gf["total_tokens"].sum() / max(1, gf["functional_pass"].sum())
+        if len(gs):
+            sc = (gs["functional_pass"] & (gs["exploit_pass"] == True))  # noqa: E712
+            row["tokens_per_sample_sec"] = gs["total_tokens"].mean()
+            row["tokens_per_secure_correct"] = gs["total_tokens"].sum() / max(1, sc.sum())
+        cps.append(row)
+    pd.DataFrame(cps).to_csv(out / "tab_cost_per_success.csv", index=False)
     tk = ex.groupby(["model_id", "variant", "condition"])[["prompt_tokens", "output_tokens", "total_tokens"]].mean().reset_index()
     tk.to_csv(out / "tab_gen_tokens.csv", index=False)
     res["n_exec"] = int(len(ex)); res["models"] = sorted(ex["model_id"].unique().tolist())

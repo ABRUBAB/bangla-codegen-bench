@@ -33,7 +33,7 @@ def fig_tokens():
     d = pd.read_csv(p)
     toks = [c[6:] for c in d.columns if c.startswith("desc__")]
     en = d[d.variant == "EN"].set_index("task_id")
-    vs = ["EN_TYPO", "BN", "BN_SPELL", "BN_MIX", "BN_TYPO", "BANGLISH"]
+    vs = ["EN_TYPO", "BN", "BN_SPELL", "BN_MIX", "BN_TYPO", "BANGLISH", "ES"]
     M = pd.DataFrame({TOK_LABEL.get(t, t): {v: float(np.median(d[d.variant == v].set_index("task_id")[f"desc__{t}"] /
                                            en[f"desc__{t}"])) for v in vs} for t in toks}).T
     M = M.sort_values("BN", ascending=False)
