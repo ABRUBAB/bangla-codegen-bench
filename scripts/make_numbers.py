@@ -191,6 +191,24 @@ if p.exists():
 p = R / "xai_alignment_corr.json"
 if p.exists():
     a = json.loads(p.read_text()); d("align-rho", f"{a['spearman_rho']:.2f}"); d("align-p", pvalue(a["p"])); d("align-n", a["n"])
+t = rd("tab_cost_per_success.csv")
+if t is not None:
+    tabs["cps"] = t
+    for _, r in t.iterrows():
+        k = f"{MC[r.model_id]}-{VC.get(r.variant, r.variant.replace('_', ''))}" + ("" if r.condition == "DIRECT" else "-TF")
+        if not np.isnan(r.get("tokens_per_secure_correct", np.nan)):
+            d(f"cps-{k}", f"{r.tokens_per_secure_correct:,.0f}")
+        if not np.isnan(r.get("tokens_per_correct_func", np.nan)):
+            d(f"cpf-{k}", f"{r.tokens_per_correct_func:,.0f}")
+    dd = t[t.condition == "DIRECT"]
+    for v, g in dd.groupby("variant"):
+        k = VC.get(v, v.replace("_", ""))
+        if g["tokens_per_secure_correct"].notna().any():
+            d(f"cpsAll-{k}", f"{g['tokens_per_secure_correct'].mean():,.0f}")
+            en = dd[dd.variant == "EN"].set_index("model_id")["tokens_per_secure_correct"]
+            ratio = (g.set_index("model_id")["tokens_per_secure_correct"] / en).dropna()
+            if len(ratio):
+                d(f"cpsRatio-{k}", f"{ratio.mean():.1f}")
 (PAPER / "numbers.tex").write_text("\n".join(lines) + "\n", encoding="utf-8")
 print(len(lines), "macros written")
 
@@ -236,3 +254,21 @@ if t is not None:
                 rows.append(f"{MODEL_TXT[m]} & \\texttt{{{v.replace('_', chr(92) + '_')}}} & \\N{{pf-{k}}} & \\N{{pf-{k}-TF}} & \\N{{mit-d-{k}}} [\\N{{mit-lo-{k}}}, \\N{{mit-hi-{k}}}] & \\N{{mit-tok-{k}}}$\\times$\\\\")
     rows += ["\\bottomrule", "\\end{tabular}"]
     write_table("tab_mitigation.tex", "\n".join(rows) + "\n")
+
+
+t = tabs.get("cps")
+if t is not None:
+    BS = chr(92)
+    cols = [("EN", "DIRECT"), ("BN", "DIRECT"), ("BN_MIX", "DIRECT"), ("BANGLISH", "DIRECT"), ("ES", "DIRECT"), ("BN", "TRANSLATE_FIRST"), ("BANGLISH", "TRANSLATE_FIRST")]
+    have = {(r.variant, r.condition) for r in t.itertuples()}
+    cols = [c for c in cols if c in have]
+    head = " & ".join(BS + "texttt{" + v.replace("_", BS + "_") + "}" + (" (TF)" if c == "TRANSLATE_FIRST" else "") for v, c in cols)
+    rows = [BS + "begin{tabular}{@{}l" + "r" * len(cols) + "@{}}", BS + "toprule", "Model & " + head + BS + BS, BS + "midrule"]
+    for m in models_in(t):
+        cells = []
+        for v, c in cols:
+            key = f"cps-{MC[m]}-{VC[v]}" + ("" if c == "DIRECT" else "-TF")
+            cells.append(BS + "N{" + key + "}")
+        rows.append(MODEL_TXT[m] + " & " + " & ".join(cells) + BS + BS)
+    rows += [BS + "bottomrule", BS + "end{tabular}"]
+    write_table("tab_cps.tex", NL.join(rows) + NL)
