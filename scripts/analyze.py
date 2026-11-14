@@ -171,6 +171,68 @@ def security(ex, n_boot=2000):
     return pd.DataFrame(rows), d
 
 
+def security_paired(d, n_boot=2000):
+    """Paired vulnerability contrast vs EN, matched on tasks that have working code in BOTH variants.
+    Conditioning V on functional success can change the task mix between variants; this matched analysis removes that
+    composition effect. Per-task V = vulnerable-correct / working samples of that task."""
+    rows = []
+    d = d[d["condition"] == "DIRECT"]
+    for m, gm in d.groupby("model_id"):
+        w = gm[gm["functional_pass"]].copy()
+        w["vuln"] = (w["exploit_pass"] == False).astype(float)  # noqa: E712
+        pt = w.groupby(["task_id", "variant"])["vuln"].mean().unstack("variant")
+        if "EN" not in pt:
+            continue
+        fam = []
+        for v in [c for c in pt.columns if c != "EN"]:
+            both = pt[["EN", v]].dropna()
+            if len(both) < 5:
+                continue
+            diff, lo, hi = S.cluster_bootstrap_diff(both[v].values, both["EN"].values, n_boot)
+            _, p = S.wilcoxon_paired(both[v].values, both["EN"].values)
+            fam.append({"model_id": m, "variant": v, "n_tasks": int(len(both)), "diff": diff, "lo": lo, "hi": hi, "p": p})
+        if fam:
+            for f, ap in zip(fam, S.holm([f["p"] for f in fam])):
+                f["p_holm"] = ap
+            rows += fam
+    return pd.DataFrame(rows)
+
+
+def pooled_gee(ex):
+    """Pooled logistic GEE over all models (model fixed effects, task-clustered, exchangeable correlation):
+    (a) functional pass on functional tasks, (b) functional pass on security tasks, (c) vulnerable given working code."""
+    import statsmodels.api as sm
+    import statsmodels.formula.api as smf
+    rows = []
+    base = ex[(ex["condition"] == "DIRECT") & (~ex["variant"].str.endswith("_HINT")) & (ex["status"] != "harness_error")].copy()
+    base["y"] = base["functional_pass"].astype(float)
+    specs = {"pass_functional": base[base.kind == "functional"], "pass_security_tasks": base[base.kind == "security"]}
+    w = base[(base.kind == "security") & base["functional_pass"] & base["exploit_pass"].notna()].copy()
+    w["y"] = (w["exploit_pass"] == False).astype(float)  # noqa: E712
+    specs["vulnerable_given_working"] = w
+    for name, g in specs.items():
+        if g["model_id"].nunique() < 1 or len(g) < 50:
+            continue
+        g = g[g["variant"] != "ID_ONLY"]
+        terms = "C(variant, Treatment('EN'))" + (" + C(model_id)" if g["model_id"].nunique() > 1 else "")
+        try:
+            res = smf.gee("y ~ " + terms, groups="task_id", data=g, family=sm.families.Binomial(),
+                          cov_struct=sm.cov_struct.Exchangeable()).fit()
+        except Exception as exc:
+            print("pooled GEE failed", name, exc)
+            continue
+        ci = res.conf_int()
+        for t in res.params.index:
+            if "variant" in t:
+                v = t.split("T.")[1].rstrip("]")
+                rows.append({"outcome": name, "variant": v, "coef": res.params[t], "OR": float(np.exp(res.params[t])),
+                             "OR_lo": float(np.exp(ci.loc[t, 0])), "OR_hi": float(np.exp(ci.loc[t, 1])), "p": res.pvalues[t], "n": len(g)})
+    out = pd.DataFrame(rows)
+    if not out.empty:
+        out["p_holm"] = out.groupby("outcome")["p"].transform(lambda s: pd.Series(S.holm(s.tolist()), index=s.index))
+    return out
+
+
 def static_vs_dynamic(d):
     """On working security samples: Bandit (relevant / any) vs exploit outcome."""
     if "bandit_relevant" not in d:
@@ -212,6 +274,8 @@ def main():
     mit = mitigation(ex, a.boot); mit.to_csv(out / "tab_mitigation.csv", index=False)
     sec, secd = security(ex, a.boot); sec.to_csv(out / "tab_security.csv", index=False)
     sd = static_vs_dynamic(secd); sd.to_csv(out / "tab_static_vs_dynamic.csv", index=False)
+    sp = security_paired(secd, a.boot); sp.to_csv(out / "tab_security_paired.csv", index=False)
+    pooled_gee(ex).to_csv(out / "tab_pooled_gee.csv", index=False)
     # per-CWE vulnerability by model/variant
     if not secd.empty:
         cw = secd.groupby(["model_id", "variant", "category"]).agg(

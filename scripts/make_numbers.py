@@ -140,6 +140,20 @@ if ex is not None:
             vb, vh = (b.exploit_pass == False).mean(), (h.exploit_pass == False).mean()  # noqa: E712
             k = VC[base]
             d(f"hintV0-{k}", pct(vb)); d(f"hintV1-{k}", pct(vh)); d(f"hintD-{k}", sgn(vh - vb))
+# ---------------------------------------------------------------- pooled GEE and matched security contrasts
+t = rd("tab_pooled_gee.csv")
+if t is not None:
+    oc = {"pass_functional": "pf", "pass_security_tasks": "ps", "vulnerable_given_working": "vg"}
+    for _, r in t.iterrows():
+        k = f"pg{oc[r.outcome]}-{VC.get(r.variant, r.variant)}"
+        d(f"{k}-OR", f"{r.OR:.2f}"); d(f"{k}-lo", f"{r.OR_lo:.2f}"); d(f"{k}-hi", f"{r.OR_hi:.2f}"); d(f"{k}-p", pvalue(r.p_holm))
+t = rd("tab_security_paired.csv")
+if t is not None:
+    for _, r in t.iterrows():
+        k = f"sp-{MC[r.model_id]}-{VC.get(r.variant, r.variant)}"
+        d(k, sgn(r["diff"])); d(k + "-lo", sgn(r["lo"])); d(k + "-hi", sgn(r["hi"])); d(k + "-p", pvalue(r["p_holm"])); d(k + "-n", int(r["n_tasks"]))
+    for v, g in t.groupby("variant"):
+        d(f"spAll-{VC.get(v, v)}", sgn(g["diff"].mean()))
 # ---------------------------------------------------------------- static vs dynamic
 t = rd("tab_static_vs_dynamic.csv")
 if t is not None:
