@@ -66,10 +66,10 @@ def main():
     variants = a.variants.split(",")
 
     tasks = {}
-    for l in Path(a.tasks).read_text(encoding="utf-8").splitlines():
+    for l in Path(a.tasks).read_text(encoding="utf-8").split("\n"):
         if l.strip():
             t = json.loads(l); tasks[t["task_id"]] = t
-    prompts = [json.loads(l) for l in Path(a.prompts).read_text(encoding="utf-8").splitlines() if l.strip()]
+    prompts = [json.loads(l) for l in Path(a.prompts).read_text(encoding="utf-8").split("\n") if l.strip()]
     prompts = [p for p in prompts if p["variant"] in variants]
     if a.limit:
         prompts = prompts[: a.limit]

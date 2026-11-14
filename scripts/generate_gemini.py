@@ -120,12 +120,12 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
     done = set()
     for f in out_dir.glob("gens_*.jsonl"):
-        for line in f.read_text(encoding="utf-8").splitlines():
+        for line in f.read_text(encoding="utf-8").split("\n"):
             if line.strip():
                 rec = json.loads(line)
                 if rec.get("finish") != "ERROR":
                     done.add(rec["gen_id"])
-    prompts = [json.loads(l) for l in Path(args.prompts).read_text(encoding="utf-8").splitlines() if l.strip()]
+    prompts = [json.loads(l) for l in Path(args.prompts).read_text(encoding="utf-8").split("\n") if l.strip()]
     if args.limit:
         prompts = prompts[: args.limit]
     only = set(filter(None, args.only.split(",")))
@@ -173,7 +173,7 @@ def main():
         tr_path = out_dir / "translations.jsonl"
         trans = {}
         if tr_path.exists():
-            for l in tr_path.read_text(encoding="utf-8").splitlines():
+            for l in tr_path.read_text(encoding="utf-8").split("\n"):
                 if l.strip():
                     r = json.loads(l); trans[(r["task_id"], r["variant"])] = r
         src = [p for p in prompts if p["variant"] in TF_VARIANTS]

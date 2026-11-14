@@ -35,11 +35,11 @@ def load_llm():
 def load_tasks():
     t = {}
     for name in ("functional", "security"):
-        for l in (ROOT / "data/tasks" / f"{name}.jsonl").read_text(encoding="utf-8").splitlines():
+        for l in (ROOT / "data/tasks" / f"{name}.jsonl").read_text(encoding="utf-8").split("\n"):
             if l.strip():
                 r = json.loads(l); t[r["task_id"]] = r
     for p in sorted((ROOT / "data/tasks/_new").glob("*.jsonl")) if (ROOT / "data/tasks/_new").exists() else []:
-        for l in p.read_text(encoding="utf-8").splitlines():
+        for l in p.read_text(encoding="utf-8").split("\n"):
             if l.strip():
                 r = json.loads(l); t.setdefault(r["task_id"], r)
     return t

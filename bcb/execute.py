@@ -67,7 +67,7 @@ def _run_shard(shard: List[dict], image: str, memory: str, cpus: str) -> List[di
     except subprocess.TimeoutExpired as exc:
         out = (exc.stdout or b"").decode("utf-8", errors="replace")
     results = []
-    for line in out.splitlines():
+    for line in out.split("\n"):
         line = line.strip()
         if line.startswith("{"):
             try:

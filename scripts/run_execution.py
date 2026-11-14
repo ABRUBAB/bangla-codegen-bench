@@ -19,7 +19,7 @@ def load_gens(root: Path, models):
         if models and mdir.name not in models:
             continue
         for f in sorted(mdir.glob("gens_*.jsonl")):
-            for line in f.read_text(encoding="utf-8").splitlines():
+            for line in f.read_text(encoding="utf-8").split("\n"):
                 if line.strip():
                     r = json.loads(line)
                     if r.get("finish") == "ERROR":
@@ -42,7 +42,7 @@ def main():
     out = Path(a.out); out.parent.mkdir(parents=True, exist_ok=True)
     done = set()
     if out.exists():
-        done = {json.loads(l)["gen_id"] for l in out.read_text(encoding="utf-8").splitlines() if l.strip()}
+        done = {json.loads(l)["gen_id"] for l in out.read_text(encoding="utf-8").split("\n") if l.strip()}
     excl = set(filter(None, a.exclude_tasks.split(",")))
     todo = [g for g in gens.values() if g["gen_id"] not in done and g["task_id"] not in excl]
     print(f"{len(gens)} generations, {len(done)} already executed, {len(todo)} to run", flush=True)

@@ -36,7 +36,7 @@ CWE_BANDIT = {
 
 
 def load(args):
-    ex = pd.DataFrame([json.loads(l) for l in Path(args.exec).read_text(encoding="utf-8").splitlines() if l.strip()])
+    ex = pd.DataFrame([json.loads(l) for l in Path(args.exec).read_text(encoding="utf-8").split("\n") if l.strip()])
     ex["pass"] = ex["functional_pass"].astype(float)
     gens = load_gens(Path(args.gens), None)
     meta = pd.DataFrame([{k: g.get(k) for k in ("gen_id", "prompt_tokens", "output_tokens", "thought_tokens",
@@ -48,7 +48,7 @@ def load(args):
                           ex["translation_tokens_in"].fillna(0) + ex["translation_tokens_out"].fillna(0))
     if args.bandit and Path(args.bandit).exists():
         bd = {}
-        for l in Path(args.bandit).read_text(encoding="utf-8").splitlines():
+        for l in Path(args.bandit).read_text(encoding="utf-8").split("\n"):
             if l.strip():
                 r = json.loads(l); bd[r["gen_id"]] = r
         tasks = {t["task_id"]: t for t in load_tasks([p for p in TASK_DIR.glob("*.jsonl") if not p.name.startswith("_")])}

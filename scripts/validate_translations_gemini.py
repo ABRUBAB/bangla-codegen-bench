@@ -62,7 +62,7 @@ def main():
     ap.add_argument("--workers", type=int, default=6)
     a = ap.parse_args()
     key = Path(a.key_file).read_text().strip()
-    tasks = [json.loads(l) for l in Path(a.tasks).read_text(encoding="utf-8").splitlines() if l.strip()]
+    tasks = [json.loads(l) for l in Path(a.tasks).read_text(encoding="utf-8").split("\n") if l.strip()]
     items = [(t["task_id"], r, t["description"]["en"], t["description"][r]) for t in tasks for r in ("bn", "bn_mix", "banglish")]
     lock = threading.Lock()
     fh = open(a.out, "w", encoding="utf-8")

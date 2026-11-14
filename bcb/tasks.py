@@ -21,7 +21,7 @@ def load_tasks(paths: Iterable[Path] | None = None, kind: str | None = None) -> 
         paths = sorted(TASK_DIR.glob("*.jsonl"))
     tasks: List[dict] = []
     for p in paths:
-        for line in Path(p).read_text(encoding="utf-8").splitlines():
+        for line in Path(p).read_text(encoding="utf-8").split("\n"):
             line = line.strip()
             if line:
                 tasks.append(json.loads(line))
