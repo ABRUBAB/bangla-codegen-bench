@@ -71,7 +71,11 @@ def build():
     from openpyxl.styles import Alignment, Font, PatternFill
     from openpyxl.worksheet.datavalidation import DataValidation
     items, tasks = load_llm(), load_tasks()
-    applied = {(a["task_id"], a["rendering"]) for f in AUD.glob("applied_fixes_*.json") for a in json.loads(f.read_text(encoding="utf-8"))}
+    applied = set()
+    for f in AUD.glob("applied_fixes_*.json"):
+        data = json.loads(f.read_text(encoding="utf-8"))
+        for a in (data["applied"] if isinstance(data, dict) else data):
+            applied.add((a["task_id"], a["rendering"]))
     rng = random.Random(42)
     ids_f = sorted(t for t in tasks if t.startswith("F")); ids_s = sorted(t for t in tasks if t.startswith("S"))
     sample_tasks = set(rng.sample(ids_f, min(40, len(ids_f))) + rng.sample(ids_s, min(20, len(ids_s))))
