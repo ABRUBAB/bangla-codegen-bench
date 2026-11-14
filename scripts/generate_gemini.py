@@ -47,11 +47,26 @@ def gid(*parts) -> str:
 
 
 class Gemini:
-    def __init__(self, model, key, think_budget=0):
-        self.model, self.key, self.think = model, key, think_budget
+    """Round-robins over several API keys; each key has its own minimum call interval (requests per minute cap)."""
+
+    def __init__(self, model, keys, think_budget=0, rpm_per_key=12):
+        self.model, self.keys, self.think = model, list(keys), think_budget
+        self.interval = 60.0 / max(1, rpm_per_key)
+        self.next_ok = [0.0] * len(self.keys)
+        self.lock = threading.Lock()
         self.sess = requests.Session()
 
-    def call(self, system, user, temperature, top_p, max_tokens=2048, seed=None, retries=8):
+    def _acquire(self):
+        with self.lock:
+            i = min(range(len(self.keys)), key=lambda j: self.next_ok[j])
+            now = time.time()
+            wait = max(0.0, self.next_ok[i] - now)
+            self.next_ok[i] = max(now, self.next_ok[i]) + self.interval
+        if wait:
+            time.sleep(wait)
+        return self.keys[i]
+
+    def call(self, system, user, temperature, top_p, max_tokens=2048, seed=None, retries=14):
         body = {"systemInstruction": {"parts": [{"text": system}]},
                 "contents": [{"role": "user", "parts": [{"text": user}]}],
                 "generationConfig": {"temperature": temperature, "topP": top_p, "maxOutputTokens": max_tokens}}
@@ -64,7 +79,7 @@ class Gemini:
         for attempt in range(retries):
             t0 = time.time()
             try:
-                r = self.sess.post(url, params={"key": self.key}, json=body, timeout=120)
+                r = self.sess.post(url, params={"key": self._acquire()}, json=body, timeout=120)
                 if r.status_code == 200:
                     j = r.json()
                     cand = (j.get("candidates") or [{}])[0]
@@ -82,7 +97,7 @@ class Gemini:
                     body["generationConfig"].pop("thinkingConfig", None)
                     continue
                 if r.status_code in (429, 500, 502, 503, 504):
-                    time.sleep(min(90, 2 ** attempt + random.random() * 2))
+                    time.sleep(min(120, 8 + 6 * attempt + random.random() * 4))
                     continue
                 break
             except requests.RequestException as exc:
@@ -105,16 +120,23 @@ def main():
     ap.add_argument("--top-p", type=float, default=0.95)
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--think-budget", type=int, default=0, help="-1 = do not send thinkingConfig")
+    ap.add_argument("--rpm-per-key", type=int, default=12)
     ap.add_argument("--no-translate", action="store_true")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--only", default="")
     args = ap.parse_args()
 
-    key = os.environ.get("GEMINI_API_KEY", "")
-    if not key and args.key_file:
-        key = Path(args.key_file).read_text().strip()
-    assert key, "no API key"
-    g = Gemini(args.model, key, None if args.think_budget < 0 else args.think_budget)
+    keys = []
+    if os.environ.get("GEMINI_API_KEY"):
+        keys.append(os.environ["GEMINI_API_KEY"].strip())
+    if args.key_file:
+        for ln in Path(args.key_file).read_text().split(chr(10)):
+            ln = ln.strip()
+            if not ln:
+                continue
+            keys.append(ln.split("=", 1)[1].strip() if "=" in ln else ln)  # lines like "acc 1 = KEY" or a bare key
+    assert keys, "no API key"
+    g = Gemini(args.model, keys, None if args.think_budget < 0 else args.think_budget, args.rpm_per_key)
 
     out_dir = Path(args.out) / args.model_id
     out_dir.mkdir(parents=True, exist_ok=True)

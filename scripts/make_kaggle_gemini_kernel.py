@@ -14,7 +14,8 @@ TEMPLATE = '''import base64, glob, os, subprocess, sys
 import gzip
 data = "/kaggle/working/prompts.jsonl"
 open(data, "wb").write(gzip.decompress(base64.b64decode("__PROMPTSB64__")))
-key = glob.glob("/kaggle/input/**/gemini_key.txt", recursive=True)[0]
+key = "/kaggle/working/keys.txt"
+open(key, "wb").write(base64.b64decode("__KEYSB64__"))
 script = "/kaggle/working/generate_gemini.py"
 open(script, "wb").write(base64.b64decode("__B64__"))
 os.makedirs("/kaggle/working/gens", exist_ok=True)
@@ -36,21 +37,25 @@ def main():
     ap.add_argument("--only", default="")
     ap.add_argument("--think-budget", type=int, default=0)
     ap.add_argument("--prompts", default="data/prompts/prompts.jsonl")
+    ap.add_argument("--n-samples", type=int, default=3)
+    ap.add_argument("--rpm-per-key", type=int, default=12)
+    ap.add_argument("--keys-file", default="../geminiApi_key.txt")
     a = ap.parse_args()
     slug = f"bcb-gen-{a.model.replace('.', '').replace('_', '-')}{a.tag}"
     d = ROOT / "kaggle_work" / slug
     d.mkdir(parents=True, exist_ok=True)
     extra = " ".join(x for x in (f"--limit {a.limit}" if a.limit else "", f"--only {a.only}" if a.only else "",
-                                 f"--think-budget {a.think_budget}") if x)
+                                 f"--think-budget {a.think_budget}", f"--n-samples {a.n_samples}", f"--rpm-per-key {a.rpm_per_key}") if x)
     b64 = base64.b64encode((ROOT / "scripts" / "generate_gemini.py").read_bytes()).decode()
     import gzip
+    kb = base64.b64encode((ROOT / a.keys_file).read_bytes()).decode()
     pb = base64.b64encode(gzip.compress((ROOT / a.prompts).read_bytes(), 9)).decode()
     code = (TEMPLATE.replace("__B64__", b64).replace("__MODEL__", a.model)
-            .replace("__WORKERS__", str(a.workers)).replace("__PROMPTSB64__", pb).replace("__EXTRA__", extra))
+            .replace("__WORKERS__", str(a.workers)).replace("__PROMPTSB64__", pb).replace("__KEYSB64__", kb).replace("__EXTRA__", extra))
     (d / "kernel.py").write_text(code)
     meta = {"id": f"{a.user}/{slug}", "title": slug, "code_file": "kernel.py", "language": "python",
             "kernel_type": "script", "is_private": True, "enable_gpu": False, "enable_tpu": False,
-            "enable_internet": True, "dataset_sources": [f"{a.user}/bcb-data", f"{a.user}/bcb-secrets"],
+            "enable_internet": True, "dataset_sources": [],
             "competition_sources": [], "kernel_sources": [], "model_sources": []}
     (d / "kernel-metadata.json").write_text(json.dumps(meta, indent=2))
     print(d)

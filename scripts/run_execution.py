@@ -7,7 +7,7 @@ Reads <gens>/<model>/gens_*.jsonl (dedupe by gen_id), writes one JSON line per g
    func_failure_type, exploit_failure_type, func_tail, exploit_tail, duration}
 status: ok | no_code | harness_error.   exploit_pass is None when not applicable/not run.
 """
-import argparse, json, sys
+import argparse, hashlib, json, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from bcb.execute import run_jobs
@@ -40,11 +40,16 @@ def main():
     tasks = {t["task_id"]: t for t in load_tasks([p for p in TASK_DIR.glob("*.jsonl") if not p.name.startswith("_")])}
     gens = load_gens(Path(a.gens), set(filter(None, a.models.split(","))))
     out = Path(a.out); out.parent.mkdir(parents=True, exist_ok=True)
-    done = set()
+    done = {}
     if out.exists():
-        done = {json.loads(l)["gen_id"] for l in out.read_text(encoding="utf-8").split("\n") if l.strip()}
+        for l in out.read_text(encoding="utf-8").split(chr(10)):
+            if l.strip():
+                r = json.loads(l)
+                done[r["gen_id"]] = r.get("code_sha")
+    sha = lambda g: hashlib.sha1((g.get("extracted_code") or "").encode("utf-8")).hexdigest()[:12]
     excl = set(filter(None, a.exclude_tasks.split(",")))
-    todo = [g for g in gens.values() if g["gen_id"] not in done and g["task_id"] not in excl]
+    # re-run a sample when it is new or its code changed since it was executed (regenerated prompts keep their gen_id)
+    todo = [g for g in gens.values() if done.get(g["gen_id"], "MISSING") != sha(g) and g["task_id"] not in excl]
     print(f"{len(gens)} generations, {len(done)} already executed, {len(todo)} to run", flush=True)
     jobs, skipped = [], []
     for g in todo:
@@ -58,7 +63,7 @@ def main():
             t = tasks[g["task_id"]]
             fh.write(json.dumps({"gen_id": g["gen_id"], "model_id": g["model_id"], "task_id": g["task_id"],
                 "variant": g["variant"], "condition": g["condition"], "sample_idx": g["sample_idx"], "kind": t["kind"],
-                "status": "no_code", "functional_pass": False, "exploit_pass": None,
+                "code_sha": sha(g), "status": "no_code", "functional_pass": False, "exploit_pass": None,
                 "func_failure_type": "no_code", "exploit_failure_type": None}) + "\n")
         for g in todo:
             if g in skipped: continue
@@ -66,7 +71,7 @@ def main():
             f = r.get("results", {}).get("functional"); e = r.get("results", {}).get("exploit")
             fh.write(json.dumps({"gen_id": g["gen_id"], "model_id": g["model_id"], "task_id": g["task_id"],
                 "variant": g["variant"], "condition": g["condition"], "sample_idx": g["sample_idx"], "kind": t["kind"],
-                "status": "harness_error" if (f is None or r.get("harness_error")) else "ok",
+                "code_sha": sha(g), "status": "harness_error" if (f is None or r.get("harness_error")) else "ok",
                 "functional_pass": bool(f and f["passed"]),
                 "exploit_pass": (bool(e["passed"]) if e is not None else None),
                 "func_failure_type": f.get("failure_type") if f else "harness_error",

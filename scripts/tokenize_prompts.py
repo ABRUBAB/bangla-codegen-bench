@@ -38,7 +38,7 @@ def main():
     prompts = [json.loads(l) for l in (ROOT / "data/prompts/prompts.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
     tasks = {t["task_id"]: t for t in load_tasks([p for p in TASK_DIR.glob("*.jsonl") if not p.name.startswith("_")])}
     lang_key = {"EN": "en", "EN_TYPO": "en", "BN": "bn", "BN_SPELL": "bn", "BN_TYPO": "bn", "BN_MIX": "bn_mix",
-                "BANGLISH": "banglish"}
+                "BANGLISH": "banglish", "ES": "es", "ES_TYPO": "es"}
 
     encoders = {}
     for name, enc in TIKTOKEN.items():

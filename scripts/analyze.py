@@ -37,6 +37,7 @@ CWE_BANDIT = {
 
 def load(args):
     ex = pd.DataFrame([json.loads(l) for l in Path(args.exec).read_text(encoding="utf-8").split("\n") if l.strip()])
+    ex = ex.drop_duplicates("gen_id", keep="last").reset_index(drop=True)  # latest execution of a regenerated sample wins
     ex["pass"] = ex["functional_pass"].astype(float)
     gens = load_gens(Path(args.gens), None)
     meta = pd.DataFrame([{k: g.get(k) for k in ("gen_id", "prompt_tokens", "output_tokens", "thought_tokens",
