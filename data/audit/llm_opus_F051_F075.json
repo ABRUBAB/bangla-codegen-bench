@@ -1,0 +1,677 @@
+[
+ {
+  "task_id": "F051",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'যাদের ওই মান আছে' is slightly awkward for keys mapping to a value ('যেগুলোর মান ওইটি' reads better).",
+  "fix": ""
+ },
+ {
+  "task_id": "F051",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Long embedded relative clause ('সেই value থাকা সব key-এর list-এ map করে') is a bit heavy but clear.",
+  "fix": ""
+ },
+ {
+  "task_id": "F051",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Same heavy relative clause as bn_mix ('sei value thaka sob key er list e map kore'); understandable.",
+  "fix": ""
+ },
+ {
+  "task_id": "F052",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Colloquial 'দুটোর' in an otherwise formal sentence ('দুটিরই' expected); 'সংখ্যাসূচক মানবিশিষ্ট' is stiff.",
+  "fix": ""
+ },
+ {
+  "task_id": "F052",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F052",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F053",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F053",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F053",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F054",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "Parenthetical '(ছোট থেকে বড়)' is a harmless clarification of ascending.",
+  "fix": ""
+ },
+ {
+  "task_id": "F054",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F054",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F055",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'দৈর্ঘ্য থেকে ... তালিকায় ম্যাপ করা থাকে' is a calque of 'maps ... to'; acceptable.",
+  "fix": ""
+ },
+ {
+  "task_id": "F055",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F055",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F056",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F056",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F056",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F057",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'পথের শেষে' is a literal rendering of 'end of the path'; long sentence but accurate.",
+  "fix": ""
+ },
+ {
+  "task_id": "F057",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'পথের শেষে' sounds literary in a code-mixed register ('path-এর শেষে' would be more natural).",
+  "fix": ""
+ },
+ {
+  "task_id": "F057",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'pother sheshe' is a literal calque; otherwise fine.",
+  "fix": ""
+ },
+ {
+  "task_id": "F058",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'সংখ্যার সাথে যুক্ত করে' is a slightly stiff rendering of 'maps to the number of times'.",
+  "fix": ""
+ },
+ {
+  "task_id": "F058",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F058",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F059",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Tie rule phrased for 'দুটি উপাদান' (two elements) rather than any elements with equal frequency; generalizes naturally.",
+  "fix": ""
+ },
+ {
+  "task_id": "F059",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'সবচেয়ে বেশি frequent' is redundant intensification (most + frequent), common but slightly clumsy.",
+  "fix": ""
+ },
+ {
+  "task_id": "F059",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'Jegulo element er frequency soman' is ungrammatical ('Je element gulor frequency soman' expected).",
+  "fix": ""
+ },
+ {
+  "task_id": "F060",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'সারির তালিকার একটি তালিকা' is a literal but acceptable rendering of 'list of row lists'.",
+  "fix": ""
+ },
+ {
+  "task_id": "F060",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F060",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F061",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'গুণনযোগ্য' for 'compatible' is a non-standard coinage ('গুণনের উপযোগী' is clearer); meaning still recoverable from the m x k / k x n dimensions.",
+  "fix": ""
+ },
+ {
+  "task_id": "F061",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Inserts the English phrase 'list of row lists আকারে' after already saying 'row-এর list-এর list'; repetitive.",
+  "fix": ""
+ },
+ {
+  "task_id": "F061",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Same repetitive 'list of row lists akare' phrase.",
+  "fix": ""
+ },
+ {
+  "task_id": "F062",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Long sentences with nested parenthetical; accurate.",
+  "fix": ""
+ },
+ {
+  "task_id": "F062",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F062",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F063",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'ধারা (run)' is an ad-hoc term needing the English gloss; acceptable.",
+  "fix": ""
+ },
+ {
+  "task_id": "F063",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F063",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F064",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'একটি অংশ দেয়' calques 'contributes'; 'জোড়া লাগানো হয়' is informal for concatenation ('জুড়ে দেওয়া হয়' better).",
+  "fix": ""
+ },
+ {
+  "task_id": "F064",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'একটা অংশ দেবে ... জোড়া লাগবে' slightly literal but clear.",
+  "fix": ""
+ },
+ {
+  "task_id": "F064",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'ongsho dibe ... jora lagbe' slightly literal but clear.",
+  "fix": ""
+ },
+ {
+  "task_id": "F065",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F065",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F065",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F066",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F066",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F066",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F067",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F067",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F067",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F068",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F068",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F068",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F069",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F069",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "English plural 'integers-এর' with a Bangla case suffix is unidiomatic (sibling tasks use 'integer-এর').",
+  "fix": ""
+ },
+ {
+  "task_id": "F069",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'integers er' plural+suffix is unidiomatic ('integer er').",
+  "fix": ""
+ },
+ {
+  "task_id": "F070",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'ডিভাইড-অ্যান্ড-কনকার' is a bare transliteration in formal Bangla; acceptable since no settled native term.",
+  "fix": ""
+ },
+ {
+  "task_id": "F070",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'integers-এর' plural+suffix is unidiomatic.",
+  "fix": ""
+ },
+ {
+  "task_id": "F070",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'integers er' plural+suffix is unidiomatic.",
+  "fix": ""
+ },
+ {
+  "task_id": "F071",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F071",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F071",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F072",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'অনন্য (ইউনিক)' double gloss and 'একই মানের সমন্বয়' are slightly stiff; all constraints preserved.",
+  "fix": ""
+ },
+ {
+  "task_id": "F072",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'integers-এর' and 'একই values-এর' plural+suffix forms are unidiomatic.",
+  "fix": ""
+ },
+ {
+  "task_id": "F072",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'integers er', 'Ekoi values er' plural+suffix forms are unidiomatic.",
+  "fix": ""
+ },
+ {
+  "task_id": "F073",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'একাধিক মানের সর্বোচ্চ ফ্রিকোয়েন্সি সমান হলে' is awkward (better: 'একাধিক মান সমান সর্বোচ্চ সংখ্যকবার এলে'); 'ফ্রিকোয়েন্সি' is a loan in formal register.",
+  "fix": ""
+ },
+ {
+  "task_id": "F073",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'value(গুলো)' parenthetical plural is clumsy; 'integers-এর' plural+suffix.",
+  "fix": ""
+ },
+ {
+  "task_id": "F073",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'value(gulo)' parenthetical plural is clumsy.",
+  "fix": ""
+ },
+ {
+  "task_id": "F074",
+  "rendering": "bn",
+  "meaning": "MINOR",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "Drops the notion of a sliding 'window' ('প্রতিটি ধারাবাহিক `window` সংখ্যক উপাদানের'), which could be read as non-overlapping chunks; only 'মুভিং অ্যাভারেজ' disambiguates.",
+  "fix": "`moving_average` ফাংশনটি তালিকা `nums`-এর ওপর `window` সংখ্যক পরপর উপাদান নিয়ে গঠিত প্রতিটি উইন্ডোর সরল মুভিং অ্যাভারেজ (গড়) হিসাব করে এবং গড়গুলো ক্রমানুসারে একটি তালিকায় ফেরত দেয়; প্রতিটি গড় ২ দশমিক স্থান পর্যন্ত রাউন্ড করা হয়। `window` ধনাত্মক না হলে বা `nums`-এর দৈর্ঘ্যের চেয়ে বড় হলে খালি তালিকা ফেরত দেয়।"
+ },
+ {
+  "task_id": "F074",
+  "rendering": "bn_mix",
+  "meaning": "MINOR",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Same omission of the 'window' concept ('প্রতিটা consecutive `window` টা element-এর'), slightly ambiguous between sliding and non-overlapping groups.",
+  "fix": "`moving_average` ফাংশনটা list `nums`-এর উপর `window` size-এর প্রতিটা consecutive window-এর simple moving average বের করে average-গুলো order অনুযায়ী list আকারে return করবে; প্রতিটা average 2 decimal place পর্যন্ত round করা থাকবে। `window` positive না হলে বা `nums`-এর length-এর চেয়ে বড় হলে empty list return করবে।"
+ },
+ {
+  "task_id": "F074",
+  "rendering": "banglish",
+  "meaning": "MINOR",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Same omission of the 'window' concept ('protita consecutive `window` ta element er'), slightly ambiguous.",
+  "fix": "`moving_average` function ta list `nums` er upor `window` size er protita consecutive window er simple moving average ber korbe ar average gulo order onujayi list akare return korbe; protita average 2 decimal place porjonto round kora thakbe. `window` positive na hole ba `nums` er length er cheye boro hole empty list return korbe."
+ },
+ {
+  "task_id": "F075",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F075",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Tense shift between 'আটকে দেওয়া হয়/হয়ে যায়' and 'return করবে/ঠিক থাকবে'; minor.",
+  "fix": ""
+ },
+ {
+  "task_id": "F075",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Tense shift ('atke deya hoy' vs 'return korbe'); otherwise fine.",
+  "fix": ""
+ }
+]

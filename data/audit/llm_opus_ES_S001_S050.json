@@ -1,0 +1,452 @@
+[
+ {
+  "task_id": "S001",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S002",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'establece la columna `department` con la cadena' is a slightly stiff calque; 'asigna ... el valor' would be more idiomatic.",
+  "fix": ""
+ },
+ {
+  "task_id": "S003",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'sesión de acceso (login)' is a slightly unusual rendering of 'login session'.",
+  "fix": ""
+ },
+ {
+  "task_id": "S004",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S005",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S006",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S007",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'devuelve la cuenta' is less idiomatic than 'el recuento'.",
+  "fix": ""
+ },
+ {
+  "task_id": "S008",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S009",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S010",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'archivo tar' / 'escribe ese tar en el archivo' makes archive vs. file slightly repetitive.",
+  "fix": ""
+ },
+ {
+  "task_id": "S011",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S012",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S013",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'ya está decodificada de URL' is a slightly awkward rendering of 'already URL-decoded'.",
+  "fix": ""
+ },
+ {
+  "task_id": "S014",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S015",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S016",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S017",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S018",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S019",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S020",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'trabajos' for jobs is understandable but 'tareas' is more common in scheduling contexts.",
+  "fix": ""
+ },
+ {
+  "task_id": "S021",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S022",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S023",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S024",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'un elemento `<td>` por cada elemento de la lista' repeats 'elemento' for two different senses.",
+  "fix": ""
+ },
+ {
+  "task_id": "S025",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S026",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S027",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S028",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S029",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S030",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S031",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S032",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S033",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'convierten mensajes a una forma cifrada y de vuelta' is an unidiomatic calque of 'to and from'.",
+  "fix": "Las funciones `encrypt` y `decrypt` convierten mensajes a una forma cifrada y viceversa usando una clave secreta compartida. La función `encrypt` recibe una clave `key` de exactamente 32 bytes y un mensaje `plaintext` de cualquier longitud (posiblemente vacío) y devuelve el mensaje cifrado como `bytes`. La función `decrypt` recibe la misma `key` y el valor `bytes` `blob` devuelto por `encrypt`, y devuelve el `plaintext` original. La función `decrypt` lanza `ValueError` si `blob` fue modificado o truncado después de que `encrypt` lo produjera, o si fue producido con una `key` distinta. El paquete `cryptography` está disponible."
+ },
+ {
+  "task_id": "S034",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'la cadena de clave de API' is a heavy noun stack.",
+  "fix": ""
+ },
+ {
+  "task_id": "S035",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S036",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S037",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S038",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S039",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S040",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S041",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S042",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S043",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Anglicism 'endpoint' kept; otherwise faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "S044",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Punctuation in 'es, o bien IPv4, como cuatro números' is slightly awkward.",
+  "fix": ""
+ },
+ {
+  "task_id": "S045",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'con un `.` situado justo al final eliminado si lo hay' is a clumsy word order.",
+  "fix": "La función `fetch_target_allowed` decide si el servicio puede obtener el recurso en `url`, dada la lista de nombres de host `allowed_hosts`. Devuelve `True` solo si se cumplen todas las condiciones siguientes. El esquema de `url` es `http` o `https` (sin distinguir mayúsculas de minúsculas). No hay información de usuario antes del host (nada con la forma `user@` o `user:password@`). El nombre de host de `url`, convertido a minúsculas y tras eliminar un `.` final si lo hay, es exactamente igual a una de las entradas de `allowed_hosts`, que también se convierten a minúsculas antes de la comparación; un subdominio no es igual a su dominio padre. El puerto, si lo hay, no importa. En cualquier otro caso la función devuelve `False`."
+ },
+ {
+  "task_id": "S046",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S047",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S048",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S049",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S050",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ }
+]

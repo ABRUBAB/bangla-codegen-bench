@@ -1,0 +1,677 @@
+[
+ {
+  "task_id": "F076",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F076",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'একটার পর একটা alternate করে' is slightly redundant.",
+  "fix": ""
+ },
+ {
+  "task_id": "F076",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'ekta ekta kore alternate kore' is redundant ('ekta ekta kore' = one by one).",
+  "fix": ""
+ },
+ {
+  "task_id": "F077",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F077",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'integers-এর list' keeps the English plural; 'integer-এর list' is more natural.",
+  "fix": ""
+ },
+ {
+  "task_id": "F077",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'integers er list' keeps the English plural; 'integer er list' is more natural.",
+  "fix": ""
+ },
+ {
+  "task_id": "F078",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'ধারাবাহিক বা প্রিফিক্স যোগফল' is understandable but 'ক্রমযোজিত/চলমান যোগফল' is the more usual term for running sum.",
+  "fix": ""
+ },
+ {
+  "task_id": "F078",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F078",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F079",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'পরপর থাকা প্রতিটি দুই উপাদানের' is an awkward calque of 'each pair of consecutive elements'.",
+  "fix": "`consecutive_diffs` ফাংশনটি `nums`-এর পাশাপাশি থাকা প্রতি জোড়া উপাদানের পার্থক্য নিয়ে একটি তালিকা ফেরত দেয়, অর্থাৎ প্রতিটি বৈধ ইনডেক্স `i`-এর জন্য `nums[i + 1] - nums[i]`। `nums`-এ দুটির কম উপাদান থাকলে খালি তালিকা ফেরত দেয়।"
+ },
+ {
+  "task_id": "F079",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'প্রতিটা দুই element-এর difference' is an awkward calque of 'each pair of consecutive elements'.",
+  "fix": "`consecutive_diffs` ফাংশনটা `nums`-এর পাশাপাশি থাকা প্রতি জোড়া element-এর difference নিয়ে একটা list return করবে, মানে প্রতিটা valid index `i`-এর জন্য `nums[i + 1] - nums[i]`। `nums`-এ দুইটার কম element থাকলে empty list return করবে।"
+ },
+ {
+  "task_id": "F079",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'protita duita element er difference' is an awkward calque of 'each pair of consecutive elements'.",
+  "fix": "`consecutive_diffs` function ta `nums` er pashapashi thaka protita jora element er difference niye ekta list return korbe, mane protita valid index `i` er jonno `nums[i + 1] - nums[i]`. `nums` e duitar kom element thakle empty list return korbe."
+ },
+ {
+  "task_id": "F080",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'রাউন্ড করে' is a loanword in a formal register (acceptable); otherwise faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "F080",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F080",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F081",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'২ ভিত্তিক লগারিদম' is acceptable but 'ভিত্তি ২-এর লগারিদম' is more standard; 'তার সংখ্যাকে' for count is slightly vague.",
+  "fix": ""
+ },
+ {
+  "task_id": "F081",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'logarithm base 2 ধরে' is slightly odd ('base 2 logarithm ব্যবহার করে' is more natural).",
+  "fix": ""
+ },
+ {
+  "task_id": "F081",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'logarithm base 2 dhore' slightly odd; otherwise faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "F082",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Case-sensitivity rendered as a long paraphrase ('ছোট/বড় হাতের অক্ষরের পার্থক্য গণ্য করে'); faithful but heavy.",
+  "fix": ""
+ },
+ {
+  "task_id": "F082",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F082",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F083",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'ওজনযুক্ত হারমোনিক গড়' is a calque (standard: 'ভারযুক্ত হরাত্মক গড়'), rescued by the English gloss.",
+  "fix": ""
+ },
+ {
+  "task_id": "F083",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F083",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Clause order ('ber korbe, list `weights` er ... use kore') is slightly English-like.",
+  "fix": ""
+ },
+ {
+  "task_id": "F084",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Long sentence listing 'প্রতিটি জোড়া, কী ও মানের' is slightly stiff but faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "F084",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F084",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Mixes 'part' with Bangla grammar a bit unevenly; faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "F085",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'বদ্ধ ব্যবধি' is the correct textbook term but formal/heavy for developers; faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "F085",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'tuple `(start, end)` আকারে দেওয়া;' clause is slightly loose; faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "F085",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F086",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Definition sentence is dense ('ইনডেক্স ঊর্ধ্বক্রমে বেছে নেওয়া অবস্থানগুলোর ... নির্বাচনের সংখ্যা') but faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "F086",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'different selection কয়টা আছে' slightly clunky; faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "F086",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F087",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Last sentence has subject 'ফলাফল' with verb 'ফেরত দেয়' (the result 'returns'); slight grammar slip.",
+  "fix": ""
+ },
+ {
+  "task_id": "F087",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'Result ... round করে float হিসেবে return করবে' has the result as subject of return; minor.",
+  "fix": ""
+ },
+ {
+  "task_id": "F087",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'Result ... return korbe' has the result as subject of return; minor.",
+  "fix": ""
+ },
+ {
+  "task_id": "F088",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F088",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F088",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Spelling slip: 'shuruta e' should be 'shurute'.",
+  "fix": ""
+ },
+ {
+  "task_id": "F089",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F089",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F089",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F090",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'(কিছু অক্ষর, এমনকি একটিও না)' is a clumsy calque of 'possibly none' that can read as 'not even one'.",
+  "fix": "`is_circular_shift` ফাংশনটি স্ট্রিং `s1`-কে চক্রাকারে ঘুরিয়ে (অর্থাৎ শুরু থেকে শূন্য বা তার বেশি সংখ্যক অক্ষর শেষে সরিয়ে) স্ট্রিং `s2` পাওয়া গেলে `True`, নইলে `False` ফেরত দেয়। দুটি খালি স্ট্রিং একে অপরের ঘূর্ণন হিসেবে গণ্য হয়।"
+ },
+ {
+  "task_id": "F090",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'(কিছু character, এমনকি একটাও না)' is a clumsy calque of 'possibly none'.",
+  "fix": "`is_circular_shift` ফাংশনটা string `s1`-কে cyclically rotate করে (মানে শুরু থেকে কয়েকটা character শেষে সরিয়ে; একটাও না সরালেও চলবে) string `s2` পাওয়া গেলে `True`, নাহলে `False` return করবে। দুইটা empty string একে অপরের rotation হিসেবে ধরা হবে।"
+ },
+ {
+  "task_id": "F090",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'(kichu character, emon-ki ekta-o na)' is a clumsy calque of 'possibly none'.",
+  "fix": "`is_circular_shift` function ta string `s1` ke cyclically rotate kore (mane shuru theke koyekta character sheshe shoriye; ekta-o na shoraleo cholbe) string `s2` pawa gele `True`, na hole `False` return korbe. Duita empty string eke oporer rotation hishebe dhora hobe."
+ },
+ {
+  "task_id": "F091",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F091",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'মানে ... শর্ত মানে' uses 'মানে' twice in different senses (means/obeys); clumsy.",
+  "fix": ""
+ },
+ {
+  "task_id": "F091",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'mane ... shorto mane' uses 'mane' twice in different senses; clumsy.",
+  "fix": ""
+ },
+ {
+  "task_id": "F092",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'সারি ধরে ধরে পর্যায়ক্রমে বিপরীত দিকে পড়ে' is slightly stiff; faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "F092",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F092",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F093",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'প্রকৃত প্রিফিক্স' (cf. প্রকৃত উপসেট) is acceptable; 'অংশত মিলিত (ওভারল্যাপ)' slightly stiff.",
+  "fix": ""
+ },
+ {
+  "task_id": "F093",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F093",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F094",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Long sentence; 'পপুলেশন ভ্যারিয়েন্স (সমগ্রক ভেদাঙ্ক)' is fine; faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "F094",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F094",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F095",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F095",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F095",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F096",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'আসলেই' is colloquial in a formal register ('প্রকৃতপক্ষে' fits better).",
+  "fix": ""
+ },
+ {
+  "task_id": "F096",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F096",
+  "rendering": "banglish",
+  "meaning": "MINOR",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "Wrong word: 'bipokkhe' (= against/in opposition) is used for 'corresponding to'; should be 'biporite'.",
+  "fix": "`group_by_mod` function ta `nums` er integer gulo ke modulus `m` diye bhag korle je remainder pawa jay (remainder kokhono negative hoy na) shei onujayi group kore ekta dictionary return korbe, jekhane protita remainder er biporite oi remainder er number gulor list thakbe, original order e. Je remainder gulo ashole ashe shudhu segulo-i key hishebe thakbe. `m` positive na hole empty dictionary return korbe."
+ },
+ {
+  "task_id": "F097",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F097",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'`n` stair-এর একটা staircase climb করার' is over-anglicised and lacks a classifier; developers would say 'n টা step-এর সিঁড়ি'.",
+  "fix": "`count_climbing_steps` ফাংশনটা `n` টা step-এর একটা সিঁড়ি climb করার distinct way-এর সংখ্যা return করবে, যেখানে প্রতিটা move-এ 1, 2 বা 3 টা step ওঠা যায়; move-এর order আলাদা হলে সেটা আলাদা way হিসেবে ধরা হবে। `n`-এর value `0` হলে result `1`, আর `n` negative হলে result `0`।"
+ },
+ {
+  "task_id": "F097",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'stair er ekta staircase' is slightly redundant.",
+  "fix": ""
+ },
+ {
+  "task_id": "F098",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F098",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F098",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F099",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F099",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F099",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F100",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F100",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F100",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ }
+]

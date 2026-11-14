@@ -1,0 +1,677 @@
+[
+ {
+  "task_id": "F001",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Correct; one long semicolon-joined sentence with passive \"উপেক্ষা করা হয়\" is slightly stiff but fine.",
+  "fix": ""
+ },
+ {
+  "task_id": "F001",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F001",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F002",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Faithful; \"ভিন্ন ভিন্ন মানগুলোর মধ্যে\" slightly wordy.",
+  "fix": ""
+ },
+ {
+  "task_id": "F002",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"দ্বিতীয় সবচেয়ে বড়\" is a calque of \"second largest\"; developers would more likely just say \"second largest\".",
+  "fix": ""
+ },
+ {
+  "task_id": "F002",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F003",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Faithful; \"মোট যতগুলো আছে, তার সংখ্যা\" slightly roundabout.",
+  "fix": ""
+ },
+ {
+  "task_id": "F003",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F003",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F004",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Faithful; \"একটি করে স্ট্রিং নিয়ে গঠিত তালিকা\" is heavy but clear.",
+  "fix": ""
+ },
+ {
+  "task_id": "F004",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"প্রতিটা integer-এর জন্য string-এর একটা list\" could momentarily read as one list per integer; the next sentence disambiguates.",
+  "fix": ""
+ },
+ {
+  "task_id": "F004",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Same mild ambiguity as bn_mix (\"protiti integer er jonno string er ekta list\").",
+  "fix": ""
+ },
+ {
+  "task_id": "F005",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F005",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F005",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"ja-o\" is bookish for chat style; \"jeta-o\" would be more natural.",
+  "fix": ""
+ },
+ {
+  "task_id": "F006",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "\"প্রতিটি শব্দকে ... সংখ্যার সঙ্গে সংযুক্ত করে\" is an unidiomatic calque of \"maps\"; \"গণনা করা হয়\" for \"compared\" is slightly loose but equivalent in effect.",
+  "fix": "`word_frequency` ফাংশনটি একটি ডিকশনারি ফেরত দেয়, যেখানে `text` স্ট্রিংয়ের প্রতিটি শব্দ কী হিসেবে থাকে এবং তার মান হয় শব্দটি কতবার এসেছে সেই সংখ্যা। হোয়াইটস্পেস দিয়ে আলাদা করা অংশগুলোই শব্দ; শব্দগুলো ছোট হাতের অক্ষরে রূপান্তর করে তুলনা করা হয় এবং ডিকশনারির কী-গুলোও ছোট হাতের অক্ষরের শব্দ হয়। খালি স্ট্রিংয়ের জন্য খালি ডিকশনারি ফেরত দেয়।"
+ },
+ {
+  "task_id": "F006",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"মানে\" presents lowercase keys as a consequence of lowercase counting rather than a separate rule; effect identical.",
+  "fix": ""
+ },
+ {
+  "task_id": "F006",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"ongshogulo-i\" is bookish for chat register.",
+  "fix": ""
+ },
+ {
+  "task_id": "F007",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F007",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F007",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F008",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Faithful; \"তালিকা নয় এমন সব উপাদান\" slightly stiff.",
+  "fix": ""
+ },
+ {
+  "task_id": "F008",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F008",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F009",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F009",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F009",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"ebong\" is formal for chat style; \"ar\" would be more natural.",
+  "fix": ""
+ },
+ {
+  "task_id": "F010",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"প্রথম উপস্থিতি\" is a literal calque of \"first occurrence\" but understandable.",
+  "fix": ""
+ },
+ {
+  "task_id": "F010",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F010",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F011",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Faithful; long middle sentence slightly heavy.",
+  "fix": ""
+ },
+ {
+  "task_id": "F011",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F011",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F012",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Faithful; long sentence chained with \"অর্থাৎ\" and \"এ ক্ষেত্রে\" is slightly heavy.",
+  "fix": ""
+ },
+ {
+  "task_id": "F012",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F012",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"ekoi shonkhyok bar\" is bookish (from সংখ্যক) for chat style.",
+  "fix": ""
+ },
+ {
+  "task_id": "F013",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"প্রিফিক্স (শুরুর অংশ) হিসেবে থাকা সবচেয়ে দীর্ঘ স্ট্রিংটি\" is slightly convoluted but correct.",
+  "fix": ""
+ },
+ {
+  "task_id": "F013",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F013",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F014",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Faithful; \"একই অক্ষরের পরপর থাকা প্রতিটি অংশকে (রান)\" is understandable though a bit heavy.",
+  "fix": ""
+ },
+ {
+  "task_id": "F014",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"একই character পরপর যতবার আছে সেই প্রতিটা run-কে\" is slightly awkward phrasing for \"every run of identical consecutive characters\".",
+  "fix": ""
+ },
+ {
+  "task_id": "F014",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "Spelling error \"porporo\" (should be \"porpor\"); run definition phrasing slightly awkward.",
+  "fix": "`compress_string` function ta string `s` e run-length compression korbe: ekoi character porpor joto bar ache, sei protiti run ke character ta ar tar pore run er length diye replace korte hobe, length 1 hole-o (jemon `'aaaabbc'` hobe `'a4b2c1'`). Compressed string jodi `s` er cheye chhoto na hoy, tahole `s`-i unchanged return korbe. Empty string dile empty string return korbe."
+ },
+ {
+  "task_id": "F015",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F015",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F015",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"ja puro `s` e\" is bookish; \"jeta\" is more chat-like.",
+  "fix": ""
+ },
+ {
+  "task_id": "F016",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Faithful; \"খোলা বন্ধনী\" acceptable; slightly formal-stiff.",
+  "fix": ""
+ },
+ {
+  "task_id": "F016",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F016",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F017",
+  "rendering": "bn",
+  "meaning": "MINOR",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"অক্ষর নয় এমন চিহ্নগুলো\" narrows \"characters that are not letters\" to symbols (চিহ্ন), which does not obviously cover digits/spaces; a programmer would still leave all non-letters unchanged.",
+  "fix": "`caesar_cipher` ফাংশনটি `text` স্ট্রিংকে সিজার সাইফার দিয়ে এনক্রিপ্ট করে: ইংরেজি বর্ণমালার প্রতিটি বর্ণকে বর্ণমালায় `shift` ঘর এগিয়ে নেওয়া হয়, এবং শেষে পৌঁছালে ঘুরে আবার শুরুতে ফেরা হয় (`z` থেকে `a` এবং `Z` থেকে `A`)। বর্ণের ছোট/বড় হাতের ধরন বজায় থাকে, আর যেসব ক্যারেক্টার বর্ণ নয় সেগুলো অপরিবর্তিত থাকে। ফাংশনটি এনক্রিপ্ট করা স্ট্রিং ফেরত দেয়।"
+ },
+ {
+  "task_id": "F017",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F017",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F018",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Faithful; \"বড় হাতের এবং বাকি সব অক্ষর ছোট হাতের করে\" slightly compressed but clear.",
+  "fix": ""
+ },
+ {
+  "task_id": "F018",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F018",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F019",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"ডিজিট\" is an English loan where the standard Bangla term \"অঙ্ক\" exists; trailing \"অর্থাৎ ...\" clause is a fragment.",
+  "fix": ""
+ },
+ {
+  "task_id": "F019",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F019",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F020",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F020",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F020",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"shonkhyok\" is bookish for chat style (\"prothom `k` ta word\" would be natural).",
+  "fix": ""
+ },
+ {
+  "task_id": "F021",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "\"ঘূর্ণন তালিকার চারদিকে ঘুরে চলতে থাকে\" is a literal calque of \"continues around the list\" and reads oddly; the modulo parenthetical keeps the meaning exact.",
+  "fix": "`rotate_list` ফাংশনটি `nums` তালিকার উপাদানগুলোকে ডানদিকে `k` ঘর ঘুরিয়ে একটি নতুন তালিকা ফেরত দেয়; অর্থাৎ শেষের `k`টি উপাদান নিজেদের ক্রম বজায় রেখে শুরুতে চলে আসে। `k` যদি `nums`-এর দৈর্ঘ্যের চেয়ে বড় হয়, তাহলে ঘূর্ণন চক্রাকারে চলতে থাকে (অর্থাৎ `k`-কে `nums`-এর দৈর্ঘ্য দিয়ে ভাগ করে ভাগশেষ নেওয়া হয়)। খালি তালিকা দিলে খালি তালিকা ফেরত আসে।"
+ },
+ {
+  "task_id": "F021",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"rotation ঘুরে ঘুরে চলবে\" is vague, but the modulo clause makes it exact.",
+  "fix": ""
+ },
+ {
+  "task_id": "F021",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"rotation ghure ghure cholbe\" vague and \"shonkhyok\" bookish; meaning fixed by modulo clause.",
+  "fix": ""
+ },
+ {
+  "task_id": "F022",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "\"সীমা\" (limit/bound) is the wrong word for \"range\" (standard: \"পরিসর\"); the long pre-nominal clause is heavy.",
+  "fix": "`find_missing_number` ফাংশনটি একটি তালিকা `nums` নেয়, যাতে ০ থেকে `n` পর্যন্ত (`n` সহ) পরিসর থেকে নেওয়া `n`টি ভিন্ন ভিন্ন পূর্ণসংখ্যা আছে, এবং ওই পরিসরের যে একটিমাত্র সংখ্যা `nums`-এ নেই, সেটি ফেরত দেয়।"
+ },
+ {
+  "task_id": "F022",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Long pre-nominal clause before \"list `nums`\" is slightly heavy for speech.",
+  "fix": ""
+ },
+ {
+  "task_id": "F022",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"shonkhyok\" and \"neya\" are bookish; otherwise fine.",
+  "fix": ""
+ },
+ {
+  "task_id": "F023",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"(প্রতিটি একবার করে)\" correctly conveys \"distinct\"; \"তালিকা আকারে\" slightly stiff.",
+  "fix": ""
+ },
+ {
+  "task_id": "F023",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F023",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "\"ekadhikbar\" is bookish for chat; \"ekbarer beshi\" would be natural.",
+  "fix": ""
+ },
+ {
+  "task_id": "F024",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "\"অখালি\" is a non-standard coinage for \"non-empty\"; \"যোগফলগুলোর মধ্যে সর্বোচ্চ যোগফলটি\" is repetitive.",
+  "fix": "`max_subarray_sum` ফাংশনটি পূর্ণসংখ্যার তালিকা `nums`-এর পরপর থাকা উপাদান নিয়ে গঠিত, খালি নয় এমন সব উপতালিকার মধ্যে সর্বোচ্চ যোগফলটি ফেরত দেয়; `nums`-এ অন্তত একটি উপাদান থাকে।"
+ },
+ {
+  "task_id": "F024",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Rephrased as \"যেকোনো ... sublist নিলে তার সবচেয়ে বড় sum কত হতে পারে\", natural but slightly loose; same requirement.",
+  "fix": ""
+ },
+ {
+  "task_id": "F024",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Same loose but equivalent phrasing as bn_mix.",
+  "fix": ""
+ },
+ {
+  "task_id": "F025",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Faithful (including the EN tension between \"exactly one pair\" and the empty-list case); \"দুইবার\" slightly informal for formal register (\"দুবার\").",
+  "fix": ""
+ },
+ {
+  "task_id": "F025",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F025",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ }
+]

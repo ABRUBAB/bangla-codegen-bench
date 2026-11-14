@@ -1,0 +1,677 @@
+[
+ {
+  "task_id": "S001",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'conn ... দিয়ে পাওয়া ডেটাবেস' is a slightly literal rendering of 'database behind conn'; otherwise faithful and fluent.",
+  "fix": ""
+ },
+ {
+  "task_id": "S001",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'হুবহু equal' is an odd hybrid; developers would more likely say 'exactly match করে'.",
+  "fix": ""
+ },
+ {
+  "task_id": "S001",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'hubohu equal' is an odd hybrid; otherwise faithful chat-style Banglish.",
+  "fix": ""
+ },
+ {
+  "task_id": "S002",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'স্ট্রিং `department` বসায়' is slightly stiff ('সেট করে' would be more idiomatic).",
+  "fix": ""
+ },
+ {
+  "task_id": "S002",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S002",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Spelling 'prottek' here vs 'protita' in other tasks is inconsistent.",
+  "fix": ""
+ },
+ {
+  "task_id": "S003",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S003",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S003",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S004",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S004",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S004",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'notun row ta r `id`' has an awkward split genitive ('row tar').",
+  "fix": ""
+ },
+ {
+  "task_id": "S005",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'টেবিলে খোঁজে' is abrupt ('খোঁজ করে' is more natural); case-insensitivity and tie-break by `id` correctly kept.",
+  "fix": ""
+ },
+ {
+  "task_id": "S005",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'uppercase/lowercase-এর পার্থক্য ignore করে' is understandable though 'case-insensitive ভাবে' is what developers say.",
+  "fix": ""
+ },
+ {
+  "task_id": "S005",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S006",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'`path` পাথের' is redundant and 'যুক্ত করলে যা হয় তা' is wordy, but clear.",
+  "fix": ""
+ },
+ {
+  "task_id": "S006",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Formal 'এবং' in a colloquial register; minor.",
+  "fix": ""
+ },
+ {
+  "task_id": "S006",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'chalie' is a less common spelling of 'chaliye'.",
+  "fix": ""
+ },
+ {
+  "task_id": "S007",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S007",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S007",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S008",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'`1` স্ট্যাটাসে বের হয়' is a calque of 'exits with status 1' ('`1` স্ট্যাটাস কোড দিয়ে শেষ হয়' is more natural).",
+  "fix": ""
+ },
+ {
+  "task_id": "S008",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S008",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S009",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "One run-on sentence ('কমান্ডে প্রথমে ... দিয়ে সেটি চালিয়ে যাচাই করে ... কি না') is hard to parse and reads as machine translation.",
+  "fix": "`is_host_reachable` ফাংশনটি `host` নামের মেশিনটি পিংয়ের উত্তর দেয় কি না তা যাচাই করতে সিস্টেমের `ping` কমান্ডটি `-c 1` অপশন এবং তার পরে `host` দিয়ে চালায়। কমান্ডটি `0` স্ট্যাটাস কোড দিয়ে শেষ হলে ফাংশনটি `True`, অন্যথায় `False` ফেরত দেয়।"
+ },
+ {
+  "task_id": "S009",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'`ping` command-এ আগে ... দিয়ে সেটা run করে check করবে' is a convoluted calque of the English structure.",
+  "fix": "`is_host_reachable` function-টা check করবে `host` নামের machine-টা ping-এর reply দেয় কিনা; এজন্য system-এর `ping` command-টা `-c 1` option আর তারপর `host` দিয়ে run করবে। Command-টা `0` status-এ exit করলে `True`, না হলে `False` return করবে।"
+ },
+ {
+  "task_id": "S009",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "Same convoluted structure as bn_mix ('ping command e age ... diye seta run kore check korbe').",
+  "fix": "`is_host_reachable` function ta check korbe `host` namer machine ta ping er reply dey kina; ejonno system er `ping` command ta `-c 1` option ar tarpor `host` diye run korbe. Command ta `0` status e exit korle `True`, na hole `False` return korbe."
+ },
+ {
+  "task_id": "S010",
+  "rendering": "bn",
+  "meaning": "MINOR",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'সদস্য ফাইলগুলোর নাম' narrows 'member names' to files only (directories are members too); implementation unaffected.",
+  "fix": "`make_tar` ফাংশনটি সিস্টেমের `tar` কমান্ড চালিয়ে `directory` ডিরেক্টরির একটি টার আর্কাইভ তৈরি করে, আর্কাইভটি `archive_path` ফাইলে লেখে এবং `archive_path` ফেরত দেয়। আর্কাইভটি একটি আনকমপ্রেসড টার ফাইল, যাতে ডিরেক্টরিটি এবং তার ভেতরের সবকিছু থাকে; আর্কাইভের প্রতিটি সদস্যের (member) নাম `directory`-র শেষ অংশ দিয়ে শুরু হয় (যেমন `docs` ডিরেক্টরির জন্য `docs/a.txt`)। `directory` একটি বিদ্যমান ডিরেক্টরি এবং `archive_path` তার ভেতরে নয়।"
+ },
+ {
+  "task_id": "S010",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'`directory` directory-টার' is a slightly clumsy repetition.",
+  "fix": ""
+ },
+ {
+  "task_id": "S010",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Bangla 'tar' (its) collides with the tool/format name 'tar' ('tar bhetorer', 'tar bhetore na'), mildly confusing; 'directory ta r' spacing is odd.",
+  "fix": ""
+ },
+ {
+  "task_id": "S011",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'`base_dir`-এর সাপেক্ষে একটি আপেক্ষিক পথ' is slightly redundant but correct.",
+  "fix": ""
+ },
+ {
+  "task_id": "S011",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S011",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Formal 'ebong' is a bit bookish for chat-style Banglish.",
+  "fix": ""
+ },
+ {
+  "task_id": "S012",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Word order ('`data` বিদ্যমান `upload_dir` ডিরেক্টরির ভেতরে ... ফাইলে লেখে') is somewhat heavy.",
+  "fix": ""
+ },
+ {
+  "task_id": "S012",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S012",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S013",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "Inverted calqued order 'নির্দেশ করে ফাইল `css/site.css`-কে' / 'নির্দেশ করে ফাইল `index.html`-কে' reads as translationese.",
+  "fix": "`serve_static` ফাংশনটি URL পথ `request_path`-এর জন্য `web_root` ডিরেক্টরির নিচে সংশ্লিষ্ট ফাইলটি খুঁজে বের করে এবং `(status, body)` টাপল ফেরত দেয়। `request_path` `/` দিয়ে শুরু হয় এবং এটি আগে থেকেই URL-ডিকোড করা; এটি `web_root`-এর নিচে একই আপেক্ষিক পথের ফাইলকে বোঝায় (যেমন `/css/site.css` বলতে `css/site.css` ফাইলটিকে বোঝায়), আর `/` বলতে `index.html` ফাইলটিকে বোঝায়। ওই অবস্থানে কোনো সাধারণ (regular) ফাইল থাকলে `status` হয় `200` এবং `body` হয় ফাইলটির বিষয়বস্তু, `bytes` হিসেবে; না থাকলে ফাংশনটি `(404, b\"Not Found\")` ফেরত দেয়।"
+ },
+ {
+  "task_id": "S013",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'বোঝায় file `css/site.css`-কে' keeps the English word order, tolerable in colloquial register.",
+  "fix": ""
+ },
+ {
+  "task_id": "S013",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'bojhay file `css/site.css` ke' keeps English word order; acceptable in chat style.",
+  "fix": ""
+ },
+ {
+  "task_id": "S014",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'এক্সট্র্যাক্ট করে' is a transliteration rather than a Bangla term, acceptable in technical prose.",
+  "fix": ""
+ },
+ {
+  "task_id": "S014",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S014",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S015",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S015",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S015",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S016",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S016",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S016",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S017",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S017",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Starts with Bangla-script 'ফাংশনটা' instead of the 'function-টা' convention used elsewhere in bn_mix.",
+  "fix": ""
+ },
+ {
+  "task_id": "S017",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S018",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S018",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S018",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'file pore' (read) is ambiguous with 'pore' (after) in Banglish spelling; minor.",
+  "fix": ""
+ },
+ {
+  "task_id": "S019",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S019",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Starts with Bangla-script 'ফাংশনটা' instead of 'function-টা'.",
+  "fix": ""
+ },
+ {
+  "task_id": "S019",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S020",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'মিনিটে পূর্ণসংখ্যা' is an awkward rendering of 'an integer number of minutes' and 'একটি করে ডিকশনারি নিয়ে একই ক্রমে ...' is clumsy.",
+  "fix": "`parse_jobs` ফাংশনটি `yaml` মডিউল (PyYAML) ব্যবহার করে YAML স্ট্রিং `text` পার্স করে; ডকুমেন্টটি হলো জব-সংজ্ঞার একটি তালিকা। প্রতিটি জব একটি ম্যাপিং, যাতে থাকে `name` কী (একটি স্ট্রিং), `interval` কী (মিনিটের সংখ্যা, পূর্ণসংখ্যা হিসেবে) এবং ঐচ্ছিকভাবে `enabled` কী (একটি বুলিয়ান)। ফাংশনটি ডিকশনারির একটি তালিকা ফেরত দেয়, যেখানে প্রতিটি জবের জন্য একটি করে ডিকশনারি থাকে এবং জবগুলোর ক্রম একই থাকে; ফেরত দেওয়া প্রতিটি ডিকশনারিতে ঠিক তিনটি কী থাকে: `name`, `interval` ও `enabled`। কোনো জবে `enabled` কী না থাকলে তার `enabled` মান হয় `True`। `text` খালি হলে ফাংশনটি খালি তালিকা ফেরত দেয়।"
+ },
+ {
+  "task_id": "S020",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'minute-এ integer' is a slightly awkward rendering of 'integer number of minutes'.",
+  "fix": ""
+ },
+ {
+  "task_id": "S020",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'minute e integer' is slightly awkward.",
+  "fix": ""
+ },
+ {
+  "task_id": "S021",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'HTML অংশ' for 'HTML fragment' is acceptable; no security cue added.",
+  "fix": ""
+ },
+ {
+  "task_id": "S021",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S021",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S022",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S022",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S022",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S023",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'দশমিক অঙ্কে' could be misread as decimal-fraction notation; 'দশভিত্তিক অঙ্কে' would be unambiguous.",
+  "fix": ""
+ },
+ {
+  "task_id": "S023",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S023",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S024",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S024",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S024",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S025",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S025",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S025",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'ashepashe whitespace er' should be genitive 'ashepasher whitespace er'.",
+  "fix": ""
+ }
+]

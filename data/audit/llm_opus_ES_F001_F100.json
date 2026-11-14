@@ -1,0 +1,902 @@
+[
+ {
+  "task_id": "F001",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F002",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'segundo valor distinto más grande' is slightly awkward; 'segundo mayor valor distinto' reads better.",
+  "fix": ""
+ },
+ {
+  "task_id": "F003",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F004",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F005",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Redundant calque 'ordenada en orden ascendente'.",
+  "fix": ""
+ },
+ {
+  "task_id": "F006",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F007",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F008",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F009",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Redundant calque 'ordenada en orden ascendente'.",
+  "fix": ""
+ },
+ {
+  "task_id": "F010",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F011",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F012",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F013",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F014",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F015",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F016",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F017",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Wrap-around phrase 'volviendo al principio después de `z` para pasar a `a`' is a bit wordy.",
+  "fix": ""
+ },
+ {
+  "task_id": "F018",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F019",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F020",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F021",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F022",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F023",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Redundant 'ordenada en orden ascendente'.",
+  "fix": ""
+ },
+ {
+  "task_id": "F024",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F025",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F026",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Redundant 'ordenada en orden ascendente'.",
+  "fix": ""
+ },
+ {
+  "task_id": "F027",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F028",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F029",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F030",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F031",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F032",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F033",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F034",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F035",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F036",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F037",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F038",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F039",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F040",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F041",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F042",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F043",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F044",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F045",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F046",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'un valor de tipo float' acceptable but glossary prefers 'número decimal'.",
+  "fix": ""
+ },
+ {
+  "task_id": "F047",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F048",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F049",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F050",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'lista de listas fila' is a slight calque of 'row lists'.",
+  "fix": ""
+ },
+ {
+  "task_id": "F051",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F052",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F053",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F054",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F055",
+  "rendering": "es",
+  "meaning": "MINOR",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Calque 'asigna cada longitud ... a la lista' literally inverts the mapping direction (in Spanish 'asignar A a B' gives A to B); context still makes the key->value intent clear.",
+  "fix": "La función `group_words_by_length` devuelve un diccionario que asocia cada longitud de palabra (un entero) con la lista de palabras de `words` que tienen esa longitud. Dentro de cada lista, las palabras conservan su orden original."
+ },
+ {
+  "task_id": "F056",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F057",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F058",
+  "rendering": "es",
+  "meaning": "MINOR",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Calque 'asigna cada carácter ... al número de veces' literally inverts the mapping direction; key->value intent still recoverable.",
+  "fix": "La función `char_frequencies` devuelve un diccionario que asocia cada carácter de la cadena `text` con el número de veces que aparece. Los caracteres de espacio en blanco se ignoran, y los caracteres se cuentan distinguiendo mayúsculas de minúsculas."
+ },
+ {
+  "task_id": "F059",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F060",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'lista de listas de filas' slightly mistranslates 'list of row lists' (should be a list of rows, each a list).",
+  "fix": ""
+ },
+ {
+  "task_id": "F061",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'lista de listas de filas' slightly mistranslates 'list of row lists'.",
+  "fix": ""
+ },
+ {
+  "task_id": "F062",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'lista de listas de filas' slightly mistranslates 'list of row lists'.",
+  "fix": ""
+ },
+ {
+  "task_id": "F063",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F064",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F065",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F066",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F067",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F068",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F069",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F070",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F071",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F072",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Redundant 'ordenados en orden lexicográfico ascendente'.",
+  "fix": ""
+ },
+ {
+  "task_id": "F073",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Redundant 'ordenada en orden ascendente'.",
+  "fix": ""
+ },
+ {
+  "task_id": "F074",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F075",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F076",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F077",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F078",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F079",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F080",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F081",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F082",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'distancia de discrepancia de caracteres' is a literal calque, though understandable.",
+  "fix": ""
+ },
+ {
+  "task_id": "F083",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F084",
+  "rendering": "es",
+  "meaning": "MINOR",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Calque 'asigna cada clave a su valor' literally inverts the mapping direction; intent still clear from context.",
+  "fix": "La función `parse_kv_pairs` analiza la cadena `text` para convertirla en un diccionario y lo devuelve. La cadena `text` contiene pares `key=value` separados por punto y coma (`;`); el diccionario asocia cada clave con su valor, y ambos son cadenas. Se eliminan los espacios en blanco alrededor de cada par, de cada clave y de cada valor; la clave es la parte de un par anterior a su primer `=`, y las partes que no contienen `=` se ignoran. Una cadena vacía da como resultado un diccionario vacío."
+ },
+ {
+  "task_id": "F085",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F086",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F087",
+  "rendering": "es",
+  "meaning": "MINOR",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Calque 'asigna un índice a su valor' literally inverts the mapping direction; intent still clear.",
+  "fix": "La función `sparse_vector_dot` calcula el producto escalar de los dos vectores dispersos `v1` y `v2`, cada uno representado como un diccionario que asocia cada índice con su valor; un índice ausente de un diccionario tiene el valor cero. El resultado es un número decimal (float) redondeado a 3 decimales."
+ },
+ {
+  "task_id": "F088",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F089",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F090",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F091",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F092",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F093",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F094",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F095",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F096",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F097",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F098",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F099",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F100",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ }
+]
