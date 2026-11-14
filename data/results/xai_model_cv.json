@@ -1,0 +1,14 @@
+{
+  "task+model": {
+    "auroc_mean": 0.7826784616560627,
+    "auroc_sd": 0.028646365363182765
+  },
+  "+variant": {
+    "auroc_mean": 0.8027907986149488,
+    "auroc_sd": 0.027551720412872224
+  },
+  "+variant+tokenization": {
+    "auroc_mean": 0.7980539980535815,
+    "auroc_sd": 0.03524914656801597
+  }
+}

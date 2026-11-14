@@ -41,7 +41,7 @@ def fig_pass():
     vs = VARIANT_ORDER + ["ID_ONLY"]
     fig, axs = plt.subplots(2, 1, figsize=(7.2, 5.2), sharex=True)
     models = _ordered(f)
-    for ax, df, lab in ((axs[0], f, "(a) functional tasks (n=100)"), (axs[1], s, "(b) security tasks, functional tests (n=50)")):
+    for ax, df, lab in ((axs[0], f, f"(a) functional tasks (n={int(f.n_tasks.max())})"), (axs[1], s, f"(b) security tasks, functional tests (n={int(s.n_tasks.max()) if s is not None else 0})")):
         if df is None:
             continue
         d = df[df.condition == "DIRECT"]
