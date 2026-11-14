@@ -13,6 +13,7 @@ python scripts/audit_tools.py llm-stats
 # failure anatomy: `failure_anatomy.py pairs` + LLM classification (data/analysis/failure_causes_opus.json) are run by hand
 [ -f data/analysis/failure_causes_opus.json ] && python scripts/failure_anatomy.py table
 python scripts/sensitivity.py
+python scripts/translation_validity.py
 python scripts/make_figures.py
 (cd paper && pdflatex -interaction=nonstopmode main.tex >/dev/null && bibtex main >/dev/null || true; \
  pdflatex -interaction=nonstopmode main.tex >/dev/null && pdflatex -interaction=nonstopmode main.tex >/dev/null)

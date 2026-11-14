@@ -1,0 +1,17 @@
+{
+  "hf_id": "Qwen/Qwen2.5-Coder-3B-Instruct",
+  "revision": "488639f1ff808d1d3d0ba301aef8c11461451ec5",
+  "dtype": "float16",
+  "quant": "none",
+  "torch": "2.11.0+cu130",
+  "gpus": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "temperature": 0.2,
+  "top_p": 0.95,
+  "max_new_tokens": 768,
+  "n_samples": 3,
+  "seed": 42,
+  "started": "2026-11-14T20:26:45Z"
+}
