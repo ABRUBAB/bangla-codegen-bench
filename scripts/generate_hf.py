@@ -110,7 +110,11 @@ def main():
     ap.add_argument("--no-translate", action="store_true")
     ap.add_argument("--limit", type=int, default=0, help="debug: only first N prompts")
     ap.add_argument("--qwen3-nothink", action="store_true")
-    ap.add_argument("--only", default="", help="comma list of conditions: DIRECT,TRANSLATE_FIRST")
+    ap.add_argument("--only", default="", help="comma list of conditions: DIRECT,TRANSLATE_FIRST,EXTERNAL")
+    ap.add_argument("--external-translations", default="",
+                    help="translations.jsonl written by ANOTHER model: code is generated from these translations "
+                         "(condition name --external-condition); run with --only EXTERNAL")
+    ap.add_argument("--external-condition", default="TRANSLATE_FIRST_X")
     args = ap.parse_args()
 
     out_dir = Path(args.out) / args.model_id
@@ -241,6 +245,21 @@ def main():
             items.append(dict(p, prompt_text=p["text"], effective_prompt=tr["translation"],
                               tr_in=tr["tr_in"], tr_out=tr["tr_out"], sig_reinjected=tr["sig_reinjected"]))
         run_pass(items, "TRANSLATE_FIRST")
+
+    # ---- EXTERNAL translations (a different, fixed translator) ----
+    if args.external_translations and (not only or "EXTERNAL" in only):
+        ext = {}
+        for l in Path(args.external_translations).read_text(encoding="utf-8").split("\n"):
+            if l.strip():
+                r = json.loads(l); ext[(r["task_id"], r["variant"])] = r
+        items = []
+        for p in prompts:
+            tr = ext.get((p["task_id"], p["variant"]))
+            if tr is not None and p["variant"] in TF_VARIANTS:
+                items.append(dict(p, prompt_text=p["text"], effective_prompt=tr["translation"],
+                                  tr_in=tr["tr_in"], tr_out=tr["tr_out"], sig_reinjected=tr["sig_reinjected"]))
+        print(f"[external] {len(items)} prompts with translations from {args.external_translations}", flush=True)
+        run_pass(items, args.external_condition)
     fh.close()
     print("[done]", flush=True)
 

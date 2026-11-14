@@ -25,6 +25,7 @@ def put(path, b64, gz):
     open(path, "wb").write(gzip.decompress(raw) if gz else raw)
 put("/kaggle/working/generate_hf.py", "__SCRIPT__", False)
 put("/kaggle/working/prompts.jsonl", "__PROMPTS__", True)
+__EXTPUT__
 os.makedirs("/kaggle/working/gens", exist_ok=True)
 cmd = [sys.executable, "/kaggle/working/generate_hf.py", "--hf-id", "__HF__", "--revision", "__REV__",
        "--model-id", "__MID__", "--prompts", "/kaggle/working/prompts.jsonl", "--out", "/kaggle/working/gens",
@@ -44,16 +45,23 @@ def main():
     ap.add_argument("--tag", default="")
     ap.add_argument("--only", default="")
     ap.add_argument("--prompts", default="data/prompts/prompts.jsonl")
+    ap.add_argument("--external-translations", default="", help="translations.jsonl of another model (cross-model translate-first)")
+    ap.add_argument("--external-condition", default="TRANSLATE_FIRST_X")
     a = ap.parse_args()
     m = json.loads((ROOT / "data/models.json").read_text())[a.model_key]
     slug = f"bcb-gen-{a.model_key.replace('.', '').replace('_', '-')}{a.tag}"
     d = ROOT / "kaggle_work" / slug
     d.mkdir(parents=True, exist_ok=True)
+    ext_put, ext_args = "", ""
+    if a.external_translations:
+        eb = base64.b64encode(gzip.compress((ROOT / a.external_translations).read_bytes(), 9)).decode()
+        ext_put = f'put("/kaggle/working/ext_translations.jsonl", "{eb}", True)'
+        ext_args = f"--external-translations /kaggle/working/ext_translations.jsonl --external-condition {a.external_condition}"
     extra = " ".join(x for x in (EXTRA.get(a.model_key, ""), f"--limit {a.limit}" if a.limit else "",
-                                 f"--only {a.only}" if a.only else "") if x)
+                                 f"--only {a.only}" if a.only else "", ext_args) if x)
     sb = base64.b64encode((ROOT / "scripts/generate_hf.py").read_bytes()).decode()
     pb = base64.b64encode(gzip.compress((ROOT / a.prompts).read_bytes(), 9)).decode()
-    code = (TEMPLATE.replace("__SCRIPT__", sb).replace("__PROMPTS__", pb).replace("__HF__", m["hf_id"])
+    code = (TEMPLATE.replace("__EXTPUT__", ext_put).replace("__SCRIPT__", sb).replace("__PROMPTS__", pb).replace("__HF__", m["hf_id"])
             .replace("__REV__", m["revision"]).replace("__MID__", a.model_key)
             .replace("__BS__", str(BATCH[a.model_key])).replace("__EXTRA__", extra))
     (d / "kernel.py").write_text(code)

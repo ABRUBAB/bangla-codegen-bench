@@ -1,0 +1,17 @@
+{
+  "hf_id": "md-nishat-008/TigerCoder-1B",
+  "revision": "5b95365917daf8a1129093879a2739ff0d761a1d",
+  "dtype": "float16",
+  "quant": "none",
+  "torch": "2.11.0+cu130",
+  "gpus": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "temperature": 0.2,
+  "top_p": 0.95,
+  "max_new_tokens": 768,
+  "n_samples": 3,
+  "seed": 42,
+  "started": "2026-11-14T20:26:33Z"
+}
