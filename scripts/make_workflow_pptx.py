@@ -90,7 +90,7 @@ def band(idx, y, h, title):
 
 nt = g("n_tasks", 150); nf = g("n_func", 100); ns = g("n_sec", 50); ncwe = g("n_cwe", 14)
 npr = g("n_prompts", 1400); nmod = g("n_models", 7); ntok = g("n_tokenizers", 9)
-ngen = g("n_generations", "~38k")
+ngen = g("n_generations", "38,850")
 
 # ---------------------------------------------------------------- Band 1
 y1, hb = 0.12, 1.98
@@ -111,14 +111,13 @@ box(x, by, bw, bh, "Oracle verification gate", ["• reference passes all tests"
 
 # ---------------------------------------------------------------- Band 2
 y2 = y1 + hb + 0.2
-band(2, y2, hb - 0.2, f"Generation: {nmod} models × 2 arms × 3 samples ≈ {ngen} completions")
+band(2, y2, hb - 0.2, f"Generation: {nmod} models, 2 arms, 3 samples per prompt ({ngen} completions)")
 by2, bh2 = y2 + 0.52, 1.16
 box(0.3, by2, 3.0, bh2, "Models", ["Qwen2.5-Coder 1.5B / 3B / 7B", "DeepSeek-Coder 6.7B · Qwen3-8B", "TigerCoder (Bangla-specialised)", "Gemini 3.8 Flash (API)"], RED)
 arrow(3.3, by2 + bh2 / 2, 3.55, by2 + bh2 / 2)
 box(3.55, by2, 2.55, bh2, "DIRECT arm", ["prompt → code model", "all variants and controls"], RED)
 box(6.3, by2, 2.55, bh2, "TRANSLATE_FIRST arm", ["BN / BN_MIX / BANGLISH →", "same model translates to English", "→ code model"], CORAL)
 box(8.95 - 0.05, by2, 0.85, bh2, "T=0.2", ["top-p", "0.95", "3 samples"], SLATE, tsize=9.5, lsize=8.5, align=PP_ALIGN.CENTER)
-arrow(6.1, by2 + bh2 / 2, 6.3, by2 + bh2 / 2, "999999", 1.0)
 
 # ---------------------------------------------------------------- Band 3
 y3 = y2 + hb - 0.2 + 0.2
