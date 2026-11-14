@@ -26,7 +26,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 SYSTEM = ("You are an expert Python programmer. Return only a single Python code block solving the "
           "requested task. Do not include extra conversational text.")
-VARIANTS = ["EN", "EN_TYPO", "BN", "BN_SPELL", "BN_MIX", "BN_TYPO", "BANGLISH", "ID_ONLY"]
+VARIANTS = ["EN", "EN_TYPO", "BN", "BN_SPELL", "BN_MIX", "BN_TYPO", "BANGLISH", "ES", "ID_ONLY"]
 EXAMPLES = {"F025", "F007", "S001", "S011"}
 
 

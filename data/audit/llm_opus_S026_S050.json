@@ -1,0 +1,677 @@
+[
+ {
+  "task_id": "S026",
+  "rendering": "bn",
+  "meaning": "MINOR",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'পাটিগাণিতিক' is a non-standard spelling, 'রাশিমালা' is a school-math term rather than 'expression', and '`ZeroDivisionError` ওঠে' drops the agent (EN: the function raises).",
+  "fix": "`evaluate_expression` ফাংশনটি স্ট্রিং `expression`-এ দেওয়া গাণিতিক (অ্যারিথমেটিক) রাশির মান নির্ণয় করে এবং সেটি `float` হিসেবে ফেরত দেয়। রাশিতে থাকতে পারে `3` বা `2.5`-এর মতো দশমিক সংখ্যা, বাইনারি অপারেটর `+`, `-`, `*`, `/` ও `**`, ইউনারি মাইনাস `-`, বন্ধনী `(` ও `)` এবং প্রয়োজনমতো স্পেস; অপারেটরগুলোর অগ্রাধিকার ও সংযোগক্রম (অ্যাসোসিয়েটিভিটি) পাইথনের মতোই। শূন্য দিয়ে ভাগ করা হলে ফাংশনটি `ZeroDivisionError` এক্সসেপশন তোলে। `expression` এই ধরনের বৈধ রাশি না হলে (যেমন খালি স্ট্রিং, বন্ধনী না মিললে বা অচেনা কোনো শব্দ থাকলে) ফাংশনটি `ValueError` এক্সসেপশন তোলে।"
+ },
+ {
+  "task_id": "S026",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S026",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S027",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'রাশিমালা' for expression is slightly bookish but clear.",
+  "fix": ""
+ },
+ {
+  "task_id": "S027",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S027",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S028",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'সংযোগধর্ম' is an unusual coinage, rescued by the English gloss.",
+  "fix": ""
+ },
+ {
+  "task_id": "S028",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S028",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S029",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'অখালি' is an unnatural coinage for 'non-empty', and 'অক্ষর' is used both for 'letter' and 'character', which is slightly ambiguous.",
+  "fix": "`is_valid_email` ফাংশনটি স্ট্রিং `s` যদি `local@domain` আকারের ইমেইল ঠিকানা হয় তাহলে `True`, নইলে `False` ফেরত দেয়। `s`-এ ঠিক একটি `@` থাকে। `local` অংশে শুধু ASCII অক্ষর, ASCII অঙ্ক এবং বিভাজক চিহ্ন `.`, `_` ও `-` থাকতে পারে; এটি একটি অক্ষর বা অঙ্ক দিয়ে শুরু ও শেষ হয়, এবং দুটি বিভাজক চিহ্ন পাশাপাশি থাকে না। `domain` অংশে একটিমাত্র ডট (`.`) দিয়ে আলাদা করা কমপক্ষে দুটি লেবেল থাকে; প্রতিটি লেবেল ASCII অক্ষর ও অঙ্কের একটি খালি নয় এমন ক্রম, আর শেষ লেবেলে কমপক্ষে দুটি ASCII অক্ষর থাকে, অন্য কিছু নয়। `s`-এর কোথাও অন্য কোনো ক্যারেক্টার থাকা চলবে না।"
+ },
+ {
+  "task_id": "S029",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S029",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S030",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'অখালি' is an unnatural coinage for 'non-empty', and 'অক্ষর' is used both for 'letter' and 'character'.",
+  "fix": "`matches_log_pattern` ফাংশনটি স্ট্রিং `line` একটি লগ লাইন হলে `True`, অন্যথায় `False` ফেরত দেয়। লগ লাইন এই ক্রমে গঠিত: `YYYY-MM-DD` আকারের একটি তারিখ, একটি স্পেস, `HH:MM:SS` আকারের একটি সময়, একটি স্পেস, একটি লেভেল যা ঠিক `DEBUG`, `INFO`, `WARNING` ও `ERROR`-এর যেকোনো একটি, একটি কোলন `:`, একটি স্পেস, এবং একটি বার্তা। তারিখ ও সময়ে শুধু `0` থেকে `9` পর্যন্ত অঙ্ক থাকে এবং মান সীমার মধ্যে আছে কি না দেখা হয় না। বার্তা হলো একটিমাত্র স্পেস দিয়ে আলাদা করা এক বা একাধিক শব্দ, যেখানে শব্দ হলো ASCII অক্ষর, ASCII অঙ্ক ও আন্ডারস্কোরের একটি খালি নয় এমন ক্রম; বার্তাটি লাইনের শেষ পর্যন্ত চলে। `line`-এর কোথাও অন্য কোনো ক্যারেক্টার থাকা চলবে না।"
+ },
+ {
+  "task_id": "S030",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'এই order-এ তৈরি' is slightly stiff.",
+  "fix": ""
+ },
+ {
+  "task_id": "S030",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S031",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'লগইন মিলিয়ে দেখতে' is a little loose for 'checking logins' but clear.",
+  "fix": ""
+ },
+ {
+  "task_id": "S031",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S031",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S032",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S032",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S032",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S033",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'এনক্রিপ্টেড রূপে নেয় ... আগের রূপে ফেরায়' is a slightly literal calque of 'convert to and from'.",
+  "fix": ""
+ },
+ {
+  "task_id": "S033",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S033",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'pherae' is an odd spelling of ফেরায় ('feray/pheray').",
+  "fix": ""
+ },
+ {
+  "task_id": "S034",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S034",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S034",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S035",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S035",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S035",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S036",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S036",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S036",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S037",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S037",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S037",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S038",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S038",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S038",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S039",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'অক্ষর' is used both for 'letter' and 'character'; understandable from context.",
+  "fix": ""
+ },
+ {
+  "task_id": "S039",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S039",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S040",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S040",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S040",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S041",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'সাইট-সাপেক্ষ পথ' is a coined term for site-relative path; acceptable.",
+  "fix": ""
+ },
+ {
+  "task_id": "S041",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S041",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S042",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S042",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S042",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S043",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'নাম-সমাধান' is an unidiomatic calque for 'name lookup' and 'লিখনরীতিতে' is an odd term for 'notation'.",
+  "fix": "`is_allowed_webhook` ফাংশনটি যাচাই করে, স্ট্রিং `url` ওয়েবহুক এন্ডপয়েন্ট হিসেবে নিবন্ধন করা যাবে কি না। নিচের সবগুলো শর্ত পূরণ হলেই কেবল ফাংশনটি `True` ফেরত দেয়। `url` `https://` দিয়ে শুরু হয় (ছোট/বড় হাতের অক্ষরের পার্থক্য উপেক্ষা করা হয়)। `url`-এ কোনো ব্যাকস্ল্যাশ, স্পেস বা কন্ট্রোল ক্যারেক্টার (কোড পয়েন্ট ৩২-এর কম বা ১২৭-এর সমান এমন অক্ষর) নেই। `url`-এর হোস্টের (`user@` বা `user:password@` উপসর্গের পরের এবং পোর্টের আগের অংশ) একেবারে শেষে একটি `.` থাকলে তা বাদ দেওয়ার পর হোস্টটি একটি DNS নাম: এতে `.` দিয়ে আলাদা করা দুই বা তার বেশি লেবেল আছে, প্রতিটি লেবেল খালি নয় এবং শুধু ASCII অক্ষর, অঙ্ক ও `-` দিয়ে গঠিত, আর শেষ লেবেলটি শুধু অক্ষর দিয়ে গঠিত (ফলে যেকোনো নোটেশনে লেখা IP অ্যাড্রেস কখনোই DNS নাম নয়)। সেই হোস্ট `localhost` নয় এবং `.localhost` দিয়ে শেষও হয় না (ছোট/বড় হাতের অক্ষরের পার্থক্য উপেক্ষা করা হয়)। পোর্ট অনুপস্থিত অথবা `443`। শুধু `url`-এর লেখা পরীক্ষা করা হয়; কোনো DNS নাম লুকআপ করা হয় না। অন্য সব ক্ষেত্রে ফাংশনটি `False` ফেরত দেয়।"
+ },
+ {
+  "task_id": "S043",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S043",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "Misspellings: 'gotho hobe' should be 'gothito hobe' (গঠিত), and 'sheshao' should be 'sheshe-o'.",
+  "fix": "`is_allowed_webhook` function ta check korbe string `url` webhook endpoint hishebe register kora jabe kina. Nicher sobgulo shorto puron hole-i shudhu `True` return korbe. `url` `https://` diye shuru hobe (upper/lower case ignore kore). `url` e kono backslash, space ba control character (code point 32 er kom ba 127 er soman emon character) thakbe na. `url` er host er (`user@` ba `user:password@` prefix er porer ebong port er age ongsho) ekdom shesh e ekta `.` thakle seta bad deoar por host ta ekta DNS name hobe: tate `.` diye alada kora dui ba tar beshi label thakbe, protita label non-empty hobe ebong shudhu ASCII letter, digit ar `-` diye gothito hobe, ar shesh label ta shudhu letter diye gothito hobe (tai jekono notation e lekha IP address kokhono-i DNS name na). Sei host `localhost` hobe na ebong `.localhost` diye sheshe-o hobe na (upper/lower case ignore kore). Port thakbe na othoba `443` hobe. Shudhu `url` er text porikkha kora hobe; kono name lookup kora hobe na. Baki sob khetre `False` return korbe."
+ },
+ {
+  "task_id": "S044",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Adds an explanatory gloss for 'publicly routable' (no requirement change); 'লিখনরীতি' for notation is unusual.",
+  "fix": ""
+ },
+ {
+  "task_id": "S044",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'judge করা হয়' is slightly awkward.",
+  "fix": ""
+ },
+ {
+  "task_id": "S044",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'barati' should be 'barti' (বাড়তি).",
+  "fix": ""
+ },
+ {
+  "task_id": "S045",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S045",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S045",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S046",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S046",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S046",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S047",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S047",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S047",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S048",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'এপিআই সিক্রেট' in Bangla script is less natural than keeping 'API'.",
+  "fix": ""
+ },
+ {
+  "task_id": "S048",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S048",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S049",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S049",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S049",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S050",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "The clause about the service account is a bit convoluted ('... সে-ই').",
+  "fix": ""
+ },
+ {
+  "task_id": "S050",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S050",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ }
+]

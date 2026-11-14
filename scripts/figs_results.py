@@ -67,7 +67,7 @@ def fig_forest():
     cf, cs = _read("tab_contrasts_functional.csv"), _read("tab_contrasts_security_tasks.csv")
     if cf is None:
         return
-    vs = ["EN_TYPO", "BN", "BN_SPELL", "BN_MIX", "BN_TYPO", "BANGLISH", "ID_ONLY"]
+    vs = ["EN_TYPO", "BN", "BN_SPELL", "BN_MIX", "BN_TYPO", "BANGLISH", "ES", "ES_TYPO", "ID_ONLY"]
     fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.6), sharey=True)
     for ax, df, lab in ((axs[0], cf, "(a) functional tasks"), (axs[1], cs, "(b) security tasks")):
         if df is None:
@@ -98,7 +98,7 @@ def fig_security():
     d["SC"] = (d.functional_pass & (d.exploit_pass == True)).astype(float)  # noqa: E712
     d["VC"] = (d.functional_pass & (d.exploit_pass == False)).astype(float)  # noqa: E712
     d["FF"] = (~d.functional_pass).astype(float)
-    vs = ["EN", "EN_TYPO", "BN", "BN_SPELL", "BN_MIX", "BN_TYPO", "BANGLISH", "ID_ONLY"]
+    vs = ["EN", "EN_TYPO", "BN", "BN_SPELL", "BN_MIX", "BN_TYPO", "BANGLISH", "ES", "ES_TYPO", "ID_ONLY"]
     fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.1), gridspec_kw={"width_ratios": [1.1, 1]})
     ax = axs[0]
     agg = d.groupby(["variant", "task_id"])[["SC", "VC", "FF"]].mean().groupby("variant").mean().reindex(vs)
@@ -242,7 +242,7 @@ def fig_hint():
         return
     d = ex[(ex.kind == "security") & (ex.condition == "DIRECT") & ex.functional_pass].copy()
     d["vuln"] = (d.exploit_pass == False).astype(float)  # noqa: E712
-    langs = [("EN", "EN_HINT"), ("BN", "BN_HINT"), ("BN_MIX", "BN_MIX_HINT"), ("BANGLISH", "BANGLISH_HINT")]
+    langs = [("EN", "EN_HINT"), ("BN", "BN_HINT"), ("BN_MIX", "BN_MIX_HINT"), ("BANGLISH", "BANGLISH_HINT"), ("ES", "ES_HINT")]
     if not d.variant.isin([h for _, h in langs]).any():
         return
     fig, ax = plt.subplots(figsize=(3.6, 2.8))
@@ -253,7 +253,7 @@ def fig_hint():
     ax.bar(x - w / 2, base, w, color=NPG["red"], label="no hint")
     ax.bar(x + w / 2, hint, w, color=NPG["teal"], label="with hint")
     ax.set_xticks(x)
-    ax.set_xticklabels(["EN", "BN", "BN-mix", "Banglish"])
+    ax.set_xticklabels(["EN", "BN", "BN-mix", "Banglish", "ES"])
     ax.set_ylabel("vulnerability rate V (%)")
     ax.legend()
     save(fig, "fig_hint", F)
@@ -264,7 +264,7 @@ def fig_errors():
     if ex is None:
         return
     d = ex[(ex.condition == "DIRECT") & (~ex.functional_pass)]
-    vs = ["EN", "EN_TYPO", "BN", "BN_SPELL", "BN_MIX", "BN_TYPO", "BANGLISH", "ID_ONLY"]
+    vs = ["EN", "EN_TYPO", "BN", "BN_SPELL", "BN_MIX", "BN_TYPO", "BANGLISH", "ES", "ES_TYPO", "ID_ONLY"]
     cats = ["wrong_answer", "signature_mismatch", "missing_symbol", "runtime_error", "syntax_error", "import_error", "timeout", "no_code", "other"]
     tab = d.groupby(["variant", "func_failure_type"]).size().unstack(fill_value=0).reindex(vs).fillna(0)
     totals = ex[ex.condition == "DIRECT"].groupby("variant").size().reindex(vs)

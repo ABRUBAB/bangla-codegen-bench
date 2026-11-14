@@ -1,0 +1,677 @@
+[
+ {
+  "task_id": "F026",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'ভিন্ন ভিন্ন' for 'distinct' is understandable but 'স্বতন্ত্র'/'পুনরাবৃত্তিহীন' would be more precise.",
+  "fix": ""
+ },
+ {
+  "task_id": "F026",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'একটা list-এ return করবে' is slightly odd; 'list হিসেবে return করবে' is more idiomatic.",
+  "fix": ""
+ },
+ {
+  "task_id": "F026",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'ekta list e return korbe' slightly odd ('list hishebe'); hyphenation 'list-e' vs 'list e' inconsistent.",
+  "fix": ""
+ },
+ {
+  "task_id": "F027",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F027",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F027",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F028",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'সেগুলোর একটি তালিকা (তালিকার তালিকা)' is a bit redundant but clear.",
+  "fix": ""
+ },
+ {
+  "task_id": "F028",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F028",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Typo 'porporo' should be 'porpor'.",
+  "fix": ""
+ },
+ {
+  "task_id": "F029",
+  "rendering": "bn",
+  "meaning": "MINOR",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'Equal neighbouring values are allowed' is only implied via 'সমান থাকছে'; present-continuous 'কখনো কমছে না' is slightly awkward; 'মনোটোনিক' transliterated (standard term 'একদিষ্ট').",
+  "fix": ""
+ },
+ {
+  "task_id": "F029",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F029",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'purotai jure' should be 'purota jure'.",
+  "fix": ""
+ },
+ {
+  "task_id": "F030",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F030",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F030",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F031",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Uses transliteration 'ফ্যাক্টরিয়াল' although standard Bangla term 'ক্রমগুণিত' exists.",
+  "fix": ""
+ },
+ {
+  "task_id": "F031",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F031",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F032",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F032",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F032",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F033",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F033",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F033",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'Duto-r ekta' is an odd spelling; 'Duitar ekta' is more natural chat spelling.",
+  "fix": ""
+ },
+ {
+  "task_id": "F034",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F034",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F034",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F035",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F035",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "bn_mix uses Bangla-script 'ফাংশনটা' instead of 'function-টা' used in F026-F034 (inconsistent code-mixing).",
+  "fix": ""
+ },
+ {
+  "task_id": "F035",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "Spelling 'sob' vs 'shob' elsewhere in the dataset is inconsistent.",
+  "fix": ""
+ },
+ {
+  "task_id": "F036",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F036",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'two-এর power' is unnatural (developers say '2-এর power'); bn_mix uses Bangla-script 'ফাংশনটা' instead of 'function-টা' used in F026-F034 (inconsistent code-mixing).",
+  "fix": ""
+ },
+ {
+  "task_id": "F036",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'two er power' unnatural; '2 er power' would be idiomatic.",
+  "fix": ""
+ },
+ {
+  "task_id": "F037",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Long procedural sentence, but faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "F037",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "bn_mix uses Bangla-script 'ফাংশনটা' instead of 'function-টা' used in F026-F034 (inconsistent code-mixing).",
+  "fix": ""
+ },
+ {
+  "task_id": "F037",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'prottek' here vs 'protiti' elsewhere (inconsistent spelling).",
+  "fix": ""
+ },
+ {
+  "task_id": "F038",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'ক্রম' for sequence (F032 uses 'অনুক্রম'); 'কলাৎজ' transliteration is unusual.",
+  "fix": ""
+ },
+ {
+  "task_id": "F038",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Elliptical 'তিনগুণ আর `1` যোগ' and lowercase sentence starts; bn_mix uses Bangla-script 'ফাংশনটা' instead of 'function-টা' used in F026-F034 (inconsistent code-mixing).",
+  "fix": ""
+ },
+ {
+  "task_id": "F038",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Elliptical 'tin gun ar `1` jog' (better 'tin gun kore `1` jog').",
+  "fix": ""
+ },
+ {
+  "task_id": "F039",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F039",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "bn_mix uses Bangla-script 'ফাংশনটা' instead of 'function-টা' used in F026-F034 (inconsistent code-mixing).",
+  "fix": ""
+ },
+ {
+  "task_id": "F039",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F040",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F040",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "bn_mix uses Bangla-script 'ফাংশনটা' instead of 'function-টা' used in F026-F034 (inconsistent code-mixing).",
+  "fix": ""
+ },
+ {
+  "task_id": "F040",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F041",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F041",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "bn_mix uses Bangla-script 'ফাংশনটা' instead of 'function-টা' used in F026-F034 (inconsistent code-mixing).",
+  "fix": ""
+ },
+ {
+  "task_id": "F041",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F042",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F042",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'`0`-ও ধরে' is elliptical ('`0`-ও ধরা হবে'); bn_mix uses Bangla-script 'ফাংশনটা' instead of 'function-টা' used in F026-F034 (inconsistent code-mixing).",
+  "fix": ""
+ },
+ {
+  "task_id": "F042",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'`0`-o dhore' elliptical ('`0`-o dhora hobe').",
+  "fix": ""
+ },
+ {
+  "task_id": "F043",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Very long single sentence; 'চালনি' acceptable ('ছাঁকনি' is more common).",
+  "fix": ""
+ },
+ {
+  "task_id": "F043",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "bn_mix uses Bangla-script 'ফাংশনটা' instead of 'function-টা' used in F026-F034 (inconsistent code-mixing).",
+  "fix": ""
+ },
+ {
+  "task_id": "F043",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F044",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F044",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "bn_mix uses Bangla-script 'ফাংশনটা' instead of 'function-টা' used in F026-F034 (inconsistent code-mixing).",
+  "fix": ""
+ },
+ {
+  "task_id": "F044",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F045",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Transliterated 'রাউন্ড করে' in formal bn; acceptable but not formal-standard.",
+  "fix": ""
+ },
+ {
+  "task_id": "F045",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "bn_mix uses Bangla-script 'ফাংশনটা' instead of 'function-টা' used in F026-F034 (inconsistent code-mixing).",
+  "fix": ""
+ },
+ {
+  "task_id": "F045",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F046",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Repetition 'দশমিক স্থান ... দশমিক সংখ্যা' reads clumsily.",
+  "fix": ""
+ },
+ {
+  "task_id": "F046",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "bn_mix uses Bangla-script 'ফাংশনটা' instead of 'function-টা' used in F026-F034 (inconsistent code-mixing).",
+  "fix": ""
+ },
+ {
+  "task_id": "F046",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F047",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'গড় ও মধ্যক একটি টাপল ... হিসেবে' slightly stiff but faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "F047",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "'list of numbers' rendered just as 'non-empty list'; bn_mix uses Bangla-script 'ফাংশনটা' instead of 'function-টা' used in F026-F034 (inconsistent code-mixing).",
+  "fix": ""
+ },
+ {
+  "task_id": "F047",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F048",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'যা ৩ দশমিক স্থান পর্যন্ত রাউন্ড করা থাকে' is awkward phrasing.",
+  "fix": ""
+ },
+ {
+  "task_id": "F048",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "bn_mix uses Bangla-script 'ফাংশনটা' instead of 'function-টা' used in F026-F034 (inconsistent code-mixing).",
+  "fix": ""
+ },
+ {
+  "task_id": "F048",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "F049",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Front-loaded long noun phrase, but faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "F049",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "English plural 'numbers-এর tuple' is unnatural (should be 'number-এর tuple'); bn_mix uses Bangla-script 'ফাংশনটা' instead of 'function-টা' used in F026-F034 (inconsistent code-mixing).",
+  "fix": "`euclidean_distance` function-টা দুটো 2D point `p1` আর `p2`-এর মধ্যে Euclidean distance 3 decimal place পর্যন্ত round করে return করবে; point দুটো number-এর tuple হিসেবে `(x1, y1)` আর `(x2, y2)` আকারে দেওয়া থাকবে।"
+ },
+ {
+  "task_id": "F049",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'numbers er tuple' unnatural (should be 'number er tuple').",
+  "fix": "`euclidean_distance` function ta duto 2D point `p1` ar `p2` er moddhe Euclidean distance 3 decimal place porjonto round kore return korbe; point duto number er tuple hishebe `(x1, y1)` ar `(x2, y2)` akare deya thakbe."
+ },
+ {
+  "task_id": "F050",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 3,
+  "register_ok": "Y",
+  "issues": "'সমান দৈর্ঘ্যের সারির তালিকার একটি তালিকা' and 'ফলাফল তালিকার একটি নতুন তালিকা' are calqued genitive chains that read ambiguously.",
+  "fix": "`transpose_matrix` ফাংশনটি ম্যাট্রিক্স `matrix`-এর ট্রান্সপোজ ফেরত দেয়; `matrix` দেওয়া থাকে সমান দৈর্ঘ্যের সারিগুলোর (প্রতিটি সারি একটি তালিকা) একটি তালিকা হিসেবে। ফলাফল হলো তালিকাগুলোর একটি নতুন তালিকা, যার প্রতিটি সারি `matrix`-এর একটি করে কলাম। `matrix` খালি হলে ফলাফল খালি তালিকা `[]`।"
+ },
+ {
+  "task_id": "F050",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "bn_mix uses Bangla-script 'ফাংশনটা' instead of 'function-টা' used in F026-F034 (inconsistent code-mixing).",
+  "fix": ""
+ },
+ {
+  "task_id": "F050",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'equal length er row list er ekta list' is a slightly heavy genitive chain.",
+  "fix": ""
+ }
+]
