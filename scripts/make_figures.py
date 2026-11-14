@@ -70,4 +70,9 @@ def fig_tokens():
 
 if __name__ == "__main__":
     setup()
-    fig_tokens()
+    import figs_results, figs_xai
+    for fn in [fig_tokens] + figs_results.ALL + figs_xai.ALL:
+        try:
+            fn()
+        except Exception as exc:  # keep going; report
+            print("FAILED", fn.__name__, type(exc).__name__, exc)
