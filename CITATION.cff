@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use BanglaCodeBench, please cite the accompanying paper."
+title: "BanglaCodeBench: correctness, executable security and tokenization cost of English, Bangla and Banglish prompts for code LLMs"
+authors:
+  - family-names: Rubab
+    given-names: Abdullah
+    orcid: "https://orcid.org/0009-0003-5063-9320"
+  - family-names: Badhon
+    given-names: Md. Mitul Kabir
+repository-code: "https://github.com/ABRUBAB/bangla-codegen-bench"
+license: MIT

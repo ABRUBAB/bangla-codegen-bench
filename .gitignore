@@ -1,0 +1,24 @@
+# secrets and local credentials - NEVER commit
+kaggle_work/
+*.key
+*key*.txt
+*token*.txt
+.env
+# scratch / caches
+data/_smoke/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+data/tasks/_functional_base.jsonl
+# large raw model outputs are released via the dataset archive, not git
+data/generations/**/translations.jsonl.bak
+data/tasks/_parts/
