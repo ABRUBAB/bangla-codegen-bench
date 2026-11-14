@@ -177,7 +177,8 @@ t = rd("tab_token_ratio_median.csv")
 if t is not None:
     tmap = {"GPT-4 (cl100k)": "cl100k", "GPT-4o (o200k)": "o200k", "Qwen2.5 (151k)": "qwen25", "Qwen3 (151k)": "qwen3",
             "DeepSeek-Coder (32k)": "dsc", "DeepSeek-V2 (100k)": "dsv2", "TigerCoder (262k)": "tiger", "Llama-3.1 (128k)": "llama3",
-            "Mistral-v0.3 (33k)": "mistral"}
+            "Mistral-v0.3 (33k)": "mistral", "Qwen3.8 (248k)": "qwen38", "Gemma-4 (262k)": "gemma4",
+            "Ministral-3 (131k)": "ministral3", "GLM-4.7 (155k)": "glm47"}
     t = t.set_index(t.columns[0])
     for tok, row in t.iterrows():
         for v, val in row.items():

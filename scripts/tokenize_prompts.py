@@ -30,6 +30,11 @@ HF_TOKENIZERS = {
     "tigercoder": "md-nishat-008/TigerCoder-1B",
     "llama3": "NousResearch/Meta-Llama-3.1-8B-Instruct",
     "mistral": "mistralai/Mistral-7B-Instruct-v0.3",
+    # current-generation open models (2026)
+    "qwen3.8": "Qwen/Qwen3.8-27B",
+    "gemma4": "google/gemma-4-31B-it",
+    "ministral3": "mistralai/Ministral-3-14B-Instruct-2512",
+    "glm4.7": "zai-org/GLM-4.7-Flash",
 }
 TIKTOKEN = {"gpt-4 (cl100k)": "cl100k_base", "gpt-4o (o200k)": "o200k_base"}
 
@@ -46,7 +51,8 @@ def main():
         encoders[name] = lambda s, e=e: len(e.encode(s, disallowed_special=()))
     for name, hf in HF_TOKENIZERS.items():
         try:
-            tk = AutoTokenizer.from_pretrained(hf, trust_remote_code=True)
+            kw = {"fix_mistral_regex": True} if name == "ministral3" else {}  # known regex bug in the published tokenizer
+            tk = AutoTokenizer.from_pretrained(hf, trust_remote_code=True, **kw)
             encoders[name] = lambda s, tk=tk: len(tk.encode(s, add_special_tokens=False))
             print("loaded tokenizer", name, "vocab", getattr(tk, "vocab_size", "?"), flush=True)
         except Exception as exc:

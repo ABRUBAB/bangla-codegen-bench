@@ -18,7 +18,8 @@ R = ROOT / "data/results"
 F = ROOT / "figures"
 TOK_LABEL = {"gpt-4 (cl100k)": "GPT-4 (cl100k)", "gpt-4o (o200k)": "GPT-4o (o200k)", "qwen2.5": "Qwen2.5 (151k)",
              "qwen3": "Qwen3 (151k)", "deepseek-coder": "DeepSeek-Coder (32k)", "deepseek-v2": "DeepSeek-V2 (100k)",
-             "tigercoder": "TigerCoder (262k)", "llama3": "Llama-3.1 (128k)", "mistral": "Mistral-v0.3 (33k)"}
+             "tigercoder": "TigerCoder (262k)", "llama3": "Llama-3.1 (128k)", "mistral": "Mistral-v0.3 (33k)",
+             "qwen3.8": "Qwen3.8 (248k)", "gemma4": "Gemma-4 (262k)", "ministral3": "Ministral-3 (131k)", "glm4.7": "GLM-4.7 (155k)"}
 
 
 def models_present(df):
@@ -37,7 +38,7 @@ def fig_tokens():
     M = pd.DataFrame({TOK_LABEL.get(t, t): {v: float(np.median(d[d.variant == v].set_index("task_id")[f"desc__{t}"] /
                                            en[f"desc__{t}"])) for v in vs} for t in toks}).T
     M = M.sort_values("BN", ascending=False)
-    fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.0), gridspec_kw={"width_ratios": [1.25, 1]})
+    fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.9), gridspec_kw={"width_ratios": [1.25, 1]})
     ax = axs[0]
     im = ax.imshow(np.log2(M.values), cmap="YlOrRd", vmin=0, vmax=np.log2(10), aspect="auto")
     ax.set_xticks(range(len(vs))); ax.set_xticklabels([VARIANT_LABEL[v] for v in vs], rotation=35, ha="right")
@@ -63,7 +64,7 @@ def fig_tokens():
     ax.axvline(1, color="grey", ls="--", lw=0.8)
     ax.set_xlabel("BN / EN token ratio (per task)")
     ax.text(-0.35, 1.02, "(b)", transform=ax.transAxes, fontweight="bold", fontsize=9)
-    fig.subplots_adjust(wspace=0.55)
+    fig.subplots_adjust(wspace=0.95)
     save(fig, "fig_tokens", F)
     M.round(3).to_csv(R / "tab_token_ratio_median.csv")
 
