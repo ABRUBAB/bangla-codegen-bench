@@ -60,12 +60,12 @@ def run_gee(d: pd.DataFrame, out: Path):
     rows = []
     for m, g in d[(d.condition == "DIRECT") & (d.variant != "ID_ONLY") & (~d.variant.str.endswith("_HINT"))].groupby("model_id"):
         g = g.dropna(subset=["ratio_qwen2.5", "difficulty"]).copy()
-        g["fail"] = 1 - g["pass"]
+        g["y"] = g["pass"]
         g["log_ratio"] = np.log(g["ratio_qwen2.5"])
-        for label, formula in [("variant", "pass ~ C(variant, Treatment('EN'))"),
-                               ("variant+difficulty", "pass ~ C(variant, Treatment('EN')) + difficulty"),
-                               ("tokens", "pass ~ log_ratio + difficulty"),
-                               ("variant+tokens", "pass ~ C(variant, Treatment('EN')) + log_ratio + difficulty")]:
+        for label, formula in [("variant", "y ~ C(variant, Treatment('EN'))"),
+                               ("variant+difficulty", "y ~ C(variant, Treatment('EN')) + difficulty"),
+                               ("tokens", "y ~ log_ratio + difficulty"),
+                               ("variant+tokens", "y ~ C(variant, Treatment('EN')) + log_ratio + difficulty")]:
             try:
                 res = smf.gee(formula, groups="task_id", data=g, family=sm.families.Binomial(),
                               cov_struct=sm.cov_struct.Exchangeable()).fit()
