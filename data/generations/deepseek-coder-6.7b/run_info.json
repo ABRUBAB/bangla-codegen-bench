@@ -1,0 +1,17 @@
+{
+  "hf_id": "deepseek-ai/deepseek-coder-6.7b-instruct",
+  "revision": "e5d64addd26a6a1db0f9b863abf6ee3141936807",
+  "dtype": "float16",
+  "quant": "none",
+  "torch": "2.11.0+cu130",
+  "gpus": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "temperature": 0.2,
+  "top_p": 0.95,
+  "max_new_tokens": 768,
+  "n_samples": 3,
+  "seed": 42,
+  "started": "2026-11-14T17:57:32Z"
+}

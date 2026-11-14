@@ -1,4 +1,7 @@
 model,variant,code_only,untranslated,valid
+deepseek-coder-6.7b,BANGLISH,1.3,0.0,98.7
+deepseek-coder-6.7b,BN,0.0,0.0,100.0
+deepseek-coder-6.7b,BN_MIX,98.0,0.7,1.3
 qwen2.5-coder-1.5b,BANGLISH,0.0,0.0,100.0
 qwen2.5-coder-1.5b,BN,0.7,0.0,99.3
 qwen2.5-coder-1.5b,BN_MIX,0.0,0.0,100.0
@@ -10,6 +13,10 @@ qwen2.5-coder-7b,BANGLISH,0.0,0.0,100.0
 qwen2.5-coder-7b,BN,0.0,0.0,100.0
 qwen2.5-coder-7b,BN_MIX,0.0,0.0,100.0
 qwen2.5-coder-7b,ES,0.0,0.0,100.0
+qwen3-8b,BANGLISH,0.0,0.0,100.0
+qwen3-8b,BN,0.0,0.0,100.0
+qwen3-8b,BN_MIX,0.0,0.0,100.0
+qwen3-8b,ES,0.9,0.0,99.1
 tigercoder-1b,BANGLISH,1.9,46.5,51.6
 tigercoder-1b,BN,0.5,27.2,72.3
 tigercoder-1b,BN_MIX,0.9,37.1,62.0
