@@ -25,7 +25,7 @@ SYSTEM_CODE = ("You are an expert Python programmer. Return only a single Python
 SYSTEM_TRANSLATE = ("You are a precise technical translator. Translate the programming task below into clear "
                     "English. Keep every code block and every `backticked` identifier, literal and signature "
                     "exactly as written. Output only the translated task text, nothing else.")
-TF_VARIANTS = {"BN", "BN_MIX", "BANGLISH"}
+TF_VARIANTS = {"BN", "BN_MIX", "BANGLISH", "ES"}
 FENCE = re.compile(r"```(?:python|py)?\s*\n(.*?)```", re.S | re.I)
 BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 

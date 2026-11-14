@@ -35,6 +35,7 @@ def main():
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--shard", type=int, default=40)
     ap.add_argument("--timeout", type=float, default=10.0)
+    ap.add_argument("--exclude-tasks", default="", help="comma list of task ids to skip (pending a regeneration patch)")
     a = ap.parse_args()
     tasks = {t["task_id"]: t for t in load_tasks([p for p in TASK_DIR.glob("*.jsonl") if not p.name.startswith("_")])}
     gens = load_gens(Path(a.gens), set(filter(None, a.models.split(","))))
@@ -42,7 +43,8 @@ def main():
     done = set()
     if out.exists():
         done = {json.loads(l)["gen_id"] for l in out.read_text(encoding="utf-8").splitlines() if l.strip()}
-    todo = [g for g in gens.values() if g["gen_id"] not in done]
+    excl = set(filter(None, a.exclude_tasks.split(",")))
+    todo = [g for g in gens.values() if g["gen_id"] not in done and g["task_id"] not in excl]
     print(f"{len(gens)} generations, {len(done)} already executed, {len(todo)} to run", flush=True)
     jobs, skipped = [], []
     for g in todo:

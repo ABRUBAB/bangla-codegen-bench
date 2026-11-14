@@ -87,3 +87,14 @@ Hard rules (enforced by `scripts/verify_tasks.py`):
 python scripts/verify_tasks.py data/tasks/<your_file>.jsonl
 ```
 must print `N/N tasks OK` before you finish.
+
+## Fifth rendering: Spanish (`description.es`)
+
+A fifth, **high-resource, Latin-script** rendering `es` is added as a contrast language (does a language that tokenizers
+and LLMs handle well behave like English, and are Bangla effects specific to Bangla?). Rules:
+* Neutral technical Spanish (Latin-American/Peninsular-neutral), full sentences, starting "La función `name` ...";
+  glossary: lista, cadena (de texto), entero, número decimal, diccionario, tupla, conjunto, matriz, elemento, índice,
+  devuelve, orden ascendente/descendente, vacío, carácter, palabra, sin distinguir mayúsculas de minúsculas, redondeado a 2 decimales.
+* Same hard rules as the other renderings: every `` `identifier` ``/literal in backticks of `en` appears verbatim in `es`;
+  every numeric literal of `en` appears in `es`; **no Bangla script**; no additions/omissions/hints; no security cue in security tasks.
+* Keep accents/punctuation correct (¿ ¡ where natural). `es` must be a faithful rendering of the FINAL `en`.

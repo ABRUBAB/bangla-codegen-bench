@@ -59,15 +59,18 @@ def validate_task(t: dict) -> List[str]:
         errs.append("BN_MIX description has no Bangla script")
     if BANGLA_RE.search(d["banglish"]):
         errs.append("BANGLISH description contains Bangla script (must be Latin only)")
+    if d.get("es") is not None and d.get("es") != "":
+        if BANGLA_RE.search(d["es"]):
+            errs.append("ES description contains Bangla script")
     # identifier preservation: every `identifier` in EN must appear verbatim in every variant
     en_ids = set(BACKTICK_RE.findall(d["en"]))
-    for k in ("bn", "bn_mix", "banglish"):
+    for k in ("bn", "bn_mix", "banglish") + (("es",) if d.get("es") else ()):
         missing = [i for i in en_ids if i not in d[k]]
         if missing:
             errs.append(f"{k}: identifiers not preserved verbatim: {missing}")
     # numeric literal preservation
     en_nums = set(re.findall(r"(?<![\w.])\d+(?:\.\d+)?(?![\w.])", d["en"]))
-    for k in ("bn", "bn_mix", "banglish"):
+    for k in ("bn", "bn_mix", "banglish") + (("es",) if d.get("es") else ()):
         txt = d[k]
         # allow Bengali digits too
         bn_digits = str.maketrans("০১২৩৪৫৬৭৮৯", "0123456789")
