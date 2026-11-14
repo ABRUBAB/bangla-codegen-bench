@@ -113,7 +113,7 @@ box(x, by, bw, bh, "Oracle verification gate", ["• reference passes all tests"
 y2 = y1 + hb + 0.2
 band(2, y2, hb - 0.2, f"Generation: {nmod} models, 2 arms, 3 samples per prompt ({ngen} completions)")
 by2, bh2 = y2 + 0.52, 1.16
-box(0.3, by2, 3.0, bh2, "Models", ["Qwen2.5-Coder 1.5B / 3B / 7B", "DeepSeek-Coder 6.7B · Qwen3-8B", "TigerCoder (Bangla-specialised)", "Gemini 3.8 Flash (API)"], RED)
+box(0.3, by2, 3.0, bh2, "Models", ["Qwen2.5-Coder 1.5B / 3B / 7B", "DeepSeek-Coder 6.7B · Qwen3-8B", "TigerCoder (Bangla-specialised)", "Gemini 3.1 Flash-Lite (API)"], RED)
 arrow(3.3, by2 + bh2 / 2, 3.55, by2 + bh2 / 2)
 box(3.55, by2, 2.55, bh2, "DIRECT arm", ["prompt → code model", "all variants and controls"], RED)
 box(6.3, by2, 2.55, bh2, "TRANSLATE_FIRST arm", ["BN / BN_MIX / BANGLISH →", "same model translates to English", "→ code model"], CORAL)

@@ -2,7 +2,7 @@
 """Resumable code generation with the Gemini API (REST), same conditions/records as generate_hf.py.
 
 Key: env GEMINI_API_KEY, or a text file given by --key-file (e.g. a private Kaggle dataset).
-Usage: python generate_gemini.py --model gemini-3.8-flash --model-id gemini-3.8-flash \
+Usage: python generate_gemini.py --model gemini-3.1-flash-lite --model-id gemini-3.1-flash-lite \
           --prompts prompts.jsonl --out gens --workers 6
 """
 from __future__ import annotations

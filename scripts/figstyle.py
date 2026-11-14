@@ -14,9 +14,9 @@ VARIANT_LABEL = {"EN": "EN", "EN_TYPO": "EN-typo", "BN": "BN", "BN_SPELL": "BN-s
 MODEL_LABEL = {"qwen2.5-coder-1.5b": "Qwen2.5-Coder 1.5B", "qwen2.5-coder-3b": "Qwen2.5-Coder 3B",
                "qwen2.5-coder-7b": "Qwen2.5-Coder 7B", "deepseek-coder-6.7b": "DeepSeek-Coder 6.7B",
                "qwen3-8b": "Qwen3 8B", "tigercoder-1b": "TigerCoder 1B", "tigercoder-9b": "TigerCoder 9B",
-               "gemini-3.8-flash": "Gemini 3.8 Flash"}
+               "gemini-3.1-flash-lite": "Gemini 3.1 Flash-Lite"}
 MODEL_ORDER = ["qwen2.5-coder-1.5b", "tigercoder-1b", "qwen2.5-coder-3b", "deepseek-coder-6.7b", "qwen2.5-coder-7b",
-               "qwen3-8b", "tigercoder-9b", "gemini-3.8-flash"]
+               "qwen3-8b", "tigercoder-9b", "gemini-3.1-flash-lite"]
 
 
 def setup():

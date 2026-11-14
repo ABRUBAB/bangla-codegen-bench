@@ -45,7 +45,7 @@ BCB_BACKEND=docker python scripts/verify_tasks.py data/tasks/functional.jsonl da
 # 3. generation (GPU, e.g. Kaggle T4x2) and Gemini API generation
 python scripts/generate_hf.py --hf-id Qwen/Qwen2.5-Coder-7B-Instruct --model-id qwen2.5-coder-7b \
        --prompts data/prompts/prompts.jsonl --out data/generations
-python scripts/generate_gemini.py --model gemini-3.8-flash --model-id gemini-3.8-flash \
+python scripts/generate_gemini.py --model gemini-3.1-flash-lite --model-id gemini-3.1-flash-lite \
        --prompts data/prompts/prompts.jsonl --out data/generations      # needs GEMINI_API_KEY
 
 # 4. execute everything, static scan, statistics, XAI, figures
