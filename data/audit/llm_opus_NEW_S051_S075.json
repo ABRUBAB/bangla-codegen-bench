@@ -1,0 +1,902 @@
+[
+ {
+  "task_id": "S051",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S051",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S051",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'placeholder er baire shob text' should be 'bairer shob text' (small grammatical slip); meaning intact.",
+  "fix": ""
+ },
+ {
+  "task_id": "S051",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S052",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S052",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S052",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'placeholder er baire shob text' should be 'bairer'; meaning intact.",
+  "fix": ""
+ },
+ {
+  "task_id": "S052",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S053",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S053",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S053",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S053",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S054",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Double gloss 'খাড়া দাঁড়ি (ভার্টিক্যাল বার)' slightly heavy but accurate.",
+  "fix": ""
+ },
+ {
+  "task_id": "S054",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S054",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'value ta r upor' oddly split ('value tar upor') and 'baire shob' slip; meaning intact.",
+  "fix": ""
+ },
+ {
+  "task_id": "S054",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S055",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S055",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S055",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S055",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S056",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S056",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S056",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S056",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S057",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S057",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S057",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'bibhoron' is a nonstandard spelling of 'biboron'; meaning intact.",
+  "fix": ""
+ },
+ {
+  "task_id": "S057",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S058",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S058",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S058",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S058",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S059",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S059",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S059",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S059",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S060",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S060",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S060",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S060",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S061",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S061",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S061",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S061",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S062",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S062",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S062",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S062",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S063",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S063",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S063",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S063",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'registro de log' is slightly redundant but common developer usage; faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "S064",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'ধরে না রেখে কলারের কাছে পৌঁছে যেতে দেয়' is wordy for 'propagate' but faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "S064",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S064",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S064",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'registro de log' slightly redundant; faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "S065",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S065",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S065",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S065",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'registro de log' slightly redundant; faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "S066",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S066",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S066",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S066",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'registro de log' slightly redundant; faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "S067",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S067",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S067",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S067",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S068",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Typo 'এক্সসেপশন' (elsewhere 'এক্সেপশন'); meaning intact.",
+  "fix": ""
+ },
+ {
+  "task_id": "S068",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S068",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S068",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'archivo' used for both the ZIP file and the archive ('Si el archivo no tiene ningún miembro'); slightly ambiguous but clear in context.",
+  "fix": ""
+ },
+ {
+  "task_id": "S069",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S069",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S069",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S069",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S070",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Long sentence with the list object fronted ('...ডিকশনারি নিয়ে গঠিত একটি তালিকা ফাংশনটি ... ফেরত দেয়') reads heavy; faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "S070",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "Word order '...dictionary নিয়ে একটা list function-টা ... return করবে' is clunky; faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "S070",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S070",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S071",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S071",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S071",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S071",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S072",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S072",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S072",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S072",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 4,
+  "register_ok": "Y",
+  "issues": "'sin los espacios en blanco iniciales ni finales' placed far from 'el texto', slightly heavy; faithful.",
+  "fix": ""
+ },
+ {
+  "task_id": "S073",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S073",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S073",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S073",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S074",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S074",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S074",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S074",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S075",
+  "rendering": "bn",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S075",
+  "rendering": "bn_mix",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S075",
+  "rendering": "banglish",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ },
+ {
+  "task_id": "S075",
+  "rendering": "es",
+  "meaning": "Y",
+  "naturalness": 5,
+  "register_ok": "Y",
+  "issues": "",
+  "fix": ""
+ }
+]

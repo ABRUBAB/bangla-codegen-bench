@@ -1,0 +1,59 @@
+{
+ "applied": [
+  {
+   "task_id": "F109",
+   "rendering": "bn",
+   "old": "`evaluate_expression` ফাংশনটি স্ট্রিং `expr`-এর গাণিতিক রাশিমালার মান নির্ণয় করে পূর্ণসংখ্যা হিসেবে ফেরত দেয়। রাশিমালায় থাকে অঋণাত্মক পূর্ণসংখ্যা লিটারেল, বাইনারি অপারেটর `+`, `-`, `*`, `/` ও `^`, একক (unary) মাইনাস `-`, বন্ধনী `(` ও `)`, এবং স্পেস, যা উপেক্ষা করা হয়। `^` অপারেটরটি ঘাত-অপারেটর (exponentiation): এটি ডানদিক থেকে সংযুক্ত (right-associative) এবং বাকি সবকিছুর চেয়ে শক্তভাবে বাঁধে, তাই `2^3^2` সমান `512` এবং `-2^2` সমান `-4`; এর ঘাত সবসময় একটি পূর্ণসংখ্যা লিটারেল অথবা অঋণাত্মক মানের একটি বন্ধনীবদ্ধ রাশিমালা। অগ্রাধিকারের ক্রম, সবচেয়ে শক্ত থেকে সবচেয়ে ঢিলে, হলো: `^`, একক মাইনাস, `*` ও `/`, এবং সবশেষে `+` ও `-`; `^` ছাড়া একই স্তরের অপারেটরগুলো বাম থেকে ডানে প্রয়োগ করা হয়। একক মাইনাস রাশিমালার শুরুতে, `(`-এর পরে, অথবা বাইনারি অপারেটর `+`, `-`, `*`, `/`-এর কোনো একটির পরে আসতে পারে (যেমন `7/-2`)। `/` অপারেটরটি শূন্যের দিকে ছাঁটা (truncate toward zero) পূর্ণসংখ্যা ভাগ, তাই `-7/2` সমান `-3`। শূন্য দিয়ে ভাগ হলে ফাংশনটি `ZeroDivisionError` রেইজ করে। রাশিমালাটি সবসময় সঠিক গঠনের।",
+   "new": "`evaluate_expression` ফাংশনটি স্ট্রিং `expr`-এর গাণিতিক রাশিমালার মান নির্ণয় করে পূর্ণসংখ্যা হিসেবে ফেরত দেয়। রাশিমালায় থাকে অঋণাত্মক পূর্ণসংখ্যা লিটারেল, বাইনারি অপারেটর `+`, `-`, `*`, `/` ও `^`, একক (unary) মাইনাস `-`, বন্ধনী `(` ও `)`, এবং স্পেস, যা উপেক্ষা করা হয়। `^` অপারেটরটি ঘাত-অপারেটর (exponentiation): এটি ডানদিক থেকে সংযুক্ত (right-associative) এবং অন্য সব অপারেটরের চেয়ে বেশি অগ্রাধিকার পায়, তাই `2^3^2` সমান `512` এবং `-2^2` সমান `-4`; এর ঘাত সবসময় একটি পূর্ণসংখ্যা লিটারেল অথবা অঋণাত্মক মানের একটি বন্ধনীবদ্ধ রাশিমালা। অগ্রাধিকারের ক্রম, সর্বোচ্চ থেকে সর্বনিম্ন, হলো: `^`, একক মাইনাস, `*` ও `/`, এবং সবশেষে `+` ও `-`; `^` ছাড়া একই স্তরের অপারেটরগুলো বাম থেকে ডানে প্রয়োগ করা হয়। একক মাইনাস রাশিমালার শুরুতে, `(`-এর পরে, অথবা বাইনারি অপারেটর `+`, `-`, `*`, `/`-এর কোনো একটির পরে আসতে পারে (যেমন `7/-2`)। `/` অপারেটরটি শূন্যের দিকে ছাঁটা (truncate toward zero) পূর্ণসংখ্যা ভাগ, তাই `-7/2` সমান `-3`। শূন্য দিয়ে ভাগ হলে ফাংশনটি `ZeroDivisionError` রেইজ করে। রাশিমালাটি সবসময় সঠিক গঠনের।",
+   "meaning": "Y",
+   "naturalness": 3,
+   "issues": "Calques 'শক্তভাবে বাঁধে' and 'সবচেয়ে শক্ত থেকে সবচেয়ে ঢিলে' for binds tighter / tightest-to-loosest are unnatural in Bangla."
+  },
+  {
+   "task_id": "F112",
+   "rendering": "bn",
+   "old": "`simulate_lru` ফাংশনটি এমন একটি LRU (least recently used) ক্যাশ সিমুলেট করে, যা সর্বোচ্চ `capacity` সংখ্যক এন্ট্রি ধরে রাখে। `operations` হলো টাপলের একটি তালিকা, যেগুলো ক্রমানুসারে কার্যকর করা হয়: `(\"put\", key, value)` `key`-এর অধীনে `value` সংরক্ষণ করে, আর `(\"get\", key)` `key` খুঁজে দেখে। আগে থেকে সংরক্ষিত কোনো কী-এর জন্য `put` তার মান বদলে দেয় এবং এন্ট্রিটিকে সবচেয়ে সম্প্রতি ব্যবহৃত এন্ট্রি করে; নতুন কী-এর জন্য `put` এন্ট্রিটিকে সবচেয়ে সম্প্রতি ব্যবহৃত এন্ট্রি হিসেবে যোগ করে, এবং তারপর ক্যাশে `capacity`-এর চেয়ে বেশি এন্ট্রি থাকলে সবচেয়ে আগে ব্যবহৃত (least recently used) এন্ট্রিটি সরিয়ে দেয়। সংরক্ষিত কোনো কী-এর `get` এন্ট্রিটিকে সবচেয়ে সম্প্রতি ব্যবহৃত এন্ট্রি করে। ফাংশনটি একটি টাপল `(results, keys)` ফেরত দেয়: `results` হলো এমন একটি তালিকা, যাতে প্রতিটি `get` অপারেশনের জন্য ক্রমানুসারে একটি করে উপাদান থাকে, সংরক্ষিত মান অথবা কী সংরক্ষিত না থাকলে `None`; আর `keys` হলো শেষে ক্যাশে থেকে যাওয়া কী-গুলোর তালিকা, সবচেয়ে আগে ব্যবহৃত থেকে সবচেয়ে সম্প্রতি ব্যবহৃত পর্যন্ত। `capacity` `0` হলে কখনোই কিছু সংরক্ষিত হয় না।",
+   "new": "`simulate_lru` ফাংশনটি এমন একটি LRU (least recently used) ক্যাশ সিমুলেট করে, যা সর্বোচ্চ `capacity` সংখ্যক এন্ট্রি ধরে রাখে। `operations` হলো টাপলের একটি তালিকা, যেগুলো ক্রমানুসারে কার্যকর করা হয়: `(\"put\", key, value)` `key`-এর অধীনে `value` সংরক্ষণ করে, আর `(\"get\", key)` `key` খুঁজে দেখে। আগে থেকে সংরক্ষিত কোনো কী-এর জন্য `put` তার মান বদলে দেয় এবং এন্ট্রিটিকে সবচেয়ে সম্প্রতি ব্যবহৃত এন্ট্রি করে; নতুন কী-এর জন্য `put` এন্ট্রিটিকে সবচেয়ে সম্প্রতি ব্যবহৃত এন্ট্রি হিসেবে যোগ করে, এবং তারপর ক্যাশে `capacity`-এর চেয়ে বেশি এন্ট্রি থাকলে সবচেয়ে কম সম্প্রতি ব্যবহৃত (least recently used) এন্ট্রিটি সরিয়ে দেয়। সংরক্ষিত কোনো কী-এর `get` এন্ট্রিটিকে সবচেয়ে সম্প্রতি ব্যবহৃত এন্ট্রি করে। ফাংশনটি একটি টাপল `(results, keys)` ফেরত দেয়: `results` হলো এমন একটি তালিকা, যাতে প্রতিটি `get` অপারেশনের জন্য ক্রমানুসারে একটি করে উপাদান থাকে, সংরক্ষিত মান অথবা কী সংরক্ষিত না থাকলে `None`; আর `keys` হলো শেষে ক্যাশে থেকে যাওয়া কী-গুলোর তালিকা, সবচেয়ে কম সম্প্রতি ব্যবহৃত থেকে সবচেয়ে সম্প্রতি ব্যবহৃত পর্যন্ত। `capacity` `0` হলে কখনোই কিছু সংরক্ষিত হয় না।",
+   "meaning": "MINOR",
+   "naturalness": 4,
+   "issues": "'সবচেয়ে আগে ব্যবহৃত' literally means 'used earliest' (FIFO-like); in the final key-order clause there is no English gloss, so LRU vs first-used ordering is ambiguous."
+  },
+  {
+   "task_id": "F120",
+   "rendering": "bn",
+   "old": "`matrix_power_mod` ফাংশনটি বর্গ ম্যাট্রিক্স `matrix`-কে (n টি সারি, প্রতিটিতে n টি পূর্ণসংখ্যা) অঋণাত্মক পূর্ণসংখ্যা ঘাত `exp`-এ উন্নীত করে, ফলাফলের প্রতিটি এন্ট্রি ধনাত্মক পূর্ণসংখ্যা `mod` দিয়ে মডুলো করে, তালিকার তালিকা হিসেবে ফেরত দেয়। `matrix`-এর এন্ট্রি ঋণাত্মক বা `mod`-এর চেয়ে বড় হতে পারে। `exp` সমান `0` হলে ফলাফল একক ম্যাট্রিক্স (identity matrix), যার এন্ট্রিও `mod` দিয়ে মডুলো করা (তাই `mod` সমান `1` হলে সব এন্ট্রি `0`)। `exp`-এর মান `10**18` পর্যন্ত বড় হতে পারে, তাই ঘাতটি দক্ষভাবে হিসাব করতে হবে।",
+   "new": "`matrix_power_mod` ফাংশনটি বর্গ ম্যাট্রিক্স `matrix`-কে (n টি সারি, প্রতিটিতে n টি পূর্ণসংখ্যা) অঋণাত্মক পূর্ণসংখ্যা ঘাত `exp`-এ উন্নীত করে, ফলাফলের প্রতিটি এন্ট্রি ধনাত্মক পূর্ণসংখ্যা `mod` দিয়ে মডুলো করে, একটি নতুন তালিকার তালিকা হিসেবে ফেরত দেয়। `matrix`-এর এন্ট্রি ঋণাত্মক বা `mod`-এর চেয়ে বড় হতে পারে। `exp` সমান `0` হলে ফলাফল একক ম্যাট্রিক্স (identity matrix), যার এন্ট্রিও `mod` দিয়ে মডুলো করা (তাই `mod` সমান `1` হলে সব এন্ট্রি `0`)। `exp`-এর মান `10**18` পর্যন্ত বড় হতে পারে, তাই ঘাতটি দক্ষভাবে হিসাব করতে হবে।",
+   "meaning": "MINOR",
+   "naturalness": 4,
+   "issues": "Drops 'new' from 'as a new list of lists' (no behavioural impact in tests)."
+  },
+  {
+   "task_id": "F120",
+   "rendering": "bn_mix",
+   "old": "`matrix_power_mod` function-টা square matrix `matrix`-কে (n টা row, প্রতিটায় n টা integer) non-negative integer power `exp`-এ raise করবে, result-এর প্রতিটা entry positive integer `mod` দিয়ে modulo করে, list of list হিসেবে return করবে। `matrix`-এর entry negative বা `mod`-এর চেয়ে বড় হতে পারে। `exp` সমান `0` হলে result হলো identity matrix, যার entry-ও `mod` দিয়ে modulo করা (তাই `mod` সমান `1` হলে সব entry `0`)। `exp`-এর value `10**18` পর্যন্ত বড় হতে পারে, তাই power-টা efficiently compute করতে হবে।",
+   "new": "`matrix_power_mod` function-টা square matrix `matrix`-কে (n টা row, প্রতিটায় n টা integer) non-negative integer power `exp`-এ raise করবে, result-এর প্রতিটা entry positive integer `mod` দিয়ে modulo করে, একটা নতুন list of list হিসেবে return করবে। `matrix`-এর entry negative বা `mod`-এর চেয়ে বড় হতে পারে। `exp` সমান `0` হলে result হলো identity matrix, যার entry-ও `mod` দিয়ে modulo করা (তাই `mod` সমান `1` হলে সব entry `0`)। `exp`-এর value `10**18` পর্যন্ত বড় হতে পারে, তাই power-টা efficiently compute করতে হবে।",
+   "meaning": "MINOR",
+   "naturalness": 4,
+   "issues": "Drops 'new' from 'as a new list of lists' (no behavioural impact in tests)."
+  },
+  {
+   "task_id": "F120",
+   "rendering": "banglish",
+   "old": "`matrix_power_mod` function ta square matrix `matrix` ke (n ta row, protitay n ta integer) non-negative integer power `exp` e raise korbe, result er protita entry positive integer `mod` diye modulo kore, list of list hishebe return korbe. `matrix` er entry negative ba `mod` er cheye boro hote pare. `exp` soman `0` hole result holo identity matrix, jar entry-o `mod` diye modulo kora (tai `mod` soman `1` hole shob entry `0`). `exp` er value `10**18` porjonto boro hote pare, tai power ta efficiently compute korte hobe.",
+   "new": "`matrix_power_mod` function ta square matrix `matrix` ke (n ta row, protitay n ta integer) non-negative integer power `exp` e raise korbe, result er protita entry positive integer `mod` diye modulo kore, ekta notun list of list hishebe return korbe. `matrix` er entry negative ba `mod` er cheye boro hote pare. `exp` soman `0` hole result holo identity matrix, jar entry-o `mod` diye modulo kora (tai `mod` soman `1` hole shob entry `0`). `exp` er value `10**18` porjonto boro hote pare, tai power ta efficiently compute korte hobe.",
+   "meaning": "MINOR",
+   "naturalness": 4,
+   "issues": "Drops 'new' from 'as a new list of lists' (no behavioural impact in tests)."
+  },
+  {
+   "task_id": "F130",
+   "rendering": "bn",
+   "old": "`subsets_with_sum` ফাংশনটি পূর্ণসংখ্যার তালিকা `nums`-এর এমন সব ভিন্ন উপসেট ফেরত দেয়, যাদের উপাদানগুলোর যোগফল `k`। `nums`-এ পুনরাবৃত্ত মান, শূন্য এবং ঋণাত্মক সংখ্যা থাকতে পারে, আর `nums`-এর প্রতিটি উপাদান সর্বোচ্চ একবার ব্যবহার করা যায়। প্রতিটি উপসেট একটি তালিকা হিসেবে প্রকাশ করা হয়, যার উপাদানগুলো অ-অবরোহী ক্রমে (সমান মান পাশাপাশি থাকতে পারে) থাকে, আর যে ভিন্ন ভিন্ন উপাদান-নির্বাচন একই তালিকা দেয়, সেগুলো একটি উপসেট হিসেবে গণ্য হয়। উপসেটগুলো ঊর্ধ্বক্রমে অভিধানিক ক্রমে সাজানো একটি তালিকা হিসেবে ফেরত আসে (তালিকাগুলো উপাদান ধরে ধরে তুলনা করা হয়, এবং কোনো তালিকা তা দিয়ে শুরু হওয়া যেকোনো দীর্ঘতর তালিকার আগে আসে)। খালি উপসেটের যোগফল 0, তাই `k` 0 হলে তা অন্তর্ভুক্ত হয়।",
+   "new": "`subsets_with_sum` ফাংশনটি পূর্ণসংখ্যার তালিকা `nums`-এর এমন সব ভিন্ন উপসেট ফেরত দেয়, যাদের উপাদানগুলোর যোগফল `k`। `nums`-এ পুনরাবৃত্ত মান, শূন্য এবং ঋণাত্মক সংখ্যা থাকতে পারে, আর `nums`-এর প্রতিটি উপাদান সর্বোচ্চ একবার ব্যবহার করা যায়। প্রতিটি উপসেট একটি তালিকা হিসেবে প্রকাশ করা হয়, যার উপাদানগুলো অ-অবরোহী ক্রমে থাকে, আর যে ভিন্ন ভিন্ন উপাদান-নির্বাচন একই তালিকা দেয়, সেগুলো একটি উপসেট হিসেবে গণ্য হয়। উপসেটগুলো ঊর্ধ্বক্রমে আভিধানিক ক্রমে সাজানো একটি তালিকা হিসেবে ফেরত আসে (তালিকাগুলো উপাদান ধরে ধরে তুলনা করা হয়, এবং কোনো তালিকা তা দিয়ে শুরু হওয়া যেকোনো দীর্ঘতর তালিকার আগে আসে)। খালি উপসেটের যোগফল 0, তাই `k` 0 হলে তা অন্তর্ভুক্ত হয়।",
+   "meaning": "MINOR",
+   "naturalness": 4,
+   "issues": "Adds a parenthetical '(সমান মান পাশাপাশি থাকতে পারে)' not present in EN, and misspells 'আভিধানিক'."
+  }
+ ],
+ "skipped": []
+}
