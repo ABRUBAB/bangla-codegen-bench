@@ -211,6 +211,11 @@ def pooled_gee(ex):
     w = base[(base.kind == "security") & base["functional_pass"] & base["exploit_pass"].notna()].copy()
     w["y"] = (w["exploit_pass"] == False).astype(float)  # noqa: E712
     specs["vulnerable_given_working"] = w
+    # the hybrid prompts exist only for multi-sentence (harder) tasks: compare them with EN on exactly those tasks
+    hyb_tasks = set(base.loc[base.variant == "HYB33", "task_id"])
+    if hyb_tasks:
+        specs["pass_functional_hybtasks"] = base[(base.kind == "functional") & base.task_id.isin(hyb_tasks) &
+                                                  base.variant.isin(["EN", "EN_PAD", "BN", "BN_DESC", "HYB33", "HYB67"])]
     for name, g in specs.items():
         if g["model_id"].nunique() < 1 or len(g) < 50:
             continue

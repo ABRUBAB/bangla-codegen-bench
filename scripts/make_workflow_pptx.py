@@ -101,10 +101,10 @@ x = bx
 box(x, by, bw, bh, f"Task authoring ({nt})", [f"• {nf} functional (adapted + original)", f"• {ns} security tasks, {ncwe} CWE types", "• neutral specs, no security cue", "• pytest + behavioural exploit tests"], NAVY)
 arrow(x + bw, by + bh / 2, x + bw + gap, by + bh / 2)
 x += bw + gap
-box(x, by, bw, bh, "Four renderings", ["EN  ·  BN (formal)", "BN_MIX (code-mixed)  ·  BANGLISH", "গ্রাহকের তালিকা ফেরত দেয়", "• identifiers kept verbatim", "• LLM-drafted + auto-checked"], NAVY)
+box(x, by, bw, bh, "Five language versions", ["EN  ·  BN (formal)  ·  BN_MIX", "BANGLISH  ·  ES (Spanish control)","গ্রাহকের তালিকা ফেরত দেয়", "• identifiers kept verbatim", "• LLM-drafted, checked, AI-audited"], NAVY)
 arrow(x + bw, by + bh / 2, x + bw + gap, by + bh / 2)
 x += bw + gap
-box(x, by, bw, bh, "Perturbation engine", ["7 variants: EN, EN_TYPO, BN,", "BN_SPELL, BN_MIX, BN_TYPO, BANGLISH", "+ ID_ONLY control (signature only)", "+ 4 security-hint ablations"], NAVY)
+box(x, by, bw, bh, "Variants and controls", ["9 language/noise variants (EN…ES_TYPO)", "+ ID_ONLY (signature only)", "+ EN_PAD, BN_DESC, hybrid prompts", "+ 5 security-hint ablations"], NAVY)
 arrow(x + bw, by + bh / 2, x + bw + gap, by + bh / 2)
 x += bw + gap
 box(x, by, bw, bh, "Oracle verification gate", ["• reference passes all tests", "• insecure ref passes functional,", "   fails exploit test", f"• frozen: {npr:,} prompts"], TEAL, fill="F4FBF9")
@@ -116,7 +116,7 @@ by2, bh2 = y2 + 0.52, 1.16
 box(0.3, by2, 3.0, bh2, "Models", ["Qwen2.5-Coder 1.5B / 3B / 7B", "DeepSeek-Coder 6.7B · Qwen3-8B", "TigerCoder (Bangla-specialised)", "Gemini 3.1 Flash-Lite (API)"], RED)
 arrow(3.3, by2 + bh2 / 2, 3.55, by2 + bh2 / 2)
 box(3.55, by2, 2.55, bh2, "DIRECT arm", ["prompt → code model", "all variants and controls"], RED)
-box(6.3, by2, 2.55, bh2, "TRANSLATE_FIRST arm", ["BN / BN_MIX / BANGLISH →", "same model translates to English", "→ code model"], CORAL)
+box(6.3, by2, 2.55, bh2, "TRANSLATE_FIRST arm", ["BN / BN_MIX / BANGLISH / ES →", "own or Qwen3-8B translation", "(code blocks stripped) → code model"], CORAL)
 box(8.95 - 0.05, by2, 0.85, bh2, "T=0.2", ["top-p", "0.95", "3 samples"], SLATE, tsize=9.5, lsize=8.5, align=PP_ALIGN.CENTER)
 
 # ---------------------------------------------------------------- Band 3
@@ -129,14 +129,14 @@ box(x, by3, tw, bh3, "A  Correctness", ["• functional pytest suites", "• sam
 x += tw + tg
 box(x, by3, tw, bh3, "B  Security: dynamic + static", ["• exploit tests (behavioural oracle)", "• Bandit static scan (CWE-matched)", "• secure-correct vs vulnerable-correct", "• Static-Pass Dynamic-Fail (SPDF)"], TEAL)
 x += tw + tg
-box(x, by3, tw, bh3, f"C  Cost ({ntok} tokenizers)", ["• token ratio vs English", "• workflow tokens incl. translation", "• Gemini usage metadata + price"], CORAL)
+box(x, by3, tw, bh3, f"C  Cost ({ntok} tokenizers)", ["• token ratio vs English", "• workflow tokens incl. translation", "• token counts of every call"], CORAL)
 
 # ---------------------------------------------------------------- Band 4
 y4 = y3 + hb + 0.2
 band(4, y4, hb - 0.12, "Statistics, explainability and recommendations")
 by4, bh4 = y4 + 0.52, 1.24
 box(0.3, by4, 2.95, bh4, "Inference", ["• task-cluster bootstrap (95% CI)", "• paired Wilcoxon / McNemar + Holm", "• GEE logistic regression"], PURPLE)
-box(3.42, by4, 3.2, bh4, "Explainability (XAI)", ["• SHAP on a failure-risk model", "• gradient × input token attribution", "• layer-wise EN↔BN alignment"], PURPLE)
+box(3.42, by4, 3.2, bh4, "Explainability and causal tests", ["• length-matched EN, hybrid prompts", "• SHAP on a failure-risk model", "• gradient × input, layer alignment"], PURPLE)
 box(6.79, by4, 3.0, bh4, "Outputs", ["• accuracy–cost Pareto frontier", "• CWE-level security maps", "• deployment recommendations"], PURPLE)
 
 # inter-band arrows

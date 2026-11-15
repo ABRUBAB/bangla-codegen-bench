@@ -25,7 +25,8 @@ def main():
     dst = ROOT / "data/generations" / model
     dst.mkdir(parents=True, exist_ok=True)
     for f in files:
-        shutil.copy(f, dst)
+        # unique name per kernel: two kernels started in the same second would otherwise overwrite each other
+        shutil.copy(f, dst / (f.stem + "_" + slug.replace("bcb-gen-", "") + ".jsonl"))
         recs = [json.loads(x) for x in f.read_text(encoding="utf-8").split("\n") if x.strip()]
         st = collections.Counter(x["extraction_status"] for x in recs)
         print(f"{slug} -> {model}/{f.name}: {len(recs)} gens, conditions {dict(collections.Counter(x['condition'] for x in recs))}, "

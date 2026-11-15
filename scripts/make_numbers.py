@@ -46,6 +46,13 @@ def _ntok():
 NTOK = _ntok()
 
 
+def _ngens():
+    n = 0
+    for f in (ROOT / "data/generations").glob("*/gens_*.jsonl"):
+        n += sum(1 for ln in f.read_text(encoding="utf-8").split(chr(10)) if ln.strip())
+    return n
+
+
 def _counts():
     tasks = []
     for name in ("functional", "security"):
@@ -60,7 +67,7 @@ def _counts():
         lines.append(BS + "newcommand{" + BS + k + "}{" + str(v) + "}")
     (ROOT / "figures/workflow_numbers.json").write_text(json.dumps({
         "n_tasks": c["NTasks"], "n_func": c["NFunc"], "n_sec": c["NSec"], "n_cwe": c["NCwe"], "n_prompts": len(prompts),
-        "n_models": max(c["NModels"], 7), "n_tokenizers": NTOK, "n_generations": f"~{round(len(prompts) * 3 * max(c['NModels'], 7) * 1.4 / 1000)}k"}))
+        "n_models": max(c["NModels"], 7), "n_tokenizers": NTOK, "n_generations": f"~{round(_ngens() / 1000)}k"}))
 
 
 def d(key, val):
@@ -156,7 +163,7 @@ if ex is not None:
 # ---------------------------------------------------------------- pooled GEE and matched security contrasts
 t = rd("tab_pooled_gee.csv")
 if t is not None:
-    oc = {"pass_functional": "pf", "pass_security_tasks": "ps", "vulnerable_given_working": "vg"}
+    oc = {"pass_functional": "pf", "pass_security_tasks": "ps", "vulnerable_given_working": "vg", "pass_functional_hybtasks": "ph"}
     for _, r in t.iterrows():
         k = f"pg{oc[r.outcome]}-{VC.get(r.variant, r.variant)}"
         d(f"{k}-OR", f"{r.OR:.2f}"); d(f"{k}-lo", f"{r.OR_lo:.2f}"); d(f"{k}-hi", f"{r.OR_hi:.2f}"); d(f"{k}-p", pvalue(r.p_holm))
