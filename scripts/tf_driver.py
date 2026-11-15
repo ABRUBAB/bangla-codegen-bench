@@ -20,14 +20,13 @@ def own(m):
 
 
 # account -> (parallel GPU slots available to this driver, job list: (model, condition, tag, translations file))
+# (wave 2: the TigerCoder arms go to the free account-1 slots; the DeepSeek Q3 job already runs on account 3 and is only collected)
 PLAN = {
-    "abdullahrubab1": (2, [("qwen2.5-coder-7b", "TF_CLEAN_Q3", "-tfq2", Q3), ("qwen2.5-coder-7b", "TF_CLEAN", "-tfc2", own("qwen2.5-coder-7b")),
-                           ("qwen2.5-coder-3b", "TF_CLEAN_Q3", "-tfq2", Q3), ("qwen2.5-coder-3b", "TF_CLEAN", "-tfc2", own("qwen2.5-coder-3b")),
-                           ("qwen2.5-coder-1.5b", "TF_CLEAN_Q3", "-tfq2", Q3), ("qwen2.5-coder-1.5b", "TF_CLEAN", "-tfc2", own("qwen2.5-coder-1.5b"))]),
-    "absanim": (1, [("qwen3-8b", "TF_CLEAN", "-tfc2", Q3), ("deepseek-coder-6.7b", "TF_CLEAN", "-tfc2", own("deepseek-coder-6.7b"))]),
-    "mitulkabirbadhon": (1, [("deepseek-coder-6.7b", "TF_CLEAN_Q3", "-tfq2", Q3), ("tigercoder-1b", "TF_CLEAN_Q3", "-tfq2", Q3),
-                             ("tigercoder-1b", "TF_CLEAN", "-tfc2", own("tigercoder-1b"))]),
+    "abdullahrubab1": (2, [("tigercoder-1b", "TF_CLEAN_Q3", "-tfq2", Q3), ("tigercoder-1b", "TF_CLEAN", "-tfc2", own("tigercoder-1b"))]),
+    "absanim": (1, []),
+    "mitulkabirbadhon": (1, []),
 }
+ALREADY_RUNNING = {"mitulkabirbadhon": [("deepseek-coder-6.7b", "TF_CLEAN_Q3", "-tfq2", Q3)]}
 
 
 def slug(model, tag):
@@ -62,7 +61,7 @@ def push(acct, model, cond, tag, src):
 def main():
     pending = {a: list(j) for a, (_, j) in PLAN.items()}
     slots = {a: n for a, (n, _) in PLAN.items()}
-    running = {a: [] for a in PLAN}
+    running = {a: list(ALREADY_RUNNING.get(a, [])) for a in PLAN}
     while any(pending.values()) or any(running.values()):
         for a in PLAN:
             for job in list(running[a]):

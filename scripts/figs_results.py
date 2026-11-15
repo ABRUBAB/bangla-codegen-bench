@@ -190,26 +190,31 @@ def fig_static():
 
 
 def fig_pareto():
-    t = _read("tab_mitigation.csv")
-    if t is None or t.empty:
+    arms = [("tab_mitigation_clean.csv", "(a) own sanitised translation"), ("tab_mitigation_q3.csv", "(b) Qwen3-8B as translator")]
+    data = [(_read(f), ttl) for f, ttl in arms]
+    data = [(t, ttl) for t, ttl in data if t is not None and not t.empty]
+    if not data:
         return
-    fig, ax = plt.subplots(figsize=(3.6, 3.2))
-    mk = {"BN": "o", "BN_MIX": "s", "BANGLISH": "^"}
-    models = _ordered(t)
-    for j, m in enumerate(models):
-        for v, mm in mk.items():
-            r = t[(t.model_id == m) & (t.variant == v)]
-            if r.empty:
-                continue
-            ax.errorbar(r.token_ratio_median, 100 * r.delta, yerr=[100 * (r.delta - r.lo), 100 * (r.hi - r.delta)], fmt=mm, ms=4.5,
-                        color=PAL[j], lw=0.6, capsize=0)
-    ax.axhline(0, color="k", lw=0.7)
-    ax.axvline(1, color="grey", lw=0.5, ls="--")
-    ax.set_xlabel("workflow tokens: translate-first / direct (median)")
-    ax.set_ylabel(r"$\Delta$ Pass@1 (pp)")
+    fig, axs = plt.subplots(1, len(data), figsize=(3.4 * len(data), 3.2), sharey=True, squeeze=False)
+    mk = {"BN": "o", "BN_MIX": "s", "BANGLISH": "^", "ES": "D"}
+    models = _ordered(pd.concat([t for t, _ in data]))
+    for ax, (t, ttl) in zip(axs[0], data):
+        for j, m in enumerate(models):
+            for v, mm in mk.items():
+                r = t[(t.model_id == m) & (t.variant == v)]
+                if r.empty:
+                    continue
+                ax.errorbar(r.token_ratio_median, 100 * r.delta, yerr=[100 * (r.delta - r.lo), 100 * (r.hi - r.delta)], fmt=mm, ms=4.5,
+                            color=PAL[j], lw=0.6, capsize=0)
+        ax.axhline(0, color="k", lw=0.7)
+        ax.axvline(1, color="grey", lw=0.5, ls="--")
+        ax.set_xlabel("workflow tokens: translate-first / direct (median)")
+        ax.set_title(ttl, fontsize=8, loc="left")
+    axs[0][0].set_ylabel(r"$\Delta$ Pass@1 vs direct (pp)")
     h1 = [Line2D([0], [0], marker=mm, color="k", lw=0, ms=4, label=VARIANT_LABEL[v]) for v, mm in mk.items()]
     h2 = [Line2D([0], [0], marker="o", color=PAL[j], lw=0, ms=4, label=MODEL_LABEL[m]) for j, m in enumerate(models)]
-    ax.legend(handles=h1 + h2, fontsize=5.5, loc="best", ncol=2, handletextpad=0.1)
+    axs[0][-1].legend(handles=h1 + h2, fontsize=5.5, loc="upper right", ncol=2, handletextpad=0.1)
+    fig.subplots_adjust(wspace=0.08)
     save(fig, "fig_pareto", F)
 
 
