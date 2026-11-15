@@ -274,6 +274,9 @@ def main():
     contrasts(ex, "pass", ~func, n_boot=a.boot).to_csv(out / "tab_contrasts_security_tasks.csv", index=False)
     mit = mitigation(ex, a.boot); mit.to_csv(out / "tab_mitigation.csv", index=False)
     mitx = mitigation(ex, a.boot, "TRANSLATE_FIRST_X7B"); mitx.to_csv(out / "tab_mitigation_x7b.csv", index=False)
+    # sanitised arms: own translation with code blocks replaced by the signature (TF_CLEAN) and Qwen3-8B as fixed translator
+    mitc = mitigation(ex, a.boot, "TF_CLEAN"); mitc.to_csv(out / "tab_mitigation_clean.csv", index=False)
+    mitq = mitigation(ex, a.boot, "TF_CLEAN_Q3"); mitq.to_csv(out / "tab_mitigation_q3.csv", index=False)
     sec, secd = security(ex, a.boot); sec.to_csv(out / "tab_security.csv", index=False)
     sd = static_vs_dynamic(secd); sd.to_csv(out / "tab_static_vs_dynamic.csv", index=False)
     sp = security_paired(secd, a.boot); sp.to_csv(out / "tab_security_paired.csv", index=False)

@@ -9,6 +9,7 @@ python scripts/static_scan.py --gens data/generations --out data/results/bandit.
 python scripts/analyze.py --exec data/results/exec.jsonl --bandit data/results/bandit.jsonl --gens data/generations --out data/results --boot 2000
 python scripts/xai_analysis.py --merged data/results/exec_merged.csv --tokens data/results/token_counts.csv --out data/results
 python scripts/make_numbers.py
+python scripts/make_extra_tables.py
 python scripts/audit_tools.py llm-stats
 # failure anatomy: `failure_anatomy.py pairs` + LLM classification (data/analysis/failure_causes_opus.json) are run by hand
 [ -f data/analysis/failure_causes_opus.json ] && python scripts/failure_anatomy.py table
