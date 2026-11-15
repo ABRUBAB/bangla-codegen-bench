@@ -112,13 +112,14 @@ def contrasts(ex, value="pass", subset=None, base="EN", cond="DIRECT", variants=
     return pd.DataFrame(rows)
 
 
-def mitigation(ex, n_boot=2000):
-    """TRANSLATE_FIRST vs DIRECT for BN/BN_MIX/BANGLISH: dPass, token ratio (total workflow tokens)."""
+def mitigation(ex, n_boot=2000, cond="TRANSLATE_FIRST"):
+    """`cond` (own translation, or the fixed 7B translator TRANSLATE_FIRST_X7B) vs DIRECT for BN/BN_MIX/BANGLISH/ES:
+    dPass, token ratio (total workflow tokens)."""
     rows = []
     for m, gm in ex.groupby("model_id"):
-        for v in ["BN", "BN_MIX", "BANGLISH"]:
+        for v in ["BN", "BN_MIX", "BANGLISH", "ES"]:
             d = gm[(gm["variant"] == v) & (gm["condition"] == "DIRECT")]
-            t = gm[(gm["variant"] == v) & (gm["condition"] == "TRANSLATE_FIRST")]
+            t = gm[(gm["variant"] == v) & (gm["condition"] == cond)]
             if d.empty or t.empty:
                 continue
             pd_ = d.groupby("task_id")["pass"].mean(); pt_ = t.groupby("task_id")["pass"].mean()
@@ -272,6 +273,7 @@ def main():
     contrasts(ex, "pass", func, n_boot=a.boot).to_csv(out / "tab_contrasts_functional.csv", index=False)
     contrasts(ex, "pass", ~func, n_boot=a.boot).to_csv(out / "tab_contrasts_security_tasks.csv", index=False)
     mit = mitigation(ex, a.boot); mit.to_csv(out / "tab_mitigation.csv", index=False)
+    mitx = mitigation(ex, a.boot, "TRANSLATE_FIRST_X7B"); mitx.to_csv(out / "tab_mitigation_x7b.csv", index=False)
     sec, secd = security(ex, a.boot); sec.to_csv(out / "tab_security.csv", index=False)
     sd = static_vs_dynamic(secd); sd.to_csv(out / "tab_static_vs_dynamic.csv", index=False)
     sp = security_paired(secd, a.boot); sp.to_csv(out / "tab_security_paired.csv", index=False)

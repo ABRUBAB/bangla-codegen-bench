@@ -172,6 +172,15 @@ if t is not None:
         d(f"mit-p-{key}", pvalue(r["p_holm"])); d(f"mit-tok-{key}", f"{r.token_ratio_median:.2f}")
         if not np.isnan(r.gap_closed_frac):
             d(f"mit-gap-{key}", pct(r.gap_closed_frac, 0))
+# fixed external translator (Qwen2.5-Coder-7B translates, the target model codes)
+t = rd("tab_mitigation_x7b.csv")
+if t is not None:
+    for _, r in t.iterrows():
+        key = f"{MC[r.model_id]}-{VC[r.variant]}"
+        d(f"x7-d-{key}", sgn(r["delta"])); d(f"x7-lo-{key}", sgn(r["lo"])); d(f"x7-hi-{key}", sgn(r["hi"]))
+        d(f"x7-p-{key}", pvalue(r["p_holm"])); d(f"x7-tok-{key}", f"{r.token_ratio_median:.2f}")
+        if not np.isnan(r.gap_closed_frac):
+            d(f"x7-gap-{key}", pct(r.gap_closed_frac, 0))
 # ---------------------------------------------------------------- tokens
 t = rd("tab_token_ratio_median.csv")
 if t is not None:

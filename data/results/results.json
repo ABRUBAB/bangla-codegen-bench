@@ -1,7 +1,11 @@
 {
-  "n_exec": 11100,
+  "n_exec": 71637,
   "models": [
+    "deepseek-coder-6.7b",
     "qwen2.5-coder-1.5b",
-    "qwen2.5-coder-7b"
+    "qwen2.5-coder-3b",
+    "qwen2.5-coder-7b",
+    "qwen3-8b",
+    "tigercoder-1b"
   ]
 }

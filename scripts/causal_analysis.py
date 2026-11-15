@@ -48,6 +48,15 @@ def main():
             p = wilcoxon_paired(a, b)[1] if np.any(a != b) else 1.0
             rows.append({"model_id": m, "variant": v, "n_tasks": len(ok), "pass_pct": 100 * a.mean(), "en_pct": 100 * b.mean(),
                          "delta_pp": 100 * d, "lo": 100 * lo, "hi": 100 * hi, "p": p})
+        # all-Bangla description on exactly the tasks that have the hybrid variants (comparable end point of the dose-response)
+        if "HYB33" in piv and "HYB67" in piv:
+            sub = piv.dropna(subset=["EN", "HYB33", "HYB67", "BN_DESC"])
+            if len(sub) >= 10:
+                a, b = sub["BN_DESC"].to_numpy(), sub["EN"].to_numpy()
+                d, lo, hi = cluster_bootstrap_diff(a, b)
+                p = wilcoxon_paired(a, b)[1] if np.any(a != b) else 1.0
+                rows.append({"model_id": m, "variant": "BN_DESC_SUB", "n_tasks": len(sub), "pass_pct": 100 * a.mean(),
+                             "en_pct": 100 * b.mean(), "delta_pp": 100 * d, "lo": 100 * lo, "hi": 100 * hi, "p": p})
     tab = pd.DataFrame(rows)
     if tab.empty:
         print("no model has the causal-control variants yet")
@@ -78,10 +87,10 @@ def main():
     ax.legend(fontsize=6, loc="lower left")
     ax.text(-0.17, 1.04, "(a)", transform=ax.transAxes, fontweight="bold", fontsize=9)
     ax = axs[1]
-    xs = {"EN": 0, "HYB33": 1 / 3, "HYB67": 2 / 3, "BN_DESC": 1}
+    xs = {"EN": 0, "HYB33": 1 / 3, "HYB67": 2 / 3, "BN_DESC_SUB": 1}
     for i, m in enumerate(models):
         s = tab[tab.model_id == m].set_index("variant")
-        pts = [(xs[v], s.loc[v, "pass_pct"]) for v in ("HYB33", "HYB67", "BN_DESC") if v in s.index]
+        pts = [(xs[v], s.loc[v, "pass_pct"]) for v in ("HYB33", "HYB67", "BN_DESC_SUB") if v in s.index]
         if not pts or "HYB33" not in s.index:
             continue
         en = s.loc["HYB33", "en_pct"]
