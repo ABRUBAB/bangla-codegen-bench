@@ -26,3 +26,10 @@ data/tasks/_parts/
 # large white-box probe tensors
 data/xai/*.npz
 scripts/center_pc_report.json
+
+# derived or very large result files (GitHub rejects files above 100 MB): rebuilt by scripts/final_pipeline.sh;
+# the execution verdicts are tracked compressed as data/results/exec.jsonl.gz (gunzip -k before running scripts/analyze.py)
+data/results/exec.jsonl
+data/results/exec_merged.csv
+data/results/xai_features.csv
+data/results/xai_shap_values.npz

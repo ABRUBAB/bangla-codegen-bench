@@ -4,7 +4,9 @@
 set -euo pipefail
 export PYTHONUTF8=1
 cd "$(dirname "$0")/.."
+[ -f data/results/exec.jsonl ] || { [ -f data/results/exec.jsonl.gz ] && gunzip -k data/results/exec.jsonl.gz; }
 python scripts/run_execution.py --gens data/generations --out data/results/exec.jsonl --workers 10 --shard 60
+gzip -kf data/results/exec.jsonl
 python scripts/static_scan.py --gens data/generations --out data/results/bandit.jsonl
 python scripts/analyze.py --exec data/results/exec.jsonl --bandit data/results/bandit.jsonl --gens data/generations --out data/results --boot 2000
 python scripts/xai_analysis.py --merged data/results/exec_merged.csv --tokens data/results/token_counts.csv --out data/results

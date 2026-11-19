@@ -66,6 +66,11 @@ python scripts/generate_hf.py ... --only EXTERNAL --external-translations data/g
 BCB_BACKEND=wsl bash scripts/final_pipeline.sh
 ```
 
+**Large files.** The execution verdicts of all samples are stored compressed (`data/results/exec.jsonl.gz`); `scripts/final_pipeline.sh` unpacks them and
+re-executes only samples that are new or whose code changed. Identical code for the same task is executed once and its verdict is reused (rows carry
+`"reused": true`). Results are appended after every batch, so an interrupted run can be restarted. Heavy runs (sandbox execution, Bandit, statistics) were
+performed on a separate GPU/CPU workstation; the sandbox is the WSL2 distro described in `bcb/sandbox/setup_wsl.sh` (or the Docker image).
+
 **Safety.** Generated code is executed only inside the sandbox (`bcb/sandbox`): no network, unprivileged user,
 resource limits, fresh temp dir per sample. Never run model outputs on a machine you care about.
 

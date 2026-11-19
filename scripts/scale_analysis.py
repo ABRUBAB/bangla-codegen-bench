@@ -185,7 +185,7 @@ def main() -> None:
     from matplotlib.lines import Line2D
     fig.legend([Line2D([], [], marker="o", ls="", color=NPG["navy"]), Line2D([], [], marker="o", ls="", color=NPG["red"]),
                 Line2D([], [], marker="o", ls="", color=NPG["teal"]), Line2D([], [], marker="D", ls="", color=NPG["purple"])],
-               ["tier 1 (fp16, 3 samples)", "tier 2 (Q4, 1 sample)", "English reminder", "Bangla reminder"], loc="lower center",
+               ["tier 1 (fp16, Kaggle T4)", "tier 2 (Q4 GGUF, RTX 5090)", "English reminder", "Bangla reminder"], loc="lower center",
                ncol=4, fontsize=6.8, frameon=False, bbox_to_anchor=(0.5, -0.07))
     fig.tight_layout()
     save(fig, "fig_scale", ROOT / "figures")

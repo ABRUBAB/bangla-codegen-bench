@@ -57,3 +57,18 @@ implementations; about 9 h for one model). llama.cpp with continuous batching ra
    `python scripts/generate_local_server.py --base-url http://127.0.0.1:8089/v1 --model <id> --model-id <id> --prompts data/prompts/prompts.jsonl --out data/generations --n-samples 1 --workers <np> --no-translate --external-translations data/generations/qwen3-8b/translations_clean.jsonl --external-condition TF_CLEAN_Q3 --extra-prompts data/prompts/prompts_causal.jsonl --extra-json '{"chat_template_kwargs": {"enable_thinking": false}}'`
    (`enable_thinking` only for the models that have a thinking mode: Qwen3.8 and Gemma-4.) The client is resumable and gives every
    sample its own reproducible seed; re-running with `--n-samples 3 --only DIRECT` adds samples 2 and 3 of the main prompts.
+
+## Running the evaluation (sandbox execution, Bandit, statistics) on the lab PC
+Heavy jobs run on the lab PC, not on a laptop; the whole pipeline then takes about 15 minutes (the 13,000 distinct programs of the last top-up
+ran at about 10 per second with 10 workers).
+1. **Sandbox.** On the machine that has the configured WSL sandbox run `wsl --export Ubuntu-24.04 sandbox.tar`, copy the tar over and
+   `wsl --import bcb-sandbox <folder> sandbox.tar --version 2`. The distro keeps `/etc/wsl.conf` (no Windows drives, no interop) and
+   `/opt/bcb/runner.py`; it is separate from every other distro of the machine. Check it by re-executing a few hundred stored samples and
+   comparing the verdicts (all 300 were identical).
+2. **Python environment.** A venv with the versions the results were produced with (pandas 2.3.3, numpy 2.4.3, scipy 1.17.1, statsmodels 0.15.0,
+   scikit-learn 1.6.1, shap 0.52.0, matplotlib 3.10.8, bandit, regex, openpyxl).
+3. **Run.** Copy `bcb/`, `scripts/`, `data/` (without `data/xai/*.npz`), `paper/` and `figures/`; set `BCB_BACKEND=wsl BCB_WSL_DISTRO=bcb-sandbox`;
+   run the steps of `scripts/final_pipeline.sh` in order (without the LaTeX step). `run_execution.py` never stores a sandbox failure as a verdict and exits
+   with code 4 when some samples failed; run it again until it reports none (a transient failure of the first batches happened once).
+4. **Copy back** `data/results`, the generated `paper/*numbers.tex`, `paper/tab_*.tex` and `figures/fig_*`. The white-box probe numbers
+   (`paper/xai_numbers.tex`) and probe figures need the ignored hidden-state tensors, so keep the existing ones.
