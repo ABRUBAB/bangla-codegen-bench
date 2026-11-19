@@ -22,11 +22,11 @@ def own(m):
 # account -> (parallel GPU slots available to this driver, job list: (model, condition, tag, translations file))
 # (wave 2: the TigerCoder arms go to the free account-1 slots; the DeepSeek Q3 job already runs on account 3 and is only collected)
 PLAN = {
-    "abdullahrubab1": (2, [("tigercoder-1b", "TF_CLEAN_Q3", "-tfq2", Q3), ("tigercoder-1b", "TF_CLEAN", "-tfc2", own("tigercoder-1b"))]),
-    "absanim": (1, []),
+    "absanim": (1, [("deepseek-coder-6.7b", "TF_CLEAN", "-tfc3", "kaggle_work/ds_tfc_missing.jsonl")]),
+    "abdullahrubab1": (1, []),
     "mitulkabirbadhon": (1, []),
 }
-ALREADY_RUNNING = {"mitulkabirbadhon": [("deepseek-coder-6.7b", "TF_CLEAN_Q3", "-tfq2", Q3)]}
+ALREADY_RUNNING = {}
 
 
 def slug(model, tag):

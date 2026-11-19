@@ -115,6 +115,12 @@ def main():
                     help="translations.jsonl written by ANOTHER model: code is generated from these translations "
                          "(condition name --external-condition); run with --only EXTERNAL")
     ap.add_argument("--external-condition", default="TRANSLATE_FIRST_X")
+    ap.add_argument("--extra-prompts", default="",
+                    help="second prompt file generated DIRECT after everything else (e.g. the causal controls), "
+                         "so the main arms finish first when time is short")
+    ap.add_argument("--skip-modules", default="",
+                    help="comma list of module names NOT quantised (vision/audio towers, projector, lm_head)")
+    ap.add_argument("--single-gpu", action="store_true", help="place the whole model on GPU 0 (fail instead of offloading)")
     args = ap.parse_args()
 
     out_dir = Path(args.out) / args.model_id
@@ -138,12 +144,21 @@ def main():
     qkw = {}
     if args.quant != "none":
         from transformers import BitsAndBytesConfig
-        qkw["quantization_config"] = (BitsAndBytesConfig(load_in_8bit=True) if args.quant == "8bit" else
-                                      BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_compute_dtype=torch.float16,
-                                                         bnb_4bit_quant_type="nf4"))
-    model = AutoModelForCausalLM.from_pretrained(
-        args.hf_id, revision=args.revision, torch_dtype=getattr(torch, args.dtype),
-        device_map="auto", trust_remote_code=True, **qkw)
+        skip = [m for m in args.skip_modules.split(",") if m] or None
+        qkw["quantization_config"] = (BitsAndBytesConfig(load_in_8bit=True, llm_int8_skip_modules=skip) if args.quant == "8bit" else
+                                      BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_compute_dtype=getattr(torch, args.dtype),
+                                                         bnb_4bit_quant_type="nf4", llm_int8_skip_modules=skip))
+    import transformers
+    dkw = {"dtype": getattr(torch, args.dtype)} if int(transformers.__version__.split(".")[0]) >= 5 else {"torch_dtype": getattr(torch, args.dtype)}
+    load_kw = dict(revision=args.revision, device_map=({"": 0} if args.single_gpu else "auto"),
+                   trust_remote_code=True, **dkw, **qkw)
+    try:
+        model = AutoModelForCausalLM.from_pretrained(args.hf_id, **load_kw)
+    except ValueError:
+        # multimodal wrappers (Mistral3, Gemma4, Qwen3.5 ...) are not registered for AutoModelForCausalLM: load the
+        # full checkpoint through the image-text class and use it as a text-only model (no images are ever passed)
+        from transformers import AutoModelForImageTextToText
+        model = AutoModelForImageTextToText.from_pretrained(args.hf_id, **load_kw)
     model.eval()
     info = {"hf_id": args.hf_id, "revision": args.revision, "dtype": args.dtype, "quant": args.quant,
             "torch": torch.__version__, "gpus": [torch.cuda.get_device_name(i) for i in range(torch.cuda.device_count())],
@@ -260,6 +275,12 @@ def main():
                                   tr_in=tr["tr_in"], tr_out=tr["tr_out"], sig_reinjected=tr["sig_reinjected"]))
         print(f"[external] {len(items)} prompts with translations from {args.external_translations}", flush=True)
         run_pass(items, args.external_condition)
+
+    # ---- extra prompt file (causal controls), DIRECT ----
+    if args.extra_prompts and (not only or "DIRECT" in only):
+        extra = [json.loads(l) for l in Path(args.extra_prompts).read_text(encoding="utf-8").split(chr(10)) if l.strip()]
+        print(f"[extra] {len(extra)} prompts from {args.extra_prompts}", flush=True)
+        run_pass([dict(p, effective_prompt=p["text"], prompt_text=p["text"]) for p in extra], "DIRECT")
     fh.close()
     print("[done]", flush=True)
 

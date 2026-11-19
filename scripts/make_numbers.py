@@ -18,15 +18,17 @@ ROOT = Path(__file__).resolve().parent.parent
 R = Path(os.environ.get("BCB_RESULTS", ROOT / "data/results"))
 PAPER = Path(os.environ.get("BCB_PAPER_OUT", ROOT / "paper"))
 MC = {"qwen2.5-coder-1.5b": "qA", "qwen2.5-coder-3b": "qB", "qwen2.5-coder-7b": "qC", "deepseek-coder-6.7b": "dsA",
-      "qwen3-8b": "qwT", "tigercoder-1b": "tgA", "tigercoder-9b": "tgB", "gemini-3.1-flash-lite": "gem",
-      "qwen2.5-coder-7b-nf4": "qCn", "qwen2.5-coder-14b": "qD", "qwen2.5-coder-32b": "qE", "qwen3.8-27b": "qwN", "gemma-4-31b": "gmA",
-      "ministral-3-14b": "msA", "qwen3.6-35b-a3b": "qwM"}
+      "qwen3-8b": "qwT", "tigercoder-1b": "tgA", "tigercoder-9b": "tgB",
+      "qwen2.5-coder-7b-q4": "qCn", "qwen2.5-coder-14b": "qD", "qwen3.8-27b": "qwN", "gemma-4-31b": "gmA",
+      "ministral-3-14b": "msA", "gemma-4-e4b": "gmB"}
 VC = {"EN": "EN", "EN_TYPO": "ENTYPO", "BN": "BN", "BN_SPELL": "BNSPELL", "BN_MIX": "BNMIX", "BN_TYPO": "BNTYPO",
       "BANGLISH": "BL", "ES": "ES", "ES_TYPO": "ESTYPO", "ID_ONLY": "ID",
       "EN_PAD": "ENPAD", "BN_DESC": "BNDESC", "HYB33": "HYB33", "HYB67": "HYB67"}
 MODEL_TXT = {"qwen2.5-coder-1.5b": "Qwen2.5-Coder 1.5B", "qwen2.5-coder-3b": "Qwen2.5-Coder 3B", "qwen2.5-coder-7b": "Qwen2.5-Coder 7B",
              "deepseek-coder-6.7b": "DeepSeek-Coder 6.7B", "qwen3-8b": "Qwen3 8B", "tigercoder-1b": "TigerCoder 1B",
-             "tigercoder-9b": "TigerCoder 9B", "gemini-3.1-flash-lite": "Gemini 3.1 Flash-Lite"}
+             "tigercoder-9b": "TigerCoder 9B", "qwen2.5-coder-7b-q4": "Qwen2.5-Coder 7B (Q4)",
+             "qwen2.5-coder-14b": "Qwen2.5-Coder 14B (Q4)", "qwen3.8-27b": "Qwen3.8 27B (Q4)", "gemma-4-31b": "Gemma-4 31B (Q4)",
+             "ministral-3-14b": "Ministral-3 14B (Q4)", "gemma-4-e4b": "Gemma-4 E4B (Q4)"}
 ORDER = list(MC)
 # key suffix per generation condition (the sanitised translate-first arms must not collide with the as-run arm)
 CS = {"DIRECT": "", "TRANSLATE_FIRST": "-TF", "TF_CLEAN": "-TC", "TF_CLEAN_Q3": "-TQ", "TRANSLATE_FIRST_X7B": "-X7"}

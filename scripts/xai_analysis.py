@@ -25,10 +25,12 @@ warnings.filterwarnings("ignore")
 
 PARAMS_B = {"qwen2.5-coder-1.5b": 1.54, "qwen2.5-coder-3b": 3.09, "qwen2.5-coder-7b": 7.62,
             "deepseek-coder-6.7b": 6.74, "qwen3-8b": 8.19, "tigercoder-1b": 1.0, "tigercoder-9b": 12.2,
-            "gemini-3.1-flash-lite": np.nan}
+            "qwen3.8-27b": 27.8, "gemma-4-31b": 31.3, "ministral-3-14b": 13.9, "qwen2.5-coder-14b": 14.8,
+            "qwen2.5-coder-7b-q4": 7.62, "gemma-4-e4b": 8.0}
 FAMILY = {"qwen2.5-coder-1.5b": "qwen", "qwen2.5-coder-3b": "qwen", "qwen2.5-coder-7b": "qwen",
           "deepseek-coder-6.7b": "deepseek", "qwen3-8b": "qwen", "tigercoder-1b": "tiger",
-          "tigercoder-9b": "tiger", "gemini-3.1-flash-lite": "gemini"}
+          "tigercoder-9b": "tiger", "qwen3.8-27b": "qwen", "gemma-4-31b": "gemma", "ministral-3-14b": "mistral",
+          "qwen2.5-coder-14b": "qwen", "qwen2.5-coder-7b-q4": "qwen", "gemma-4-e4b": "gemma"}
 
 
 def features(ex: pd.DataFrame, tok: pd.DataFrame) -> pd.DataFrame:

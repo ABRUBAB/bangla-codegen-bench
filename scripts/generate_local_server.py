@@ -101,6 +101,13 @@ def main():
     ap.add_argument("--no-translate", action="store_true")
     ap.add_argument("--limit", type=int, default=0, help="only the first N prompts (smoke test)")
     ap.add_argument("--only", default="", help="DIRECT and/or TRANSLATE_FIRST")
+    ap.add_argument("--external-translations", default="",
+                    help="translations.jsonl written by ANOTHER model: code is generated from these translations "
+                         "(condition name --external-condition); the sanitised Qwen3-8B translations are used for TF_CLEAN_Q3")
+    ap.add_argument("--external-condition", default="TRANSLATE_FIRST_X")
+    ap.add_argument("--extra-prompts", default="",
+                    help="second prompt file generated DIRECT after everything else (e.g. the causal controls)")
+    ap.add_argument("--concurrency-note", default="", help="free text stored in run_info.json (e.g. server flags, quantisation)")
     args = ap.parse_args()
 
     g = Server(args.base_url, args.model, args.api_key, json.loads(args.extra_json))
@@ -122,7 +129,7 @@ def main():
     (out_dir / "run_info.json").write_text(json.dumps({
         "model": args.model, "server": args.base_url, "temperature": args.temperature, "top_p": args.top_p,
         "max_tokens": args.max_tokens, "n_samples": args.n_samples, "seed": args.seed, "extra": json.loads(args.extra_json),
-        "started": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}))
+        "note": args.concurrency_note, "started": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}))
 
     def emit(rec):
         with lock:
@@ -130,11 +137,13 @@ def main():
 
     def gen_one(p, condition, s, tr=None):
         eff = tr["translation"] if tr else p["text"]
-        r = g.call(SYSTEM_CODE, eff, args.temperature, args.top_p, args.max_tokens, seed=args.seed + s)
+        g_id = gid(args.model_id, p["task_id"], p["variant"], condition, s)
+        sd = args.seed + int(g_id[:5], 16) % 1000003  # a different but reproducible seed for every sample
+        r = g.call(SYSTEM_CODE, eff, args.temperature, args.top_p, args.max_tokens, seed=sd)
         code, status = extract_code(r["text"])
-        emit({"gen_id": gid(args.model_id, p["task_id"], p["variant"], condition, s), "model_id": args.model_id,
+        emit({"gen_id": g_id, "model_id": args.model_id,
               "task_id": p["task_id"], "variant": p["variant"], "condition": condition, "sample_idx": s,
-              "seed": args.seed + s, "prompt_text": p["text"], "effective_prompt": eff,
+              "seed": sd, "prompt_text": p["text"], "effective_prompt": eff,
               "translation_tokens_in": tr["tr_in"] if tr else 0, "translation_tokens_out": tr["tr_out"] if tr else 0,
               "signature_reinjected": tr["sig_reinjected"] if tr else False,
               "prompt_tokens": r["prompt_tokens"], "output_tokens": r["output_tokens"],
@@ -185,6 +194,19 @@ def main():
                     tfh.write(json.dumps(rec, ensure_ascii=False) + "\n"); tfh.flush()
         items = [(p, trans[(p["task_id"], p["variant"])]) for p in src if (p["task_id"], p["variant"]) in trans]
         run(items, "TRANSLATE_FIRST", "TRANSLATE_FIRST")
+
+    if args.external_translations and (not only or "EXTERNAL" in only):
+        ext = {}
+        for l in Path(args.external_translations).read_text(encoding="utf-8").split("\n"):
+            if l.strip():
+                r = json.loads(l); ext[(r["task_id"], r["variant"])] = r
+        items = [(p, ext[(p["task_id"], p["variant"])]) for p in prompts
+                 if p["variant"] in TF_VARIANTS and (p["task_id"], p["variant"]) in ext]
+        run(items, args.external_condition, args.external_condition)
+
+    if args.extra_prompts and (not only or "DIRECT" in only):
+        extra = [json.loads(l) for l in Path(args.extra_prompts).read_text(encoding="utf-8").split("\n") if l.strip()]
+        run([(p, None) for p in extra], "DIRECT", "DIRECT-extra")
     fh.close()
     print("[done]", flush=True)
 

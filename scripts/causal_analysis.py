@@ -20,7 +20,8 @@ from bcb.stats import cluster_bootstrap_diff, wilcoxon_paired  # noqa: E402
 from figstyle import MODEL_LABEL, MODEL_ORDER, NPG, save, setup  # noqa: E402
 
 KEY = {"qwen2.5-coder-1.5b": "A", "qwen2.5-coder-3b": "B", "qwen2.5-coder-7b": "C", "deepseek-coder-6.7b": "D",
-       "qwen3-8b": "E", "tigercoder-1b": "F", "gemini-3.1-flash-lite": "G", "qwen2.5-coder-14b": "H", "qwen2.5-coder-32b": "I"}
+       "qwen3-8b": "E", "tigercoder-1b": "F", "qwen3.8-27b": "G", "qwen2.5-coder-14b": "H", "gemma-4-31b": "I",
+       "ministral-3-14b": "J", "qwen2.5-coder-7b-q4": "K", "gemma-4-e4b": "L"}
 VARS = ["EN", "EN_PAD", "HYB33", "HYB67", "BN_DESC", "BN"]
 
 

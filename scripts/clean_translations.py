@@ -32,7 +32,8 @@ UNTERM = re.compile(r"```(?:python|py)?[ \t]*\n(.*)$", re.S | re.I)
 BENGALI = re.compile("[" + chr(0x0980) + "-" + chr(0x09FF) + "]")
 LETTERS = re.compile("[A-Za-z" + chr(0x0980) + "-" + chr(0x09FF) + "]")
 KEY = {"qwen2.5-coder-1.5b": "A", "qwen2.5-coder-3b": "B", "qwen2.5-coder-7b": "C", "deepseek-coder-6.7b": "D",
-       "qwen3-8b": "E", "tigercoder-1b": "F", "gemini-3.1-flash-lite": "G", "qwen2.5-coder-14b": "H", "qwen2.5-coder-32b": "I"}
+       "qwen3-8b": "E", "tigercoder-1b": "F", "qwen3.8-27b": "G", "qwen2.5-coder-14b": "H", "gemma-4-31b": "I",
+       "ministral-3-14b": "J", "qwen2.5-coder-7b-q4": "K", "gemma-4-e4b": "L"}
 STOP = set("the a an of to in is are be for and or with that this it as by on at from if its not no only each than then "
            "they their into which will have has".split())
 

@@ -23,7 +23,7 @@ def g(k, d):
 NAVY, RED, TEAL, CYAN, CORAL, SLATE, PURPLE = "3C5488", "E64B35", "00A087", "4DBBD5", "F39B7F", "8491B4", "7E6BA8"
 BAND = {1: ("EAF0F8", NAVY), 2: ("FDF0EC", RED), 3: ("E8F6F3", TEAL), 4: ("F1EEF8", PURPLE)}
 
-W, H = 10.0, 8.35
+W, H = 10.0, 8.5
 prs = Presentation()
 prs.slide_width, prs.slide_height = Inches(W), Inches(H)
 slide = prs.slides.add_slide(prs.slide_layouts[6])
@@ -111,16 +111,17 @@ box(x, by, bw, bh, "Oracle verification gate", ["• reference passes all tests"
 
 # ---------------------------------------------------------------- Band 2
 y2 = y1 + hb + 0.2
-band(2, y2, hb - 0.2, f"Generation: {nmod} models, 2 arms, 3 samples per prompt ({ngen} completions)")
-by2, bh2 = y2 + 0.52, 1.16
-box(0.3, by2, 3.0, bh2, "Models", ["Qwen2.5-Coder 1.5B / 3B / 7B", "DeepSeek-Coder 6.7B · Qwen3-8B", "TigerCoder (Bangla-specialised)", "Gemini 3.1 Flash-Lite (API)"], RED)
-arrow(3.3, by2 + bh2 / 2, 3.55, by2 + bh2 / 2)
-box(3.55, by2, 2.55, bh2, "DIRECT arm", ["prompt → code model", "all variants and controls"], RED)
-box(6.3, by2, 2.55, bh2, "TRANSLATE_FIRST arm", ["BN / BN_MIX / BANGLISH / ES →", "own or Qwen3-8B translation", "(code blocks stripped) → code model"], CORAL)
-box(8.95 - 0.05, by2, 0.85, bh2, "T=0.2", ["top-p", "0.95", "3 samples"], SLATE, tsize=9.5, lsize=8.5, align=PP_ALIGN.CENTER)
+hb2 = hb - 0.05
+band(2, y2, hb2, f"Generation: {nmod} open models in two tiers, 2 arms ({ngen} completions)")
+by2, bh2 = y2 + 0.5, 1.33
+box(0.3, by2, 3.85, bh2, "Models", ["Tier 1 · Kaggle 2×T4 · fp16 · 3 samples", "Qwen2.5-Coder 1.5B / 3B / 7B · DeepSeek-Coder 6.7B", "Qwen3-8B · TigerCoder 1B (Bangla-specialised)", "Tier 2 · RTX 5090 · Q4 GGUF · 1 sample", "Qwen3.8 27B · Gemma-4 31B / E4B · Ministral-3 14B", "Qwen2.5-Coder 14B · 7B (Q4 control)"], RED, tsize=10, lsize=8.3)
+arrow(4.15, by2 + bh2 / 2, 4.35, by2 + bh2 / 2)
+box(4.35, by2, 1.95, bh2, "DIRECT arm", ["prompt → code model", "all variants and controls", "768 tokens, non-thinking"], RED, lsize=8.5)
+box(6.4, by2, 2.4, bh2, "TRANSLATE_FIRST arm", ["BN / BN_MIX / BANGLISH / ES →", "own or Qwen3-8B translation", "(code blocks stripped) → code model", "tier 2: Qwen3-8B translation only"], CORAL, lsize=8.5)
+box(8.9, by2, 0.9, bh2, "T=0.2", ["top-p", "0.95", "3 / 1", "samples"], SLATE, tsize=9.5, lsize=8.5, align=PP_ALIGN.CENTER)
 
 # ---------------------------------------------------------------- Band 3
-y3 = y2 + hb - 0.2 + 0.2
+y3 = y2 + hb2 + 0.2
 band(3, y3, hb, "Evaluation harness (isolated Linux sandbox: no network, rlimits, 10 s timeout)")
 by3, bh3 = y3 + 0.52, 1.36
 tw = 2.95; tg = 0.17
@@ -135,12 +136,12 @@ box(x, by3, tw, bh3, f"C  Cost ({ntok} tokenizers)", ["• token ratio vs Englis
 y4 = y3 + hb + 0.2
 band(4, y4, hb - 0.12, "Statistics, explainability and recommendations")
 by4, bh4 = y4 + 0.52, 1.24
-box(0.3, by4, 2.95, bh4, "Inference", ["• task-cluster bootstrap (95% CI)", "• paired Wilcoxon / McNemar + Holm", "• GEE logistic regression"], PURPLE)
-box(3.42, by4, 3.2, bh4, "Explainability and causal tests", ["• length-matched EN, hybrid prompts", "• SHAP on a failure-risk model", "• gradient × input, layer alignment"], PURPLE)
+box(0.3, by4, 2.95, bh4, "Inference", ["• task-cluster bootstrap (95% CI)", "• paired Wilcoxon / McNemar + Holm", "• GEE logistic regression, size × language"], PURPLE)
+box(3.42, by4, 3.2, bh4, "Explainability and causal tests", ["• length-matched EN, BN-description, hybrids", "• SHAP on a failure-risk model", "• gradient × input, layer alignment"], PURPLE)
 box(6.79, by4, 3.0, bh4, "Outputs", ["• accuracy–cost Pareto frontier", "• CWE-level security maps", "• deployment recommendations"], PURPLE)
 
 # inter-band arrows
-for yy_from, yy_to in [(y1 + hb, y2), (y2 + hb - 0.2, y3), (y3 + hb, y4)]:
+for yy_from, yy_to in [(y1 + hb, y2), (y2 + hb2, y3), (y3 + hb, y4)]:
     arrow(W / 2, yy_from - 0.02, W / 2, yy_to + 0.1, "555555", 2.25)
 
 out = ROOT / "figures"

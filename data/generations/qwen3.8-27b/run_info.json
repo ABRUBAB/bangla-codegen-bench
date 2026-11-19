@@ -1,0 +1,1 @@
+{"model": "qwen3.8-27b", "server": "http://127.0.0.1:8089/v1", "temperature": 0.2, "top_p": 0.95, "max_tokens": 768, "n_samples": 1, "seed": 42, "extra": {"chat_template_kwargs": {"enable_thinking": false}}, "note": "llama.cpp b12444 llama-server, GGUF Qwen3.8-27B-UD-Q4_K_M.gguf from unsloth/Qwen3.8-27B-GGUF, 8 parallel slots, ctx 3072/slot", "started": "2026-11-16T20:49:49Z"}

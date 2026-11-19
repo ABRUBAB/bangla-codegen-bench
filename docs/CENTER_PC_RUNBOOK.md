@@ -43,3 +43,17 @@ Then on the main machine: `bash scripts/final_pipeline.sh` executes the code in 
 ## Notes for the paper
 Each model needs its exact name and quantization (shown by `ollama show <name>`); record them in `data/models.json`. Quantized local
 models are reported as such.
+
+## Route used for the tier-2 models of the paper (llama.cpp, 4-bit GGUF, one RTX 5090)
+Hugging Face Transformers with bitsandbytes was too slow for 27-31B models (hybrid-attention kernels fell back to reference
+implementations; about 9 h for one model). llama.cpp with continuous batching ran the same prompt set in 0.2-1.2 h per model.
+1. Download a `llama-bXXXX-bin-win-cuda-*-x64.zip` build (b12444 was used) and the matching `cudart-*.zip` from the ggml-org/llama.cpp
+   releases; unpack into one folder.
+2. Download the Q4_K_M GGUF of each model (repositories and file names are in `data/models.json`, key `gguf`).
+3. Start the server (GPU memory was kept below about 24 GB so that other jobs on the shared GPU are not starved; the number of parallel
+   slots `-np` is the lever: 8 for Qwen3.8 27B, 4 for Gemma-4 31B, 12-16 for the smaller models, each slot with a 3,072-token context):
+   `llama-server -m <model>.gguf -ngl 999 -c <3072*np> -np <np> --host 127.0.0.1 --port 8089 --jinja`
+4. Run the client with one sample per prompt, the sanitised Qwen3-8B translations and the causal controls:
+   `python scripts/generate_local_server.py --base-url http://127.0.0.1:8089/v1 --model <id> --model-id <id> --prompts data/prompts/prompts.jsonl --out data/generations --n-samples 1 --workers <np> --no-translate --external-translations data/generations/qwen3-8b/translations_clean.jsonl --external-condition TF_CLEAN_Q3 --extra-prompts data/prompts/prompts_causal.jsonl --extra-json '{"chat_template_kwargs": {"enable_thinking": false}}'`
+   (`enable_thinking` only for the models that have a thinking mode: Qwen3.8 and Gemma-4.) The client is resumable and gives every
+   sample its own reproducible seed; re-running with `--n-samples 3 --only DIRECT` adds samples 2 and 3 of the main prompts.

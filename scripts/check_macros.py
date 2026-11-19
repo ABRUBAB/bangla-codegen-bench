@@ -19,6 +19,7 @@ def keys(path, prefix):
 
 def main():
     nkeys = keys("numbers.tex", "n@")
+    sgk = keys("scale_numbers.tex", "sg@")
     xn, tv, cz = keys("xai_numbers.tex", "xn@"), keys("translation_numbers.tex", "tv@"), keys("causal_numbers.tex", "cz@")
     defined_cmds = set()
     for f in P.glob("*numbers.tex"):
@@ -31,6 +32,9 @@ def main():
         for k in re.findall(re.escape(BS) + r"N\{([^}]+)\}", t):
             if k not in nkeys:
                 bad.append((f.name, "\\N{" + k + "}"))
+        for k in re.findall(re.escape(BS) + r"SG\{([^}]+)\}", t):
+            if k not in sgk:
+                bad.append((f.name, BS + "SG{" + k + "}"))
         for name, ks in (("XN", xn), ("TV", tv), ("CZ", cz)):
             for m in re.finditer(re.escape(BS) + name + r"\{([^}]*)\}\{([^}]*)\}\{([^}]*)\}", t):
                 k = "@".join(m.groups())

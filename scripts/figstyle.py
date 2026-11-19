@@ -14,13 +14,12 @@ VARIANT_LABEL = {"EN": "EN", "EN_TYPO": "EN-typo", "BN": "BN", "BN_SPELL": "BN-s
 MODEL_LABEL = {"qwen2.5-coder-1.5b": "Qwen2.5-Coder 1.5B", "qwen2.5-coder-3b": "Qwen2.5-Coder 3B",
                "qwen2.5-coder-7b": "Qwen2.5-Coder 7B", "deepseek-coder-6.7b": "DeepSeek-Coder 6.7B",
                "qwen3-8b": "Qwen3 8B", "tigercoder-1b": "TigerCoder 1B", "tigercoder-9b": "TigerCoder 9B",
-               "gemini-3.1-flash-lite": "Gemini 3.1 Flash-Lite", "qwen2.5-coder-7b-nf4": "Qwen2.5-Coder 7B (4-bit)",
-               "qwen2.5-coder-14b": "Qwen2.5-Coder 14B (4-bit)", "qwen2.5-coder-32b": "Qwen2.5-Coder 32B (4-bit)",
-               "qwen3.8-27b": "Qwen3.8 27B (4-bit)", "gemma-4-31b": "Gemma-4 31B (4-bit)",
-               "ministral-3-14b": "Ministral-3 14B", "qwen3.6-35b-a3b": "Qwen3.6 35B-A3B (4-bit)"}
+               "qwen2.5-coder-7b-q4": "Qwen2.5-Coder 7B (Q4)",
+               "qwen2.5-coder-14b": "Qwen2.5-Coder 14B (Q4)", "qwen3.8-27b": "Qwen3.8 27B (Q4)", "gemma-4-31b": "Gemma-4 31B (Q4)",
+               "ministral-3-14b": "Ministral-3 14B (Q4)", "gemma-4-e4b": "Gemma-4 E4B (Q4)"}
 MODEL_ORDER = ["qwen2.5-coder-1.5b", "tigercoder-1b", "qwen2.5-coder-3b", "deepseek-coder-6.7b", "qwen2.5-coder-7b",
-               "qwen2.5-coder-7b-nf4", "qwen3-8b", "tigercoder-9b", "qwen2.5-coder-14b", "ministral-3-14b", "qwen3.8-27b",
-               "qwen2.5-coder-32b", "gemma-4-31b", "qwen3.6-35b-a3b", "gemini-3.1-flash-lite"]
+               "qwen2.5-coder-7b-q4", "qwen3-8b", "tigercoder-9b", "gemma-4-e4b", "qwen2.5-coder-14b", "ministral-3-14b",
+               "qwen3.8-27b", "gemma-4-31b"]
 
 
 def setup():

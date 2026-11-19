@@ -68,21 +68,49 @@
   "base": [
    "Qwen/Qwen2.5-Coder-14B"
   ],
-  "quant": "nf4",
-  "hardware": "RTX 5090 32GB (lab PC)"
+  "quant": "Q4_K_M (GGUF, llama.cpp b12444)",
+  "hardware": "RTX 5090 32GB (lab PC)",
+  "samples_per_prompt": 1,
+  "gguf": "Qwen/Qwen2.5-Coder-14B-Instruct-GGUF qwen2.5-coder-14b-instruct-q4_k_m.gguf",
+  "gguf_revision": "d0a692ef765eefbf2fabb130b3cb2e8917e3d225"
  },
- "qwen2.5-coder-32b": {
-  "hf_id": "Qwen/Qwen2.5-Coder-32B-Instruct",
-  "revision": "381fc969f78efac66bc87ff7ddeadb7e73c218a7",
-  "params": 32763876352,
+ "qwen3.8-27b": {
+  "hf_id": "Qwen/Qwen3.8-27B",
+  "revision": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
+  "params": 27781427952,
   "license": "apache-2.0",
-  "base": [
-   "Qwen/Qwen2.5-Coder-32B"
-  ],
-  "quant": "nf4",
-  "hardware": "RTX 5090 32GB (lab PC)"
+  "base": null,
+  "quant": "Q4_K_M (GGUF, llama.cpp b12444)",
+  "hardware": "RTX 5090 32GB (lab PC)",
+  "samples_per_prompt": 1,
+  "gguf": "unsloth/Qwen3.8-27B-GGUF Qwen3.8-27B-UD-Q4_K_M.gguf",
+  "gguf_revision": "4af51b3542f775b0a8e4b310bfb3f17e01c306c9"
  },
- "qwen2.5-coder-7b-nf4": {
+ "gemma-4-31b": {
+  "hf_id": "google/gemma-4-31B-it",
+  "revision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+  "params": 31273088876,
+  "license": "apache-2.0",
+  "base": null,
+  "quant": "Q4_K_M (GGUF, llama.cpp b12444)",
+  "hardware": "RTX 5090 32GB (lab PC)",
+  "samples_per_prompt": 1,
+  "gguf": "unsloth/gemma-4-31B-it-GGUF gemma-4-31B-it-Q4_K_M.gguf",
+  "gguf_revision": "c1ac76e99d5513b141e8adde7288b85c3f9c32ec"
+ },
+ "ministral-3-14b": {
+  "hf_id": "mistralai/Ministral-3-14B-Instruct-2512",
+  "revision": "29439f81c2be264d8d393273f99e7db9c0961120",
+  "params": 13945031680,
+  "license": "apache-2.0",
+  "base": null,
+  "quant": "Q4_K_M (GGUF, llama.cpp b12444)",
+  "hardware": "RTX 5090 32GB (lab PC)",
+  "samples_per_prompt": 1,
+  "gguf": "unsloth/Ministral-3-14B-Instruct-2512-GGUF Ministral-3-14B-Instruct-2512-Q4_K_M.gguf",
+  "gguf_revision": "9b948841b705cc11285ff274b84ba6c885908b19"
+ },
+ "qwen2.5-coder-7b-q4": {
   "hf_id": "Qwen/Qwen2.5-Coder-7B-Instruct",
   "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
   "params": 7615616512,
@@ -90,8 +118,22 @@
   "base": [
    "Qwen/Qwen2.5-Coder-7B"
   ],
-  "quant": "nf4",
+  "quant": "Q4_K_M (GGUF, llama.cpp b12444)",
   "hardware": "RTX 5090 32GB (lab PC)",
-  "note": "4-bit control for the fp16 7B run"
+  "samples_per_prompt": 1,
+  "note": "4-bit control for the fp16 7B run",
+  "gguf": "Qwen/Qwen2.5-Coder-7B-Instruct-GGUF qwen2.5-coder-7b-instruct-q4_k_m.gguf",
+  "gguf_revision": "13fb94bfda8c8cf22497dc57b78f391a9acb426a"
+ },
+ "gemma-4-e4b": {
+  "hf_id": "google/gemma-4-E4B-it",
+  "params": 7996156490,
+  "license": "apache-2.0",
+  "base": null,
+  "quant": "Q4_K_M (GGUF, llama.cpp b12444)",
+  "hardware": "RTX 5090 32GB (lab PC)",
+  "samples_per_prompt": 1,
+  "gguf": "unsloth/gemma-4-E4B-it-GGUF gemma-4-E4B-it-Q4_K_M.gguf",
+  "gguf_revision": "bfc15c382204943c3a8fff0c750b94ae2364d7a3"
  }
 }

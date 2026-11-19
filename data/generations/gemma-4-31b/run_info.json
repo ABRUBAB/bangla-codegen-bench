@@ -1,0 +1,1 @@
+{"model": "gemma-4-31b", "server": "http://127.0.0.1:8089/v1", "temperature": 0.2, "top_p": 0.95, "max_tokens": 768, "n_samples": 1, "seed": 42, "extra": {"chat_template_kwargs": {"enable_thinking": false}}, "note": "llama.cpp b12444 llama-server, GGUF gemma-4-31B-it-Q4_K_M.gguf from unsloth/gemma-4-31B-it-GGUF, 4 parallel slots, ctx 3072/slot", "started": "2026-11-16T21:39:48Z"}

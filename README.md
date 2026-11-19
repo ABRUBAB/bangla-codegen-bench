@@ -19,7 +19,7 @@ Repository: <https://github.com/ABRUBAB/bangla-codegen-bench>
 | `data/audit/` | AI audit of all renderings, applied fixes, `errata.md`, blinded human review workbooks |
 | `data/analysis/`, `data/xai/` | failure pairs and their LLM-classified root causes; white-box probe outputs (large tensors are not tracked) |
 | `bcb/` | package: prompt builder / perturbation engine, causal prompt controls, task loader, statistics, sandbox driver and in-sandbox runner |
-| `scripts/` | pipeline: `build_prompts.py`, `build_causal_prompts.py`, `generate_hf.py`, `generate_gemini.py`, `generate_local_server.py` (any OpenAI-compatible local server), `run_execution.py`, `static_scan.py`, `tokenize_prompts.py`, `analyze.py`, `clean_translations.py`, `causal_analysis.py`, `failure_anatomy.py`, `sensitivity.py`, `xai_*.py`, `make_numbers.py`, `make_figures.py`, `make_workflow_pptx.py` |
+| `scripts/` | pipeline: `build_prompts.py`, `build_causal_prompts.py`, `generate_hf.py`, `generate_gemini.py`, `generate_local_server.py` (any OpenAI-compatible local server), `run_execution.py`, `static_scan.py`, `tokenize_prompts.py`, `analyze.py`, `clean_translations.py`, `causal_analysis.py`, `scale_analysis.py` (size/recency analysis), `failure_anatomy.py`, `sensitivity.py`, `xai_*.py`, `make_numbers.py`, `make_figures.py`, `make_workflow_pptx.py` |
 | `figures/` | all paper figures; `workflow.pptx` is the editable PowerPoint source of Figure 1 |
 | `paper/` | LaTeX sources (Elsevier `cas-dc`) and verified bibliography; every number in the text comes from a generated macro file |
 | `docs/` | task schema, authoring briefs, related-work notes, `CENTER_PC_RUNBOOK.md` (running more models on a local GPU) |
@@ -47,7 +47,9 @@ python scripts/tokenize_prompts.py
 # 2. verify the benchmark in the sandbox (Docker image or the WSL fallback, see bcb/sandbox)
 BCB_BACKEND=docker python scripts/verify_tasks.py data/tasks/functional.jsonl data/tasks/security.jsonl
 
-# 3. generation (GPU, e.g. Kaggle T4x2), Gemini API, or a local OpenAI-compatible server (Ollama, LM Studio, vLLM)
+# 3. generation. Tier 1 (fp16, 3 samples/prompt): Hugging Face Transformers on Kaggle T4x2 (generate_hf.py).
+#    Tier 2 (4-bit GGUF, 1 sample/prompt): llama.cpp llama-server + generate_local_server.py, see docs/CENTER_PC_RUNBOOK.md.
+#    Any OpenAI-compatible server (Ollama, LM Studio, vLLM) or the Gemini API (free-tier quota is too small for a full run) also works.
 python scripts/generate_hf.py --hf-id Qwen/Qwen2.5-Coder-7B-Instruct --model-id qwen2.5-coder-7b \
        --prompts data/prompts/prompts.jsonl --out data/generations
 python scripts/generate_gemini.py --model gemini-3.1-flash-lite --model-id gemini-3.1-flash-lite \
