@@ -16,7 +16,7 @@ from figstyle import (MODEL_LABEL, MODEL_ORDER, NPG, VARIANT_COLOR, VARIANT_LABE
 R = ROOT / "data/results"
 F = ROOT / "figures"
 PARAMS = {"qwen2.5-coder-1.5b": 1.54, "qwen2.5-coder-3b": 3.09, "qwen2.5-coder-7b": 7.62}
-PAL = plt.cm.tab10(np.linspace(0, 1, 10))
+PAL = plt.cm.Paired(np.linspace(0, 1, 12))  # twelve distinct model colours
 
 
 def _read(name):
@@ -39,7 +39,7 @@ def fig_pass():
     if f is None:
         return
     vs = VARIANT_ORDER + ["ID_ONLY"]
-    fig, axs = plt.subplots(2, 1, figsize=(7.2, 5.2), sharex=True)
+    fig, axs = plt.subplots(2, 1, figsize=(7.2, 5.6), sharex=True)
     models = _ordered(f)
     for ax, df, lab in ((axs[0], f, f"(a) functional tasks (n={int(f.n_tasks.max())})"), (axs[1], s, f"(b) security tasks, functional tests (n={int(s.n_tasks.max()) if s is not None else 0})")):
         if df is None:
@@ -56,7 +56,7 @@ def fig_pass():
         ax.set_ylim(0, 105)
         ax.text(0.0, 1.02, lab, transform=ax.transAxes, fontsize=8, fontweight="bold")
     axs[1].set_xticks(range(len(models)))
-    axs[1].set_xticklabels([MODEL_LABEL[m].replace(" ", "\n", 1) for m in models], fontsize=7)
+    axs[1].set_xticklabels([MODEL_LABEL[m] for m in models], fontsize=7, rotation=30, ha="right")
     h, l = axs[0].get_legend_handles_labels()
     fig.legend(h, l, ncol=8, loc="upper center", bbox_to_anchor=(0.5, 1.02), fontsize=7, columnspacing=1.0, handlelength=1.0)
     fig.subplots_adjust(hspace=0.18)
@@ -99,7 +99,7 @@ def fig_security():
     d["VC"] = (d.functional_pass & (d.exploit_pass == False)).astype(float)  # noqa: E712
     d["FF"] = (~d.functional_pass).astype(float)
     vs = ["EN", "EN_TYPO", "BN", "BN_SPELL", "BN_MIX", "BN_TYPO", "BANGLISH", "ES", "ES_TYPO", "ID_ONLY"]
-    fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.1), gridspec_kw={"width_ratios": [1.1, 1]})
+    fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.6), gridspec_kw={"width_ratios": [1.0, 1.0]})
     ax = axs[0]
     agg = d.groupby(["variant", "task_id"])[["SC", "VC", "FF"]].mean().groupby("variant").mean().reindex(vs)
     bottom = np.zeros(len(vs))
@@ -116,16 +116,23 @@ def fig_security():
     sec = _read("tab_security.csv")
     if sec is not None:
         s = sec[sec.condition == "DIRECT"]
-        for j, m in enumerate(_ordered(s)):
-            q = s[s.model_id == m].set_index("variant").reindex(["EN", "BN", "BN_MIX", "BANGLISH"])
-            ax.plot(range(4), 100 * q["vuln_rate"], marker="o", ms=3, lw=1.0, color=PAL[j], label=MODEL_LABEL[m])
-        ax.set_xticks(range(4))
-        ax.set_xticklabels(["EN", "BN", "BN-mix", "Banglish"])
-        ax.set_ylabel("vulnerability rate V (%)")
-        ax.set_ylim(0, 100)
-        ax.legend(fontsize=5.6, ncol=2, loc="lower center", bbox_to_anchor=(0.5, 1.0), handlelength=1.2, columnspacing=0.8)
-    ax.text(-0.18, 1.12, "(b)", transform=ax.transAxes, fontweight="bold", fontsize=9)
-    fig.subplots_adjust(wspace=0.35)
+        models = _ordered(s)
+        cols = {"EN": NPG["navy"], "BN": NPG["red"], "BN_MIX": NPG["teal"], "BANGLISH": NPG["purple"]}
+        for i, m in enumerate(models):
+            q = s[s.model_id == m].set_index("variant")
+            vals = [100 * q.loc[v, "vuln_rate"] for v in cols if v in q.index]
+            ax.plot([min(vals), max(vals)], [i, i], color="#bbbbbb", lw=1.0, zorder=1)
+            for v, c in cols.items():
+                if v in q.index:
+                    ax.scatter(100 * q.loc[v, "vuln_rate"], i, s=13, color=c, zorder=3, linewidth=0,
+                               label={"EN": "EN", "BN": "BN", "BN_MIX": "BN-mix", "BANGLISH": "Banglish"}[v] if i == 0 else None)
+        ax.set_yticks(range(len(models)))
+        ax.set_yticklabels([MODEL_LABEL[m] for m in models], fontsize=6.5)
+        ax.invert_yaxis()
+        ax.set_xlabel("vulnerability rate V (%)")
+        ax.legend(fontsize=6.5, ncol=4, loc="lower center", bbox_to_anchor=(0.45, 1.0), handletextpad=0.1, columnspacing=0.8, frameon=False)
+    ax.text(-0.62, 1.12, "(b)", transform=ax.transAxes, fontweight="bold", fontsize=9)
+    fig.subplots_adjust(wspace=0.75, left=0.08, right=0.98, bottom=0.2)
     save(fig, "fig_security", F)
 
 
@@ -141,16 +148,17 @@ def fig_cwe():
         for i, cw in enumerate(cwes):
             if cw in sub.index and sub.loc[cw].sum() > 0:
                 M[i, j] = sub.loc[cw, "VC"] / sub.loc[cw].sum()
-    fig, ax = plt.subplots(figsize=(3.6, 3.6))
+    fig, ax = plt.subplots(figsize=(3.8, 4.6))
     im = ax.imshow(100 * M, cmap="RdYlGn_r", vmin=0, vmax=100, aspect="auto")
     ax.set_xticks(range(len(groups)))
     ax.set_xticklabels(list(groups), rotation=30, ha="right")
     ax.set_yticks(range(len(cwes)))
-    ax.set_yticklabels(cwes)
+    ax.set_yticklabels(cwes, fontsize=7.5)
+    ax.tick_params(axis="x", labelsize=7.5)
     for i in range(M.shape[0]):
         for j in range(M.shape[1]):
             if not np.isnan(M[i, j]):
-                ax.text(j, i, f"{100 * M[i, j]:.0f}", ha="center", va="center", fontsize=6.5)
+                ax.text(j, i, f"{100 * M[i, j]:.0f}", ha="center", va="center", fontsize=7.5)
     cb = fig.colorbar(im, ax=ax, fraction=0.05, pad=0.03)
     cb.set_label("vulnerability rate V (%)", fontsize=7)
     save(fig, "fig_cwe", F)
@@ -195,7 +203,7 @@ def fig_pareto():
     data = [(t, ttl) for t, ttl in data if t is not None and not t.empty]
     if not data:
         return
-    fig, axs = plt.subplots(1, len(data), figsize=(3.4 * len(data), 3.2), sharey=True, squeeze=False)
+    fig, axs = plt.subplots(1, len(data), figsize=(3.6 * len(data), 3.6), sharey=True, squeeze=False)
     mk = {"BN": "o", "BN_MIX": "s", "BANGLISH": "^", "ES": "D"}
     models = _ordered(pd.concat([t for t, _ in data]))
     for ax, (t, ttl) in zip(axs[0], data):
@@ -213,8 +221,8 @@ def fig_pareto():
     axs[0][0].set_ylabel(r"$\Delta$ Pass@1 vs direct (pp)")
     h1 = [Line2D([0], [0], marker=mm, color="k", lw=0, ms=4, label=VARIANT_LABEL[v]) for v, mm in mk.items()]
     h2 = [Line2D([0], [0], marker="o", color=PAL[j], lw=0, ms=4, label=MODEL_LABEL[m]) for j, m in enumerate(models)]
-    axs[0][-1].legend(handles=h1 + h2, fontsize=5.5, loc="upper right", ncol=2, handletextpad=0.1)
-    fig.subplots_adjust(wspace=0.08)
+    fig.legend(handles=h1 + h2, fontsize=6.5, loc="lower center", ncol=8, handletextpad=0.1, columnspacing=0.9, frameon=False)
+    fig.subplots_adjust(wspace=0.08, bottom=0.3)
     save(fig, "fig_pareto", F)
 
 
@@ -260,7 +268,9 @@ def fig_hint():
     ax.set_xticks(x)
     ax.set_xticklabels(["EN", "BN", "BN-mix", "Banglish", "ES"])
     ax.set_ylabel("vulnerability rate V (%)")
-    ax.legend()
+    ax.set_ylim(0, 72)
+    ax.legend(loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2, frameon=False)
+    fig.tight_layout()
     save(fig, "fig_hint", F)
 
 

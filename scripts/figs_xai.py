@@ -17,9 +17,9 @@ from figstyle import NPG, VARIANT_COLOR, VARIANT_LABEL, save  # noqa: E402
 R = ROOT / "data/results"
 X = ROOT / "data/xai"
 SEG_COLOR = {"head": "#E5E7EB", "signature": "#BFDBFE", "description": "#FDE68A", "tail": "#E5E7EB", "template": "#FFFFFF"}
-FEAT_LABEL = {"difficulty": "task difficulty (EN pass rate of other models)", "log_params": "model size (log params)",
-              "is_security": "security task", "ratio_qwen2.5": "token ratio vs EN (Qwen)", "ratio_deepseek-coder": "token ratio vs EN (DeepSeek)",
-              "ratio_gpt-4o (o200k)": "token ratio vs EN (o200k)", "tok_per_word_qwen": "tokens per word", "tok_per_char_qwen": "tokens per character",
+FEAT_LABEL = {"difficulty": "task difficulty", "log_params": "model size (log params)",
+              "is_security": "security task", "ratio_qwen2.5": "token ratio (Qwen)", "ratio_deepseek-coder": "token ratio (DeepSeek)",
+              "ratio_gpt-4o (o200k)": "token ratio (o200k)", "tok_per_word_qwen": "tokens per word", "tok_per_char_qwen": "tokens per character",
               "desc__qwen2.5": "description length (tokens)", "desc_chars": "description length (chars)", "bn_share": "share of Bangla script"}
 
 
@@ -29,12 +29,20 @@ def fig_shap():
         return
     import shap
     z = np.load(p, allow_pickle=True)
-    cols = [FEAT_LABEL.get(c, c.replace("var_", "variant: ").replace("fam_", "family: ")) for c in z["cols"]]
+    cols = [FEAT_LABEL.get(c, c.replace("var_ID_ONLY", "variant: signature only").replace("var_", "variant: ").replace("fam_", "family: ")) for c in z["cols"]]
     sv, Xv = z["shap"], z["X"]
-    plt.figure(figsize=(5.6, 4.2))
+    plt.figure(figsize=(3.8, 3.2))
     shap.summary_plot(sv, Xv, feature_names=cols, show=False, max_display=14, plot_size=None)
     fig = plt.gcf()
     fig.axes[0].tick_params(labelsize=6.5)
+    fig.axes[0].set_xlabel("SHAP value (impact on failure risk)", fontsize=6.5)
+    for ax_ in fig.axes[1:]:
+        ax_.tick_params(labelsize=6)
+        ax_.yaxis.label.set_size(6.5)
+    # the library's automatic layout collapses the plot area for long feature names: place the axes by hand
+    fig.axes[0].set_position([0.43, 0.13, 0.44, 0.85])
+    if len(fig.axes) > 1:
+        fig.axes[1].set_position([0.90, 0.13, 0.018, 0.85])
     save(fig, "fig_shap", ROOT / "figures")
 
 
@@ -59,7 +67,7 @@ def fig_attribution():
         return
     model, tid = pick
     vs = ["EN", "BN", "BN_MIX", "BANGLISH"]
-    fig, axs = plt.subplots(len(vs), 1, figsize=(7.2, 3.6), sharex=False)
+    fig, axs = plt.subplots(len(vs), 1, figsize=(2.95, 3.2), sharex=False)
     for ax, v in zip(axs, vs):
         d = json.loads(by[pick][v].read_text(encoding="utf-8"))
         a = np.abs(np.array(d["attr"]))
@@ -73,8 +81,8 @@ def fig_attribution():
         ax.set_xlim(-0.5, len(a) - 0.5)
         ax.set_xticks([])
     handles = [plt.Rectangle((0, 0), 1, 1, color=SEG_COLOR[s]) for s in ("signature", "description", "head")]
-    axs[0].legend(handles, ["signature", "description", "instruction/template"], ncol=3, loc="lower left", bbox_to_anchor=(0.0, 1.0), fontsize=6.5)
-    axs[-1].set_xlabel(f"prompt token position (task {tid}); bar height = share of gradient$\\times$input saliency")
+    axs[0].legend(handles, ["signature", "description", "instruction"], ncol=3, loc="lower left", bbox_to_anchor=(0.0, 1.0), fontsize=5.5, handlelength=0.9, columnspacing=0.6, handletextpad=0.4)
+    axs[-1].set_xlabel(f"prompt token position (task {tid})", fontsize=6.5)
     fig.subplots_adjust(hspace=0.12)
     save(fig, "fig_attribution", ROOT / "figures")
 
@@ -156,7 +164,7 @@ def fig_alignment(model=None):
     ax.set_xlabel("layer")
     ax.set_ylabel("cosine similarity to EN\n(last prompt token)")
     ax.legend(fontsize=6, ncol=2)
-    ax.text(-0.17, 1.04, "(a)", transform=ax.transAxes, fontweight="bold", fontsize=9)
+    ax.text(-0.17, 1.04, "(c)", transform=ax.transAxes, fontweight="bold", fontsize=9)
     ax = axs[1]
     ex = pd.read_csv(R / "exec_merged.csv") if (R / "exec_merged.csv").exists() else None
     if ex is not None and "BN" in per_task:
@@ -169,9 +177,10 @@ def fig_alignment(model=None):
         ax.scatter(al, drop + np.random.default_rng(0).normal(0, 0.01, len(drop)), s=7, color=NPG["red"], alpha=0.6, linewidths=0)
         ax.set_xlabel("late-layer cosine, EN vs BN")
         ax.set_ylabel(r"per-task Pass@1 drop EN$-$BN")
+        ax.set_ylim(-1.1, 1.45)
         ax.text(0.03, 0.95, f"Spearman $\\rho$={rho:.2f} (p={pval:.3f})", transform=ax.transAxes, fontsize=7, va="top")
         json.dump({"spearman_rho": float(rho), "p": float(pval), "n": int(len(t))}, open(R / "xai_alignment_corr.json", "w"))
-    ax.text(-0.2, 1.04, "(b)", transform=ax.transAxes, fontweight="bold", fontsize=9)
+    ax.text(-0.2, 1.04, "(d)", transform=ax.transAxes, fontweight="bold", fontsize=9)
     fig.subplots_adjust(wspace=0.35)
     save(fig, "fig_alignment", ROOT / "figures")
     pd.DataFrame(curves).to_csv(R / "xai_alignment_curves.csv", index_label="layer")

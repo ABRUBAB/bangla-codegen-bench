@@ -85,22 +85,31 @@ def main():
     ax.set_xticks(range(len(models)))
     ax.set_xticklabels([MODEL_LABEL.get(m, m).replace("Qwen2.5-Coder ", "Q2.5-C ") for m in models], rotation=30, ha="right", fontsize=6.5)
     ax.set_ylabel("Pass@1 change vs EN (pp)")
-    ax.legend(fontsize=6, loc="lower left")
-    ax.text(-0.17, 1.04, "(a)", transform=ax.transAxes, fontweight="bold", fontsize=9)
+    ax.legend(fontsize=6.5, loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2, frameon=False)
+    ax.text(-0.17, 1.14, "(a)", transform=ax.transAxes, fontweight="bold", fontsize=9)
     ax = axs[1]
-    xs = {"EN": 0, "HYB33": 1 / 3, "HYB67": 2 / 3, "BN_DESC_SUB": 1}
-    for i, m in enumerate(models):
-        s = tab[tab.model_id == m].set_index("variant")
-        pts = [(xs[v], s.loc[v, "pass_pct"]) for v in ("HYB33", "HYB67", "BN_DESC_SUB") if v in s.index]
-        if not pts or "HYB33" not in s.index:
+    xs = [0, 1 / 3, 2 / 3, 1]
+    curves = []
+    for m in models:
+        s_ = tab[tab.model_id == m].set_index("variant")
+        if "HYB33" not in s_.index or "HYB67" not in s_.index or "BN_DESC_SUB" not in s_.index:
             continue
-        en = s.loc["HYB33", "en_pct"]
-        ax.plot([0] + [p[0] for p in pts], [en] + [p[1] for p in pts], marker="o", ms=3, lw=1, label=MODEL_LABEL.get(m, m).replace("Qwen2.5-Coder ", "Q2.5-C "))
+        ys = [0.0, s_.loc["HYB33", "delta_pp"], s_.loc["HYB67", "delta_pp"], s_.loc["BN_DESC_SUB", "delta_pp"]]
+        curves.append(ys)
+        ax.plot(xs, ys, color="#b9bfcc", lw=0.9, zorder=1)
+    if curves:
+        mean = np.mean(curves, axis=0)
+        ax.plot(xs, mean, color=NPG["red"], lw=2.0, marker="o", ms=4, zorder=3)
+    ax.axhline(0, color="grey", lw=0.7)
+    ax.set_xticks(xs)
+    ax.set_xticklabels(["0 (EN)", "1/3", "2/3", "all (BN)"])
     ax.set_xlabel("share of description sentences in Bangla")
-    ax.set_ylabel("Pass@1 (%)")
-    ax.legend(fontsize=5.5)
-    ax.text(-0.2, 1.04, "(b)", transform=ax.transAxes, fontweight="bold", fontsize=9)
-    fig.subplots_adjust(wspace=0.4, bottom=0.27)
+    ax.set_ylabel("Pass@1 change vs EN (pp)")
+    from matplotlib.lines import Line2D
+    ax.legend(handles=[Line2D([0], [0], color="#b9bfcc", lw=1.2, label="one model"), Line2D([0], [0], color=NPG["red"], lw=2, marker="o", ms=4, label="mean over models")],
+              fontsize=6.5, loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2, frameon=False)
+    ax.text(-0.2, 1.14, "(b)", transform=ax.transAxes, fontweight="bold", fontsize=9)
+    fig.subplots_adjust(wspace=0.32, bottom=0.27, top=0.86)
     save(fig, "fig_causal", ROOT / "figures")
     print(tab.round(2).to_string())
 
