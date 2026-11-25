@@ -4,6 +4,8 @@
 set -euo pipefail
 export PYTHONUTF8=1
 cd "$(dirname "$0")/.."
+# output folders (not tracked in git): LaTeX number macros/tables go to paper/, figures to figures/
+mkdir -p paper figures
 [ -f data/results/exec.jsonl ] || { [ -f data/results/exec.jsonl.gz ] && gunzip -k data/results/exec.jsonl.gz; }
 python scripts/run_execution.py --gens data/generations --out data/results/exec.jsonl --workers 10 --shard 60
 gzip -kf data/results/exec.jsonl
@@ -21,6 +23,4 @@ python scripts/causal_analysis.py
 python scripts/scale_analysis.py
 python scripts/make_extra_tables.py
 python scripts/make_figures.py
-(cd paper && pdflatex -interaction=nonstopmode main.tex >/dev/null && bibtex main >/dev/null || true; \
- pdflatex -interaction=nonstopmode main.tex >/dev/null && pdflatex -interaction=nonstopmode main.tex >/dev/null)
-echo "pipeline finished -> paper/main.pdf"
+echo "pipeline finished -> data/results/, paper/*.tex (number macros and tables), figures/"

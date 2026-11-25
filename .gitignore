@@ -33,3 +33,9 @@ data/results/exec.jsonl
 data/results/exec_merged.csv
 data/results/xai_features.csv
 data/results/xai_shap_values.npz
+
+# the manuscript and its figures are NOT part of this code repository (kept locally only)
+paper/
+figures/
+docs/related_work_notes.md
+*.pdf

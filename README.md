@@ -4,8 +4,8 @@ Controlled benchmark and pipeline for measuring how the **language of the prompt
 code-mixed Bangla, Banglish, a Spanish control and perturbed variants) changes the **correctness**, **executable
 security** and **tokenization cost** of code written by LLMs.
 
-Companion code and data of the paper *"Does the Language of the Prompt Change What Code LLMs Write? Correctness,
-Executable Security and Tokenization Cost of English, Bangla and Banglish Prompts"* (A. Rubab, M. M. K. Badhon).
+Companion code and data of the paper *"Does the Prompt Language Matter? An Empirical Study of Correctness, Security,
+and Token Cost in Multilingual LLM Code Generation"* (A. Rubab, M. M. K. Badhon).
 Repository: <https://github.com/ABRUBAB/bangla-codegen-bench>
 
 ## What is in the box
@@ -20,9 +20,11 @@ Repository: <https://github.com/ABRUBAB/bangla-codegen-bench>
 | `data/analysis/`, `data/xai/` | failure pairs and their LLM-classified root causes; white-box probe outputs (large tensors are not tracked) |
 | `bcb/` | package: prompt builder / perturbation engine, causal prompt controls, task loader, statistics, sandbox driver and in-sandbox runner |
 | `scripts/` | pipeline: `build_prompts.py`, `build_causal_prompts.py`, `generate_hf.py`, `generate_gemini.py`, `generate_local_server.py` (any OpenAI-compatible local server), `run_execution.py`, `static_scan.py`, `tokenize_prompts.py`, `analyze.py`, `clean_translations.py`, `causal_analysis.py`, `scale_analysis.py` (size/recency analysis), `failure_anatomy.py`, `sensitivity.py`, `xai_*.py`, `make_numbers.py`, `make_figures.py`, `make_workflow_pptx.py` |
-| `figures/` | all paper figures; `workflow.pptx` is the editable PowerPoint source of Figure 1 |
-| `paper/` | LaTeX sources (Elsevier `cas-dc`) and verified bibliography; every number in the text comes from a generated macro file |
-| `docs/` | task schema, authoring briefs, related-work notes, `CENTER_PC_RUNBOOK.md` (running more models on a local GPU) |
+| `docs/` | task schema, authoring briefs, `CENTER_PC_RUNBOOK.md` (running more models on a local GPU) |
+
+The scripts write their outputs into two folders that are not tracked in git: `figures/` (figures from
+`make_figures.py` and the other figure scripts) and `paper/` (LaTeX macro and table files such as `numbers.tex` and
+`tab_*.tex`, which carry every reported number). The manuscript itself is not part of this repository.
 
 ## Design in one paragraph
 Every language variant of a task shows the model the *same* code signature; only the natural-language description
@@ -62,7 +64,7 @@ python scripts/clean_translations.py
 python scripts/generate_hf.py ... --only EXTERNAL --external-translations data/generations/qwen3-8b/translations_clean.jsonl \
        --external-condition TF_CLEAN_Q3
 
-# 5. execute everything, static scan, statistics, XAI, figures, paper
+# 5. execute everything, static scan, statistics, XAI, number macros and figures
 BCB_BACKEND=wsl bash scripts/final_pipeline.sh
 ```
 
