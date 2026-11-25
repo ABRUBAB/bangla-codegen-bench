@@ -361,18 +361,18 @@ for i, (k, d) in enumerate(rows):
 text(X2 + 0.08, BY + 1.78, W2 - 0.16, 0.14, [dict(t="Controls: ID_ONLY · EN_PAD · BN_DESC · HYB33/67 · hints", i=True, s=7, c="444444", align="c")])
 
 # box 3: validation and gates
-title_block(X3, BY + 0.05, W3, "Validation & QA", "(852 non-English renderings)")
+title_block(X3, BY + 0.05, W3, "Validation & QA", "(852 non-English translations)")
 icon_doc_check(X3 + 0.10, BY + 0.50, 0.34)
 text(X3 + 0.54, BY + 0.46, 1.28, 0.56, [dict(t="Oracle gate", b=True, s=8, c=INK, after=1),
      dict(t="reference passes all tests; insecure one fails the exploit test", s=7)])
 line(X3 + 0.12, BY + 1.06, X3 + W3 - 0.12, BY + 1.06, GREY, 0.8, dash=MSO_LINE.DASH)
 icon_ai(X3 + 0.10, BY + 1.22, 0.32)
 text(X3 + 0.54, BY + 1.10, 1.28, 0.44, [dict(t="LLM audit", b=True, s=8, c=INK, after=1),
-     dict(t="852 renderings, 43 fixes applied", s=7)])
+     dict(t="852 translations, 43 fixes applied", s=7)])
 line(X3 + 0.12, BY + 1.56, X3 + W3 - 0.12, BY + 1.56, GREY, 0.8, dash=MSO_LINE.DASH)
-icon_people(X3 + 0.10, BY + 1.64, 0.28, color="9A9A9A")
-text(X3 + 0.54, BY + 1.60, 1.28, 0.32, [dict(t="Native-speaker review", b=True, s=8, c="666666", after=1),
-     dict(t="150-item sample: pending", s=7, c="666666")])
+icon_people(X3 + 0.10, BY + 1.64, 0.28)
+text(X3 + 0.54, BY + 1.60, 1.28, 0.32, [dict(t="Native-speaker check", b=True, s=8, c=INK, after=1),
+     dict(t="all Bangla, both authors", s=7)])
 
 # box 4: corpus
 title_block(X4, BY + 0.05, W4, "Benchmark Corpus", f"(N = {N_PROMPTS:,} prompts)")

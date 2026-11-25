@@ -16,7 +16,7 @@ Repository: <https://github.com/ABRUBAB/bangla-codegen-bench>
 | `data/prompts/prompts.jsonl` | the 2,505 frozen main prompts (10 variants incl. the `ID_ONLY` control, + 5 security-hint ablations); `prompts_causal.jsonl`: interventional controls (`EN_PAD`, `BN_DESC`, `HYB33`, `HYB67`) |
 | `data/generations/<model>/` | every raw model output (jsonl), the models' own translations (`translations.jsonl`) and their sanitised versions (`translations_clean.jsonl`) |
 | `data/results/` | execution, Bandit and token-count results, statistics tables |
-| `data/audit/` | AI audit of all renderings, applied fixes, `errata.md`, blinded human review workbooks |
+| `data/audit/` | AI audit of all translations, applied fixes, `errata.md`, unfilled review workbooks for an independent rating study |
 | `data/analysis/`, `data/xai/` | failure pairs and their LLM-classified root causes; white-box probe outputs (large tensors are not tracked) |
 | `bcb/` | package: prompt builder / perturbation engine, causal prompt controls, task loader, statistics, sandbox driver and in-sandbox runner |
 | `scripts/` | pipeline: `build_prompts.py`, `build_causal_prompts.py`, `generate_hf.py`, `generate_gemini.py`, `generate_local_server.py` (any OpenAI-compatible local server), `run_execution.py`, `static_scan.py`, `tokenize_prompts.py`, `analyze.py`, `clean_translations.py`, `causal_analysis.py`, `scale_analysis.py` (size/recency analysis), `failure_anatomy.py`, `sensitivity.py`, `xai_*.py`, `make_numbers.py`, `make_figures.py`, `make_workflow_pptx.py` |
@@ -28,7 +28,7 @@ The scripts write their outputs into two folders that are not tracked in git: `f
 
 ## Design in one paragraph
 Every language variant of a task shows the model the *same* code signature; only the natural-language description
-changes, and each rendering must impose exactly the English requirements (identifiers/literals verbatim). Security
+changes, and each translation must impose exactly the English requirements (identifiers/literals verbatim). Security
 task descriptions are *neutral* (no security cue). Correctness is decided by pytest, security by behavioural exploit
 tests (benign attacks that create marker files, return extra rows, ...), never by string matching. Before any model
 is run, every task passes a gate: reference passes all tests; for security tasks the secure reference passes
@@ -78,17 +78,22 @@ resource limits, fresh temp dir per sample. Never run model outputs on a machine
 
 **API keys.** No secrets are stored in this repository. Pass keys via environment variables.
 
-## Native-speaker audit (important)
-The Bangla, code-mixed, Banglish and Spanish renderings were drafted with an LLM, checked automatically (schema,
-identifier and numeral preservation) and audited by Claude Opus agents (`data/audit/llm_opus_*.json`; statistics via
-`python scripts/audit_tools.py llm-stats`). They are **not** human-certified until native speakers complete the review:
-`python scripts/audit_tools.py build` writes the blinded review workbooks `data/audit/review_annotator{1,2}.xlsx`
-(150-item fixed-seed sample; AI judgements pre-filled, independent empty columns per reviewer). After two people have
-really completed them, run
-`python scripts/audit_tools.py ingest data/audit/review_annotator1.xlsx data/audit/review_annotator2.xlsx`;
-this rewrites `paper/audit_numbers.tex` so the paper reports the real agreement statistics. Until then the paper
-describes the renderings as LLM-drafted, automatically checked and AI-audited only. Known ambiguities found after
-generation are listed in `data/audit/errata.md`.
+## How the translations were checked
+The formal Bangla, code-mixed, Banglish and Spanish translations were drafted with an LLM and then checked in three ways:
+1. **Automatic gate:** expected script, and every identifier, literal and number of the English text kept verbatim.
+2. **AI audit:** Claude Opus agents compared all 852 translations with the English task (`data/audit/llm_opus_*.json`;
+   statistics via `python scripts/audit_tools.py llm-stats`); the 43 proposed corrections were applied
+   (`data/audit/applied_fixes_*.json`).
+3. **Native-speaker check:** after the prompts were frozen, both authors (native Bangla speakers) read the formal,
+   code-mixed and Banglish versions of all 213 tasks against the English text, first independently and then together.
+   They found no translation that adds, drops or changes a requirement, so no text was changed. This was a read-through
+   by the authors, not a rating study, so no agreement statistic exists. The Spanish versions were not checked by a
+   Spanish speaker.
+
+For an independent rating study, `python scripts/audit_tools.py build` writes blinded review workbooks
+(`data/audit/review_annotator{1,2}.xlsx`, a 150-item fixed-seed sample; they are released unfilled) and
+`python scripts/audit_tools.py ingest A.xlsx B.xlsx` computes agreement statistics from two completed workbooks.
+Known ambiguities found after generation are listed in `data/audit/errata.md`.
 
 ## Licence
 Code: MIT. Task and prompt data: CC BY 4.0. Model outputs are research artefacts of third-party models and remain
